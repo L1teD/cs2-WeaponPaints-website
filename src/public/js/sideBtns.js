@@ -29,13 +29,13 @@ const showDefaults = (type) => {
                     let card = document.createElement('div')
                     card.classList.add('col-3', 'p-2')
 
+                    element.weapon.id = element.id.slice(13)
+
                     // check if knife is selected
                     let active = ''
                     if (element.weapon.id == selectedKnife.knife) {
                         active = 'active-card'
                     }
-
-                    element.weapon.id = element.id.slice(13)
 
                     card.innerHTML = `
                     <div class="rounded-3 d-flex flex-column card-common weapon-card ${active} weapon_knife" id="${element.weapon.id}">
@@ -65,14 +65,8 @@ const showDefaults = (type) => {
                     let card = document.createElement('div')
                     card.classList.add('col-3', 'p-2')
 
-                    // check if knife is selected
-                    let active = ''
-                    if (element.weapon.id == selectedKnife.knife) {
-                        active = 'active-card'
-                    }
-
                     card.innerHTML = `
-                    <div class="rounded-3 d-flex flex-column card-common weapon-card ${active} weapon_knife" id="${element.weapon.id}">
+                    <div class="rounded-3 d-flex flex-column card-common weapon-card weapon_knife" id="${element.weapon.id}">
                     <a class="text-decoration-none d-flex flex-column" style="z-index: 0;">
                             <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" alt="${element.name}">
                             
