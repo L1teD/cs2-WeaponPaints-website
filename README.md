@@ -28,7 +28,7 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
     }
 }
 ```
-- Supported languages **`ru, en`**
+- Supported languages **`ru, en, pt-BR`**
 
 - And then
 
