@@ -27,7 +27,7 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
 }
 ```
 - Supported languages **`ru, en`**
-- In **`src/app.js`** got to the 40 line
+- In **`src/app.js`** go to the 40 line
 - Change returnURL and realm
 
 if localhost:
