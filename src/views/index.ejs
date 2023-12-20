@@ -18,39 +18,38 @@
     <script src="js/index.js"></script>
     <script src="js/sideBtns.js"></script> 
 </head>
+<body class="bg-color">
 
-<div class="container-fluid bg-opacity text-light" style="position: fixed; height: 100dvh; padding-top: 20dvh; z-index: 2;" id="popup" hidden>
-    <div class="d-flex justify-content-center flex-column container">
-        <div class="bg-nav d-flex flex-row justify-content-between px-4 align-items-center">
-            <p class="m-0 my-2">Change pattern and float</p>
-            <i class="fa-solid fa-xmark" onclick="closePopup()"></i>
-        </div>
-        <div class="bg-color px-5">
-            <div class="container p-3 d-flex flex-column">
-                <p class="m-0 text-center my-2">Weapon index: <span class="text-info" id="weaponid">515</span> Paint index: <span class="text-info" id="paintid">515</span></p>
-                <div class="d-flex justify-content-evenly">
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="float" type="text" placeholder="Float" data-sb-validations="required" />
-                        <label for="float" class="text-secondary">Float</label>
-                        <div class="invalid-feedback" data-sb-feedback="float:required">Float is required.</div>
+    <!-- Modal -->
+    <div class="modal fade" id="patternFloat" tabindex="-1" aria-labelledby="patternFloatLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: transparent !important;">
+                <div class="modal-header bg-nav text-light border-dark">
+                    <h5 class="modal-title" id="patternFloatLabel">Float and pattern</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-color d-flex flex-column text-light">
+                    <img id="modalImg" class="mx-auto" src="https://raw.githubusercontent.com/ByMykel/CSGO-API/efe25483a04a03414dea9c61d4b0e958a373cdfd/public/images/econ/default_generated/weapon_knife_gut_aa_fade_light.png" width="40%">
+                    <h5 class="mx-auto"><span id="modalWeapon">Gut knife</span> | <span id="modalPaint">Fade</span></h5>
+                    <div class="form-outline mx-auto mb-2">
+                        <label class="form-label m-0" for="float">Float</label>
+                        <input type="number" id="float" class="form-control" placeholder="Float" value="0.000001"/>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="pattern" type="text" placeholder="Pattern" data-sb-validations="required" />
-                        <label for="pattern" class="text-secondary">Pattern</label>
-                        <div class="invalid-feedback" data-sb-feedback="pattern:required">Pattern is required.</div>
+                    <div class="form-outline mx-auto">
+                        <label class="form-label m-0" for="pattern">Pattern</label>
+                        <input type="number" id="pattern" class="form-control" placeholder="Pattern" value="0"/>
                     </div>
                 </div>
-                <button class="btn btn-outline-light mx-auto" onclick="changeParams()">Change</button>
+                <div class="modal-footer bg-nav text-light border-dark d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary" onclick="changeParams()" id="modalButton"><%= lang.change %></button>
+                </div>
             </div>
         </div>
     </div>
-    
-</div>  
 
-<body class="bg-color">
     <nav class="navbar navbar-dark bg-nav">
         <div class="container">
-            <div class="nav-item">
+            <div class="nav-item d-flex align-items-center">
                 <a class="navbar-brand" href="#"><%= config.name %></a>
                 <% if (config.connect.show) { %>
                     <a href="<%= config.connect.url %>" class="btn btn-outline-warning rounded-pill"><small><%= lang.connect %></small></a>

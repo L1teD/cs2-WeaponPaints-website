@@ -218,15 +218,15 @@ const knifeSkins = (knifeType) => {
                     <div onclick="changeSkin(\'${user.id}\', \'${weaponIds[element.weapon.id]}\', ${element.paint_index})" id="weapon-${weaponIds[element.weapon.id]}-${element.paint_index}" class="parent-weapon-card weapon_card bg-nav rounded-3 d-flex flex-column ${active} ${bgColor}">
 
 
-                        <div class="settings d-flex justify-content-center align-items-center bg-light text-dark rounded-circle" onclick="openPopup(\'${steamid}\', \'${weaponid}\', \'${paintid}\', \'${float}\', \'${pattern}\')">
+                        <button onclick="editModal(\'${element.image}\', \'${element.weapon.name}\', \'${element.pattern.name} ${phase}\', \'${element.weapon.id}\' , \'${element.paint_index}\')" style="z-index: 3;" class="settings d-flex justify-content-center align-items-center bg-light text-dark rounded-circle" data-bs-toggle="modal" data-bs-target="#patternFloat">
                             <i class="fa-solid fa-gear"></i>
-                        </div>
+                        </button>
 
                         <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" alt="${element.name}">
                         
-                        <p class="m-0 ms-4 text-secondary"><small>${element.weapon.name}</small></p>
+                        <p class="m-0 ms-4 text-secondary"><small class="text-roboto">${element.weapon.name}</small></p>
                         
-                        <h5 class="ms-2 mb-3 weapon-skin-title">
+                        <h5 class="ms-2 mb-3 weapon-skin-title text-roboto">
                             <i class="fa-solid fa-circle fa-2xs mx-2"></i>
                             ${element.pattern.name} ${phase}
                         </h5>

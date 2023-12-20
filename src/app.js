@@ -163,9 +163,8 @@ io.on('connection', socket => {
     })
 
     socket.on('change-params', data => {
-        console.log(data)
         connection.query('UPDATE wp_player_skins SET weapon_wear = ?, weapon_seed = ? WHERE steamid = ? AND weapon_defindex = ? AND weapon_paint_id = ?', [data.float, data.pattern, data.steamid, data.weaponid, data.paintid], (err, results, fields) => {
-           console.log(results)
+            socket.emit('params-changed')
         })
     })
         

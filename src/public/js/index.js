@@ -1,5 +1,8 @@
 const socket = io()
 
+let currentWeaponId = ''
+let currentPaintId = ''
+
 const getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -103,24 +106,32 @@ const weaponIds = {
     "studded_hydra_gloves": 5035
 }
 
-const closePopup = () => {
-    document.getElementById('popup').hidden = true
-}
-
-const openPopup = (steamid, weaponid, paintid, float, pattern) => {
-    document.getElementById("weaponid").innerText = weaponid
-    document.getElementById("paintid").innerText = paintid
-    document.getElementById("float").value = float
-    document.getElementById("pattern").value = pattern
-    document.getElementById('popup').hidden = false
+const editModal = (img, weaponName, paintName, weaponId, paintId) => {
+    document.getElementById('modalImg').src = img
+    document.getElementById('modalWeapon').innerText = weaponName
+    document.getElementById('modalPaint').innerText = paintName
+    currentWeaponId = weaponIds[weaponId]
+    currentPaintId = paintId
+    console.log(img, weaponName, paintName, currentWeaponId, currentPaintId)
 }
 
 const changeParams = () => {
     let steamid = user.id
-    let weaponid = document.getElementById("weaponid").innerText
-    let paintid = document.getElementById("paintid").innerText
+    let weaponid = currentWeaponId
+    let paintid = currentPaintId
     let float = document.getElementById("float").value
     let pattern = document.getElementById("pattern").value
 
+    document.getElementById('modalButton').innerHTML = 
+        `
+            <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        `
+
     socket.emit('change-params', {steamid: steamid, weaponid: weaponid, paintid: paintid, float: float, pattern: pattern})
 }
+
+socket.on('params-changed', () => {
+    document.getElementById('modalButton').innerHTML = langObject.change
+})
