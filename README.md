@@ -19,6 +19,7 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
         "DB_PASS": "password",
         "DB_DB": "table"
     },
+    "HOST": "example.com or localhost/127.0.0.1"
     "PORT": 27275,
     "STEAMAPIKEY": "Your Steam Web API Key",
     "connect": {
@@ -28,20 +29,6 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
 }
 ```
 - Supported languages **`ru, en`**
-- In **`src/app.js`** go to the 40 line
-- Change returnURL and realm
-
-if localhost:
-```js
-    returnURL: 'http://localhost:' + PORT + '/api/auth/steam/return',
-    realm: 'http://localhost:' + PORT + '/',
-```
-
-if domain:
-```js
-    returnURL: 'http://example.com/api/auth/steam/return',
-    realm: 'http://example.com/',
-```
 
 - And then
 
