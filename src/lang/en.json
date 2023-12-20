@@ -9,8 +9,7 @@
         "rifles": "Rifles",
         "sniperRifles": "Sniper rifles",
         "SMGs": "SMGs",
-        "shotguns": "Shotguns",
-        "MGs": "MGs"
+        "heavy": "Тяжёлое"
     },
     "selectCategory": "Select category",
     "needLogin": "You need to login",
