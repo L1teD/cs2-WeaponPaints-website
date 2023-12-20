@@ -1,4 +1,10 @@
 
+# Weapon Paints website
+
+Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-WeaponPaints/)** plugin
+
+
+
 ## Installation
 
 - Download the release
