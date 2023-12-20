@@ -7,7 +7,7 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
 
 ## Installation
 
-- Download the release
+- **[Download the release](https://github.com/L1teD/cs2-WeaponPaints-website/releases/latest/download/cs2-WeaponPaints-website.zip)**
 - In **`src/`** create **`config.json`** file and fill it:
 ```json
 {
