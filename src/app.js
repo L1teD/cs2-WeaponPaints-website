@@ -12,6 +12,13 @@ const app = new express()
 
 const PORT = config.PORT
 
+let returnURL = `http://${config.HOST}/api/auth/steam/return`
+let realm = `http://${config.HOST}/`
+
+if (config.HOST == 'localhost' || config.host == '127.0.0.1') {
+    returnURL = `http://${config.HOST}:${config.PORT}/api/auth/steam/return`
+    realm = `http://${config.HOST}:${config.PORT}/`
+}
 
 const connection = mysql.createConnection({
     host: config.DB.DB_HOST,
@@ -37,9 +44,9 @@ passport.serializeUser((user, done) => {
     });
     // Initiate Strategy
     passport.use(new SteamStrategy({
-    returnURL: 'http://localhost:' + PORT + '/api/auth/steam/return',
-    realm: 'http://localhost:' + PORT + '/',
-    apiKey: config.STEAMAPIKEY,
+        returnURL: returnURL,
+        realm: realm,
+        apiKey: config.STEAMAPIKEY,
     }, function (identifier, profile, done) {
         process.nextTick(function () {
             profile.identifier = identifier;
@@ -97,6 +104,16 @@ app.get('/api/auth/steam/return', passport.authenticate('steam', {failureRedirec
 app.get('/api/logout', (req, res) => {
     req.session.destroy(err => {
         res.redirect('/')
+    })
+})
+
+app.get('/api/delete', (req, res) => {
+    connection.query("DELETE FROM wp_player_knife WHERE steamid = ?", [req.user.id], (err, results, fields) => {
+        connection.query("DELETE FROM wp_player_skins WHERE steamid = ?", [req.user.id], (err, results, fields) => {
+            req.session.destroy(err => {
+                res.redirect('/')
+            })
+        })
     })
 })
 

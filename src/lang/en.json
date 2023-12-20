@@ -1,6 +1,7 @@
 {
     "navLogin": "Login",
     "navLogout": "Logout",
+    "navDelete": "Delete account",
     "connect": "Connect to server",
     "sideMenu": {
         "knives": "Knives",
@@ -9,7 +10,7 @@
         "rifles": "Rifles",
         "sniperRifles": "Sniper rifles",
         "SMGs": "SMGs",
-        "heavy": "Тяжёлое"
+        "heavy": "Heavy"
     },
     "selectCategory": "Select category",
     "needLogin": "You need to login",

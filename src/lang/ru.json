@@ -1,6 +1,7 @@
 {
     "navLogin": "Войти",
     "navLogout": "Выйти",
+    "navDelete": "Удалить аккаунт",
     "connect": "Подключиться к серверу",
     "sideMenu": {
         "knives": "Ножи",
