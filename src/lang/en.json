@@ -1,0 +1,20 @@
+{
+    "navLogin": "Login",
+    "navLogout": "Logout",
+    "connect": "Connect to server",
+    "sideMenu": {
+        "knives": "Knives",
+        "gloves": "Gloves",
+        "pistols": "Pistols",
+        "rifles": "Rifles",
+        "sniperRifles": "Sniper rifles",
+        "SMGs": "SMGs",
+        "shotguns": "Shotguns",
+        "MGs": "MGs"
+    },
+    "selectCategory": "Select category",
+    "needLogin": "You need to login",
+    "viaSteam": "via Steam",
+    "change": "Change",
+    "changeSkin": "Change skin"
+}

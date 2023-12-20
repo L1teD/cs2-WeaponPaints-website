@@ -1,0 +1,20 @@
+{
+    "navLogin": "Войти",
+    "navLogout": "Выйти",
+    "connect": "Подключиться к серверу",
+    "sideMenu": {
+        "knives": "Ножи",
+        "gloves": "Перчатки",
+        "pistols": "Пистолеты",
+        "rifles": "Винтовки",
+        "sniperRifles": "Снайперские винтовки",
+        "SMGs": "Пистолеты-пулемёты",
+        "shotguns": "Дробовики",
+        "MGs": "Пулемёты"
+    },
+    "selectCategory": "Выберите категорию",
+    "needLogin": "Нужно войти",
+    "viaSteam": "через Steam",
+    "change": "Сменить",
+    "changeSkin": "Сменить скин"
+}

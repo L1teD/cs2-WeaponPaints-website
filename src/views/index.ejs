@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>SkinChanger</title>
+
+    <link rel="stylesheet" href="css/fontawesome/all.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    
+    <script src="socket.io/socket.io.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/sideBtns.js"></script> 
+</head>
+
+<div class="container-fluid bg-opacity text-light" style="position: fixed; height: 100dvh; padding-top: 20dvh; z-index: 2;" id="popup" hidden>
+    <div class="d-flex justify-content-center flex-column container">
+        <div class="bg-nav d-flex flex-row justify-content-between px-4 align-items-center">
+            <p class="m-0 my-2">Change pattern and float</p>
+            <i class="fa-solid fa-xmark" onclick="closePopup()"></i>
+        </div>
+        <div class="bg-color px-5">
+            <div class="container p-3 d-flex flex-column">
+                <p class="m-0 text-center my-2">Weapon index: <span class="text-info" id="weaponid">515</span> Paint index: <span class="text-info" id="paintid">515</span></p>
+                <div class="d-flex justify-content-evenly">
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="float" type="text" placeholder="Float" data-sb-validations="required" />
+                        <label for="float" class="text-secondary">Float</label>
+                        <div class="invalid-feedback" data-sb-feedback="float:required">Float is required.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="pattern" type="text" placeholder="Pattern" data-sb-validations="required" />
+                        <label for="pattern" class="text-secondary">Pattern</label>
+                        <div class="invalid-feedback" data-sb-feedback="pattern:required">Pattern is required.</div>
+                    </div>
+                </div>
+                <button class="btn btn-outline-light mx-auto" onclick="changeParams()">Change</button>
+            </div>
+        </div>
+    </div>
+    
+</div>  
+
+<body class="bg-color">
+    <nav class="navbar navbar-dark bg-nav">
+        <div class="container">
+            <div class="nav-item">
+                <a class="navbar-brand" href="#"><%= config.name %></a>
+                <% if (config.connect.show) { %>
+                    <a href="<%= config.connect.url %>" class="btn btn-outline-warning rounded-pill"><small><%= lang.connect %></small></a>
+                <% } %>
+            </div>
+            <% if (typeof user == 'undefined') { %>
+                <a class="btn btn-primary my-2 my-sm-0 text-warning" href="api/auth/steam"><%= lang.navLogin %> <i class="bi bi-steam text-secondary ms-1"></i></a>
+            <% } else { %>
+                <li class="nav-item dropdown">
+                <div class="profile-bg p-2 px-3 d-flex align-items-center dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                    <p class="m-0 me-2"><%= user.displayName %></p>
+                    <img src="<%= user.photos[1].value%>" alt="" height="40" class="rounded-pill">
+                </div>
+                    <ul class="dropdown-menu bg-nav">
+                      <li><a class="text-decoration-none ms-3 text-danger" href="api/logout"><%= lang.navLogout %></a></li>
+                    </ul>
+                </li>
+            <% } %>
+        </div>
+    </nav>
+
+    <% if (typeof user == 'undefined') { %>
+        <h5 class="text-center mt-4 text-white"><%= lang.needLogin %> <a class="text-warning" href="api/auth/steam"><%= lang.viaSteam %></a></h5>
+    <% } else { %>
+
+    <div class="container text-light mt-3">
+        <div class="row">
+            <div class="col-2 rounded p-0">
+
+                <div class="bg-nav p-0 p-2 rounded">
+                    <button onclick="showKnives()" id="sideBtnKnives" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
+                        <i class="fa-solid fa-utensils"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.knives %></small></p>
+                    </button>
+    
+                    <!-- 
+                    <button onclick="showGloves()" id="sideBtnGloves" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
+                        <i class="fa-solid fa-mitten"></i>
+                        <p class="p-0 m-0 mx-auto"><small>Перчатки</small></p>
+                    </button>
+                    -->
+
+                    <button onclick="showPistols()" id="sideBtnPistols" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
+                        <i class="fa-solid fa-gun"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.pistols %></small></p>
+                    </button>
+    
+                    <button onclick="showRifles()" id="sideBtnRifles" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
+                        <i class="fa-solid fa-gun"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.rifles %></small></p>
+                    </button>
+    
+                    <button onclick="showSniperRifles()" id="sideBtnSniperRifles" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
+                        <i class="fa-solid fa-gun"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.sniperRifles %></small></p>
+                    </button>
+    
+                    <button onclick="showPPs()" id="sideBtnPPs" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
+                        <i class="fa-solid fa-gun"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.SMGs %></small></p>
+                    </button>
+    
+                    <button onclick="showShotguns()" id="sideBtnShotguns" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
+                        <i class="fa-solid fa-gun"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.shotguns %></small></p>
+                    </button>
+    
+                    <button onclick="showP()" id="sideBtnP" class="btn btn-primary w-100 d-flex align-items-center">
+                        <i class="fa-solid fa-gun"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.MGs %></small></p>
+                    </button>
+                </div>
+
+            </div>
+            <div class="col-10">
+                <div class="row" id="skinsContainer">
+
+                    <h3 class="text-center mt-5"><%= lang.selectCategory %></h3>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</body>
+
+
+
+
+<script>
+    let lang = "<%- config.lang %>";
+    let langObject = <%- JSON.stringify(lang) %>; 
+    let selectedKnife = {
+        knife: undefined,
+        steamid: undefined,
+    }
+</script>
+
+<% if (typeof knife != 'undefined') { %>
+    <script>    
+        selectedKnife = <%- JSON.stringify(knife) %>;
+    </script>
+<% } %>
+
+<% if (typeof skins != 'undefined') { %>
+    <script>    
+        let selectedSkins = <%- JSON.stringify(skins) %>;
+    </script>
+<% } %>
+
+<% if (typeof user != 'undefined') { %>
+    <script>    
+        let user = <%- JSON.stringify(user) %>;
+    </script>
+<% } %>
+
+</html>
