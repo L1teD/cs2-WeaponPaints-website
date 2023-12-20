@@ -83,34 +83,27 @@
 
                 <div class="bg-nav p-0 p-2 rounded">
                     <button onclick="showKnives()" id="sideBtnKnives" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <i class="fa-solid fa-utensils"></i>
+                        <img src="icons/weapon_knife_karambit.svg" style="filter: invert();" width="35px">
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.knives %></small></p>
                     </button>
-    
-                    <!-- 
-                    <button onclick="showGloves()" id="sideBtnGloves" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <i class="fa-solid fa-mitten"></i>
-                        <p class="p-0 m-0 mx-auto"><small>Перчатки</small></p>
-                    </button>
-                    -->
 
                     <button onclick="showPistols()" id="sideBtnPistols" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <i class="fa-solid fa-gun"></i>
+                        <img src="icons/weapon_deagle.svg" style="filter: invert();" width="35px">
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.pistols %></small></p>
                     </button>
     
                     <button onclick="showRifles()" id="sideBtnRifles" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <i class="fa-solid fa-gun"></i>
+                        <img src="icons/weapon_ak47.svg" style="filter: invert();" width="35px">
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.rifles %></small></p>
                     </button>
     
                     <button onclick="showPPs()" id="sideBtnPPs" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <i class="fa-solid fa-gun"></i>
+                        <img src="icons/weapon_mac10.svg" style="filter: invert();" width="35px">
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.SMGs %></small></p>
                     </button>
     
-                    <button onclick="showShotguns()" id="sideBtnShotguns" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <i class="fa-solid fa-gun"></i>
+                    <button onclick="showShotguns()" id="sideBtnShotguns" class="btn btn-primary w-100 d-flex align-items-center">
+                        <img src="icons/weapon_negev.svg" style="filter: invert();" width="35px">
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.heavy %></small></p>
                     </button>
                 </div>
@@ -126,6 +119,11 @@
         </div>
     </div>
     <% } %>
+
+    <div class="container-fluid fixed-bottom bg-nav text-light text-center py-3">
+        <a href="https://github.com/L1teD" class="text-decoration-none text-light">L1te</a> @ <%= new Date().getFullYear();%> | <a href="https://github.com/L1teD/cs2-WeaponPaints-website" class="text-decoration-none text-warning">L1teD/cs2-WeaponPaints-website</a>
+    </div>
+
 </body>
 
 
