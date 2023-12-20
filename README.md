@@ -19,6 +19,7 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
         "DB_PASS": "password",
         "DB_DB": "table"
     },
+    "PORT": 27275,
     "STEAMAPIKEY": "Your Steam Web API Key",
     "connect": {
         "show": true,
