@@ -10,7 +10,7 @@ const lang = require(`./lang/${config.lang}.json`)
 
 const app = new express()
 
-const PORT = 27275
+const PORT = config.PORT
 
 
 const connection = mysql.createConnection({
