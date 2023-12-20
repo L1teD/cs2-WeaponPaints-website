@@ -11,14 +11,13 @@ const sideBtnHandler = (activeBtn) => {
     // add active background
     document.getElementById(activeBtn).classList.add('active-side')
 }
-
-
+  
 const showDefaults = (type) => {
 
     let defaultWeapons = {
         'knives': [
             'css',
-            'knife_bayonet',
+            'bayonet',
             'flip',
             'gut',
             'karambit',
@@ -89,44 +88,81 @@ const showDefaults = (type) => {
     // clear main container
     document.getElementById('skinsContainer').innerHTML = ''
 
+    // ALERT!!!
+    // THE AMOUNT OF SHITCODE BELOW IS INSANE
+
     if (type == 'knives') {
         getJSON(`https://bymykel.github.io/CSGO-API/api/${lang}/skins.json`, (err, res) => {
+            // var to get rid of second m9 bayonet
+            let dublicate = 0
 
             // make unique object for weapons
             const unique = res.filter((obj, index) => {
-                return index === res.findIndex(o => obj.weapon.name === o.weapon.name);
-            });
+                return index === res.findIndex(o => obj.weapon.id === o.weapon.id);
+            })
+            console.log(unique)
 
             unique.forEach(element => {
 
                 // show only weapons that are selected in defaultWeapons
                 defaultWeapons[type].forEach(weapontype => {
 
-                    if (element.weapon.id.includes(weapontype)) {
+                    if (element.id.includes(weapontype) && element.id.includes('vanilla')) {
+                        if (dublicate < 1 && element.id == "skin-vanilla-weapon_knife_m9_bayonet") {
 
-                        let card = document.createElement('div')
-                        card.classList.add('col-3', 'p-2')
-                                
-                        // check if knife is selected
-                        let active = ''
-                        if (element.weapon.id == selectedKnife.knife) {
-                            active = 'active-card'
-                        }
+                        
+                            let card = document.createElement('div')
+                            card.classList.add('col-3', 'p-2')
 
-                        card.innerHTML = `
-                        <div class="rounded-3 d-flex flex-column card-common weapon-card ${active} weapon_knife" id="${element.weapon.id}">
-                        <a onclick="changeKnife(\'${element.weapon.id}\', ${selectedKnife.steamid})" class="text-decoration-none d-flex flex-column" style="z-index: 0;">
-                                <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" alt="${element.name}">
-                                
-                                <p class="m-0 text-light weapon-skin-title mx-auto text-center">${element.weapon.name}</p>
-                        </a>
-                        <button onclick="knifeSkins(\'${element.weapon.id}\')" class="btn btn-primary text-warning mx-auto my-2" style="z-index: 1;"><small>${langObject.changeSkin}</small></button>
-                        </div>
-                        `
+                            element.weapon.id = `weapon_knife_m9_${weapontype}`
+                                    
+                            // check if knife is selected
+                            let active = ''
+                            if (element.weapon.id == selectedKnife.knife) {
+                                active = 'active-card'
+                            }
 
-                        document.getElementById('skinsContainer').appendChild(card)
+                            card.innerHTML = `
+                            <div class="rounded-3 d-flex flex-column card-common weapon-card ${active} weapon_knife" id="${element.weapon.id}">
+                            <a onclick="changeKnife(\'${element.weapon.id}\', ${selectedKnife.steamid})" class="text-decoration-none d-flex flex-column" style="z-index: 0;">
+                                    <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" alt="${element.name}">
+                                    
+                                    <p class="m-0 text-light weapon-skin-title mx-auto text-center">${element.weapon.name}</p>
+                            </a>
+                            <button onclick="knifeSkins(\'${element.weapon.id}\')" class="btn btn-primary text-warning mx-auto my-2" style="z-index: 1;"><small>${langObject.changeSkin}</small></button>
+                            </div>
+                            `
+
+                            document.getElementById('skinsContainer').appendChild(card)
+                        } else if (element.id != "skin-vanilla-weapon_knife_m9_bayonet") {
+                            let card = document.createElement('div')
+                            card.classList.add('col-3', 'p-2')
+
+
+                            element.weapon.id = `weapon_knife_${weapontype}`
+
+                            // check if knife is selected
+                            let active = ''
+                            if (element.weapon.id == selectedKnife.knife) {
+                                active = 'active-card'
+                            }
+
+                            card.innerHTML = `
+                            <div class="rounded-3 d-flex flex-column card-common weapon-card ${active} weapon_knife" id="${element.weapon.id}">
+                            <a onclick="changeKnife(\'${element.weapon.id}\', ${selectedKnife.steamid})" class="text-decoration-none d-flex flex-column" style="z-index: 0;">
+                                    <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" alt="${element.name}">
+                                    
+                                    <p class="m-0 text-light weapon-skin-title mx-auto text-center">${element.weapon.name}</p>
+                            </a>
+                            <button onclick="knifeSkins(\'${element.weapon.id}\')" class="btn btn-primary text-warning mx-auto my-2" style="z-index: 1;"><small>${langObject.changeSkin}</small></button>
+                            </div>
+                            `
+
+                            document.getElementById('skinsContainer').appendChild(card)
+                        }   
+
+                        if (element.id == "skin-vanilla-weapon_knife_m9_bayonet") { dublicate++ }      
                     }
-
                 });
 
             });
