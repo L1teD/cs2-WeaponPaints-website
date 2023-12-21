@@ -39,7 +39,7 @@ const showDefaults = (type) => {
 
                     card.innerHTML = `
                     <div class="rounded-3 d-flex flex-column card-common weapon-card ${active} weapon_knife" id="${element.weapon.id}">
-                        <div style="z-index: 3; visibility: hidden;" class="loading-card d-flex justify-content-center align-items-center w-100 h-100" id="loading-${element.weapon.id}">
+                        <div style="z-index: 3;" class="loading-card d-flex justify-content-center align-items-center w-100 h-100" id="loading-${element.weapon.id}">
                             <div class="spinner-border spinner-border-xl" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
@@ -151,6 +151,7 @@ socket.on('knife-changed', data => {
 
     document.getElementById(data.knife).classList.add('active-card')
     document.getElementById(`loading-${data.knife}`).style.visibility = 'hidden'
+    document.getElementById(`loading-${data.knife}`).style.opacity = 1
 })
 
 socket.on('skin-changed', data => {
@@ -164,6 +165,7 @@ socket.on('skin-changed', data => {
 
     document.getElementById(`weapon-${data.weaponid}-${data.paintid}`).classList.add('active-card')
     document.getElementById(`loading-${data.weaponid}-${data.paintid}`).style.visibility = 'hidden'
+    document.getElementById(`loading-${data.weaponid}-${data.paintid}`).style.opacity = 1
 })
 
 const knifeSkins = (knifeType) => {
@@ -219,7 +221,7 @@ const knifeSkins = (knifeType) => {
     
                 card.innerHTML = `
                     <div onclick="changeSkin(\'${user.id}\', \'${weaponIds[element.weapon.id]}\', ${element.paint_index})" id="weapon-${weaponIds[element.weapon.id]}-${element.paint_index}" class="parent-weapon-card weapon_card bg-nav rounded-3 d-flex flex-column ${active} ${bgColor}">
-                        <div style="z-index: 3; visibility: hidden;" class="loading-card d-flex justify-content-center align-items-center w-100 h-100" id="loading-${weaponIds[element.weapon.id]}-${element.paint_index}">
+                        <div style="z-index: 3;" class="loading-card d-flex justify-content-center align-items-center w-100 h-100" id="loading-${weaponIds[element.weapon.id]}-${element.paint_index}">
                             <div class="spinner-border spinner-border-xl" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
