@@ -36,3 +36,7 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
   npm i
   npm run start
 ```
+
+## Support me
+
+![Steam Donations](https://camo.githubusercontent.com/b5f2c42b10192556e0703f1c86dd55954bd5a5e6f14f10e08ba7a576a12e8f04/68747470733a2f2f692e696d6775722e636f6d2f684e49487751452e706e67)
