@@ -95,6 +95,7 @@ const weaponIds = {
     "weapon_knife_gypsy_jackknife": 520,
     "weapon_knife_stiletto": 522,
     "weapon_knife_widowmaker": 523,
+    "weapon_knife_skeleton": 525,
     "studded_bloodhound_gloves": 5027,
     "t_gloves": 5028,
     "ct_gloves": 5029,
