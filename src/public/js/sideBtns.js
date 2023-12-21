@@ -131,11 +131,13 @@ const showP = () => {
 const changeKnife = (weaponid) => {
     socket.emit('change-knife', {weaponid: weaponid, steamUserId: user.id})
     document.getElementById(`loading-${weaponid}`).style.visibility = 'visible'
+    document.getElementById(`loading-${weaponid}`).style.opacity = 1
 }
 
 const changeSkin = (steamid, weaponid, paintid) => {
     socket.emit('change-skin', {steamid: steamid, weaponid: weaponid, paintid: paintid})
     document.getElementById(`loading-${weaponid}-${paintid}`).style.visibility = 'visible'
+    document.getElementById(`loading-${weaponid}-${paintid}`).style.opacity = 1
 }
 
 socket.on('knife-changed', data => {
@@ -150,8 +152,9 @@ socket.on('knife-changed', data => {
     selectedKnife.knife = data.knife
 
     document.getElementById(data.knife).classList.add('active-card')
+    document.getElementById(`loading-${data.knife}`).style.opacity = 0
     document.getElementById(`loading-${data.knife}`).style.visibility = 'hidden'
-    document.getElementById(`loading-${data.knife}`).style.opacity = 1
+    
 })
 
 socket.on('skin-changed', data => {
@@ -164,8 +167,8 @@ socket.on('skin-changed', data => {
     selectedSkins = data.newSkins
 
     document.getElementById(`weapon-${data.weaponid}-${data.paintid}`).classList.add('active-card')
+    document.getElementById(`loading-${data.weaponid}-${data.paintid}`).style.opacity = 0
     document.getElementById(`loading-${data.weaponid}-${data.paintid}`).style.visibility = 'hidden'
-    document.getElementById(`loading-${data.weaponid}-${data.paintid}`).style.opacity = 1
 })
 
 const knifeSkins = (knifeType) => {
