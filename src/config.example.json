@@ -1,0 +1,17 @@
+{
+    "name": "Title of your website",
+    "lang": "en", 
+    "DB": {
+        "DB_HOST": "host",
+        "DB_USER": "username",
+        "DB_PASS": "password",
+        "DB_DB": "table"
+    },
+    "HOST": "example.com or localhost/127.0.0.1"
+    "PORT": 27275,
+    "STEAMAPIKEY": "Your Steam Web API Key",
+    "connect": {
+        "show": true,
+        "url": "steam://connect/[IP:PORT]?appid=730/[Server password if needed]"
+    }
+}
