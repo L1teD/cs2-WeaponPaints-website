@@ -27,7 +27,7 @@ const showDefaults = (type) => {
             unique.forEach(element => {
                 if (element.id.includes('vanilla')) {
                     let card = document.createElement('div')
-                    card.classList.add('col-3', 'p-2')
+                    card.classList.add('col-6', 'col-sm-4', 'col-md-3', 'p-2')
 
                     element.weapon.id = element.id.slice(13)
 
@@ -69,7 +69,7 @@ const showDefaults = (type) => {
             unique.forEach(element => {
                 if (element.category.id == type) {
                     let card = document.createElement('div')
-                    card.classList.add('col-3', 'p-2')
+                    card.classList.add('col-6', 'col-sm-4', 'col-md-3', 'p-2')
 
                     card.innerHTML = `
                     <div class="rounded-3 d-flex flex-column card-common weapon-card weapon_knife" id="${element.weapon.id}">
@@ -154,7 +154,6 @@ socket.on('knife-changed', data => {
     document.getElementById(data.knife).classList.add('active-card')
     document.getElementById(`loading-${data.knife}`).style.opacity = 0
     document.getElementById(`loading-${data.knife}`).style.visibility = 'hidden'
-    
 })
 
 socket.on('skin-changed', data => {
@@ -220,7 +219,7 @@ const knifeSkins = (knifeType) => {
 
 
                 let card = document.createElement('div')
-                card.classList.add('col-3', 'p-2')
+                card.classList.add('col-6', 'col-sm-4', 'col-md-3', 'p-2')
     
                 card.innerHTML = `
                     <div onclick="changeSkin(\'${user.id}\', \'${weaponIds[element.weapon.id]}\', ${element.paint_index})" id="weapon-${weaponIds[element.weapon.id]}-${element.paint_index}" class="parent-weapon-card weapon_card bg-nav rounded-3 d-flex flex-column ${active} ${bgColor}">

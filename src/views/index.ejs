@@ -51,24 +51,29 @@
         <div class="container">
             <div class="nav-item d-flex align-items-center">
                 <a class="navbar-brand" href="#"><%= config.name %></a>
-                <% if (config.connect.show) { %>
-                    <a href="<%= config.connect.url %>" class="btn btn-outline-warning rounded-pill"><small><%= lang.connect %></small></a>
-                <% } %>
             </div>
-            <% if (typeof user == 'undefined') { %>
-                <a class="btn btn-primary my-2 my-sm-0 text-warning" href="api/auth/steam"><%= lang.navLogin %> <i class="bi bi-steam text-secondary ms-1"></i></a>
-            <% } else { %>
-                <li class="nav-item dropdown">
-                <div class="profile-bg p-2 px-3 d-flex align-items-center dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                    <p class="m-0 me-2"><%= user.displayName %></p>
-                    <img src="<%= user.photos[1].value%>" alt="" height="40" class="rounded-pill">
+                <div class="nav-item d-flex align-items-center">
+                    <% if (config.connect.show) { %>
+                        <a href="<%= config.connect.url %>" class="btn btn-outline-warning rounded-pill d-none d-md-block"><small><%= lang.connect %></small></a>
+                    <% } %>
                 </div>
-                    <ul class="dropdown-menu bg-nav">
-                        <li><a class="text-decoration-none ms-3 text-danger" href="api/logout"><%= lang.navLogout %></a></li>
-                        <li><a class="text-decoration-none ms-3 text-danger" href="api/delete"><%= lang.navDelete %></a></li>
-                    </ul>
-                </li>
-            <% } %>
+                <div class="nav-item d-flex align-items-center">
+                    <% if (typeof user == 'undefined') { %>
+                        <a class="btn btn-primary my-2 my-sm-0 text-warning" href="api/auth/steam"><%= lang.navLogin %> <i class="bi bi-steam text-secondary ms-1"></i></a>
+                    <% } else { %>
+                        <li class="nav-item dropdown">
+                            <div class="profile-bg p-2 px-3 d-flex align-items-center dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                                <p class="m-0 me-2"><%= user.displayName %></p>
+                                <img src="<%= user.photos[1].value%>" alt="" height="40" class="rounded-pill">
+                            </div>
+                            <ul class="dropdown-menu bg-nav">
+                                <li><a class="text-decoration-none ms-3 text-danger" href="api/logout"><%= lang.navLogout %></a></li>
+                                <li><a class="text-decoration-none ms-3 text-danger" href="api/delete"><%= lang.navDelete %></a></li>
+                                <li><a class="text-decoration-none ms-3 text-warning d-block d-md-none" href="<%= config.connect.url %>"><small><%= lang.connect %></small></a></li>
+                            </ul>
+                        </li>
+                    <% } %>
+                </div>
         </div>
     </nav>
 
@@ -77,8 +82,34 @@
     <% } else { %>
 
     <div class="container text-light mt-3">
+        <div class="d-block d-lg-none list-group list-group-horizontal position-relative overflow-auto d-flex justify-content-between bg-nav p-2 rounded">
+            <button onclick="showKnives()" id="sideBtnKnives" class="btn btn-primary d-flex my-1 mx-1 align-items-center">
+                <img src="icons/weapon_knife_karambit.svg" style="filter: invert();" width="35px">
+                <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.knives %></small></p>
+            </button>
+
+            <button onclick="showPistols()" id="sideBtnPistols" class="btn btn-primary d-flex my-1 mx-1 align-items-center">
+                <img src="icons/weapon_deagle.svg" style="filter: invert();" width="35px">
+                <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.pistols %></small></p>
+            </button>
+
+            <button onclick="showRifles()" id="sideBtnRifles" class="btn btn-primary d-flex my-1 mx-1 align-items-center">
+                <img src="icons/weapon_ak47.svg" style="filter: invert();" width="35px">
+                <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.rifles %></small></p>
+            </button>
+
+            <button onclick="showPPs()" id="sideBtnPPs" class="btn btn-primary d-flex my-1 mx-1 align-items-center">
+                <img src="icons/weapon_mac10.svg" style="filter: invert();" width="35px">
+                <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.SMGs %></small></p>
+            </button>
+
+            <button onclick="showShotguns()" id="sideBtnShotguns" class="btn btn-primary my-1 mx-1 d-flex align-items-center">
+                <img src="icons/weapon_negev.svg" style="filter: invert();" width="35px">
+                <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.heavy %></small></p>
+            </button>
+        </div>
         <div class="row">
-            <div class="col-2 rounded p-0">
+            <div class="col-2 rounded p-0 d-none d-lg-block">
 
                 <div class="bg-nav p-0 p-2 rounded">
                     <button onclick="showKnives()" id="sideBtnKnives" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
@@ -108,7 +139,7 @@
                 </div>
 
             </div>
-            <div class="col-10 mb-5">
+            <div class="col-mb-12 col-lg-10 mb-5">
                 <div class="row" id="skinsContainer">
 
                     <h3 class="text-center mt-5"><%= lang.selectCategory %></h3>
