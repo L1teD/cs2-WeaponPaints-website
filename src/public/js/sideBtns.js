@@ -39,12 +39,18 @@ const showDefaults = (type) => {
 
                     card.innerHTML = `
                     <div class="rounded-3 d-flex flex-column card-common weapon-card ${active} weapon_knife" id="${element.weapon.id}">
-                    <a onclick="changeKnife(\'${element.weapon.id}\', ${selectedKnife.steamid})" class="text-decoration-none d-flex flex-column" style="z-index: 0;">
-                            <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" alt="${element.name}">
-                            
-                            <p class="m-0 text-light weapon-skin-title mx-auto text-center">${element.weapon.name}</p>
-                    </a>
-                    <button onclick="knifeSkins(\'${element.weapon.id}\')" class="btn btn-primary text-warning mx-auto my-2" style="z-index: 1;"><small>${langObject.changeSkin}</small></button>
+                        <div style="z-index: 3; visibility: hidden;" class="loading-card d-flex justify-content-center align-items-center w-100 h-100" id="loading-${element.weapon.id}">
+                            <div class="spinner-border spinner-border-xl" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+
+                        <a onclick="changeKnife(\'${element.weapon.id}\', ${selectedKnife.steamid})" class="text-decoration-none d-flex flex-column" style="z-index: 0;">
+                                <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" alt="${element.name}">
+                                
+                                <p class="m-0 text-light weapon-skin-title mx-auto text-center">${element.weapon.name}</p>
+                        </a>
+                        <button onclick="knifeSkins(\'${element.weapon.id}\')" class="btn btn-primary text-warning mx-auto my-2" style="z-index: 1;"><small>${langObject.changeSkin}</small></button>
                     </div>
                     `
 
@@ -67,12 +73,12 @@ const showDefaults = (type) => {
 
                     card.innerHTML = `
                     <div class="rounded-3 d-flex flex-column card-common weapon-card weapon_knife" id="${element.weapon.id}">
-                    <a class="text-decoration-none d-flex flex-column" style="z-index: 0;">
-                            <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" alt="${element.name}">
-                            
-                            <p class="m-0 text-light weapon-skin-title mx-auto text-center">${element.weapon.name}</p>
-                    </a>
-                    <button onclick="knifeSkins(\'${element.weapon.id}\')" class="btn btn-primary text-warning mx-auto my-2" style="z-index: 1;"><small>${langObject.changeSkin}</small></button>
+                        <a class="text-decoration-none d-flex flex-column" style="z-index: 0;">
+                                <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" alt="${element.name}">
+                                
+                                <p class="m-0 text-light weapon-skin-title mx-auto text-center">${element.weapon.name}</p>
+                        </a>
+                        <button onclick="knifeSkins(\'${element.weapon.id}\')" class="btn btn-primary text-warning mx-auto my-2" style="z-index: 1;"><small>${langObject.changeSkin}</small></button>
                     </div>
                     `
 
@@ -124,12 +130,12 @@ const showP = () => {
 
 const changeKnife = (weaponid) => {
     socket.emit('change-knife', {weaponid: weaponid, steamUserId: user.id})
-    console.log(weaponid, user.id)
+    document.getElementById(`loading-${weaponid}`).style.visibility = 'visible'
 }
 
 const changeSkin = (steamid, weaponid, paintid) => {
     socket.emit('change-skin', {steamid: steamid, weaponid: weaponid, paintid: paintid})
-    console.log(steamid, weaponid, paintid)
+    document.getElementById(`loading-${weaponid}-${paintid}`).style.visibility = 'visible'
 }
 
 socket.on('knife-changed', data => {
@@ -144,6 +150,7 @@ socket.on('knife-changed', data => {
     selectedKnife.knife = data.knife
 
     document.getElementById(data.knife).classList.add('active-card')
+    document.getElementById(`loading-${data.knife}`).style.visibility = 'hidden'
 })
 
 socket.on('skin-changed', data => {
@@ -156,12 +163,14 @@ socket.on('skin-changed', data => {
     selectedSkins = data.newSkins
 
     document.getElementById(`weapon-${data.weaponid}-${data.paintid}`).classList.add('active-card')
+    document.getElementById(`loading-${data.weaponid}-${data.paintid}`).style.visibility = 'hidden'
 })
 
 const knifeSkins = (knifeType) => {
     console.log(knifeType)
 
     getJSON(`https://bymykel.github.io/CSGO-API/api/${lang}/skins.json`, (err, res) => {
+        // clear main container
         document.getElementById('skinsContainer').innerHTML = ''
         res.forEach(element => {
             if (element.weapon.id == knifeType) {
@@ -210,7 +219,11 @@ const knifeSkins = (knifeType) => {
     
                 card.innerHTML = `
                     <div onclick="changeSkin(\'${user.id}\', \'${weaponIds[element.weapon.id]}\', ${element.paint_index})" id="weapon-${weaponIds[element.weapon.id]}-${element.paint_index}" class="parent-weapon-card weapon_card bg-nav rounded-3 d-flex flex-column ${active} ${bgColor}">
-
+                        <div style="z-index: 3; visibility: hidden;" class="loading-card d-flex justify-content-center align-items-center w-100 h-100" id="loading-${weaponIds[element.weapon.id]}-${element.paint_index}">
+                            <div class="spinner-border spinner-border-xl" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
 
                         <button onclick="editModal(\'${element.image}\', \'${element.weapon.name}\', \'${element.pattern.name} ${phase}\', \'${element.weapon.id}\' , \'${element.paint_index}\')" style="z-index: 3;" class="settings d-flex justify-content-center align-items-center bg-light text-dark rounded-circle" data-bs-toggle="modal" data-bs-target="#patternFloat">
                             <i class="fa-solid fa-gear"></i>

@@ -135,6 +135,12 @@ li {
     border: none;
 }
 
+.loading-card {
+    position: absolute;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .3s;
+    backdrop-filter: blur(15px);
+}
+
 .settings:hover {
     background-color: rgb(179, 179, 179) !important;
 }
