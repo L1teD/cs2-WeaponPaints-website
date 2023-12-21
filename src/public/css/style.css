@@ -122,7 +122,8 @@
 }
 
 .active-card {
-    border: 5px solid rgba(228,174,57);
+    margin: -2px;
+    border: 2px solid rgba(228,174,57);
 }
 
 .active-card > .settings {
