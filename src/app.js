@@ -12,8 +12,8 @@ const app = new express()
 
 const PORT = config.PORT
 
-let returnURL = `http://${config.HOST}/api/auth/steam/return`
-let realm = `http://${config.HOST}/`
+let returnURL = `https://${config.HOST}/api/auth/steam/return`
+let realm = `https://${config.HOST}/`
 
 if (config.HOST == 'localhost' || config.host == '127.0.0.1') {
     returnURL = `http://${config.HOST}:${config.PORT}/api/auth/steam/return`
@@ -69,7 +69,7 @@ app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 app.use(express.static('src/public'))
 
-app.get('/', (req, res) => {
+app.get('/skins', (req, res) => {
     if (typeof req.user != 'undefined') {
         connection.query('SELECT * FROM wp_player_knife WHERE steamid = ?', [req.user.id], (err, results, fields) => {
             connection.query('SELECT * FROM wp_player_skins WHERE steamid = ?', [req.user.id], (err, results2, fields) => {
@@ -93,21 +93,21 @@ app.get('/', (req, res) => {
     console.log(req.user, )
 })
 
-app.get('/api/auth/steam', passport.authenticate('steam', {failureRedirect: '/'}), function (req, res) {
-    res.redirect('/')
+app.get('/skins/api/auth/steam', passport.authenticate('steam', {failureRedirect: '/skins'}), function (req, res) {
+    res.redirect('/skins')
 });
 
-app.get('/api/auth/steam/return', passport.authenticate('steam', {failureRedirect: '/'}), function (req, res) {
-    res.redirect('/')
+app.get('/skins/api/auth/steam/return', passport.authenticate('steam', {failureRedirect: '/skins'}), function (req, res) {
+    res.redirect('/skins')
 });
 
-app.get('/api/logout', (req, res) => {
+app.get('/skins/api/logout', (req, res) => {
     req.session.destroy(err => {
-        res.redirect('/')
+        res.redirect('/skins')
     })
 })
 
-app.get('/api/delete', (req, res) => {
+app.get('/skins/api/delete', (req, res) => {
     connection.query("DELETE FROM wp_player_knife WHERE steamid = ?", [req.user.id], (err, results, fields) => {
         connection.query("DELETE FROM wp_player_skins WHERE steamid = ?", [req.user.id], (err, results, fields) => {
             req.session.destroy(err => {
@@ -118,7 +118,7 @@ app.get('/api/delete', (req, res) => {
 })
 
 const server = app.listen(PORT, () => {
-    console.log(`App is running on http://localhost:${PORT}`)
+    console.log(`App is running on https://localhost:${PORT}`)
 })
 
 const io = require('socket.io')(server)
