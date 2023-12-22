@@ -93,21 +93,21 @@ app.get('/skins', (req, res) => {
     console.log(req.user, )
 })
 
-app.get('/skins/api/auth/steam', passport.authenticate('steam', {failureRedirect: '/skins'}), function (req, res) {
+app.get('/api/auth/steam', passport.authenticate('steam', {failureRedirect: '/skins'}), function (req, res) {
     res.redirect('/skins')
 });
 
-app.get('/skins/api/auth/steam/return', passport.authenticate('steam', {failureRedirect: '/skins'}), function (req, res) {
+app.get('/api/auth/steam/return', passport.authenticate('steam', {failureRedirect: '/skins'}), function (req, res) {
     res.redirect('/skins')
 });
 
-app.get('/skins/api/logout', (req, res) => {
+app.get('/api/logout', (req, res) => {
     req.session.destroy(err => {
         res.redirect('/skins')
     })
 })
 
-app.get('/skins/api/delete', (req, res) => {
+app.get('/api/delete', (req, res) => {
     connection.query("DELETE FROM wp_player_knife WHERE steamid = ?", [req.user.id], (err, results, fields) => {
         connection.query("DELETE FROM wp_player_skins WHERE steamid = ?", [req.user.id], (err, results, fields) => {
             req.session.destroy(err => {
