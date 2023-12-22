@@ -51,12 +51,12 @@
         <div class="container">
             <div class="nav-item d-flex align-items-center">
                 <a class="navbar-brand" href="#"><%= config.name %></a>
-            </div>
                 <div class="nav-item d-flex align-items-center">
                     <% if (config.connect.show) { %>
                         <a href="<%= config.connect.url %>" class="btn btn-outline-warning rounded-pill d-none d-md-block"><small><%= lang.connect %></small></a>
                     <% } %>
                 </div>
+            </div>
                 <div class="nav-item d-flex align-items-center">
                     <% if (typeof user == 'undefined') { %>
                         <a class="btn btn-primary my-2 my-sm-0 text-warning" href="<%= subdir %>api/auth/steam"><%= lang.navLogin %> <i class="bi bi-steam text-secondary ms-1"></i></a>

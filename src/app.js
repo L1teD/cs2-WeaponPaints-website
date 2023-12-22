@@ -1,10 +1,12 @@
 const express = require('express')
-var passport = require('passport');
-var session = require('express-session');
-var passportSteam = require('passport-steam');
-var SteamStrategy = passportSteam.Strategy;
+const passport = require('passport');
+const session = require('express-session');
+const passportSteam = require('passport-steam');
+const SteamStrategy = passportSteam.Strategy;
 const mysql = require('mysql')
 const path = require('path')
+
+// load configuration files
 const config = require('./config.json');
 const lang = require(`./lang/${config.lang}.json`)
 
@@ -20,13 +22,14 @@ if (config.HOST == 'localhost' || config.host == '127.0.0.1') {
     realm = `http://${config.HOST}:${config.PORT}${config.SUBDIR}`
 }
 
+// connect to db
 const connection = mysql.createConnection({
     host: config.DB.DB_HOST,
     user: config.DB.DB_USER,
     database: config.DB.DB_DB,
     password: config.DB.DB_PASS
 })
-    connection.connect(function(err){
+connection.connect(function(err){
     if (err) {
         return console.error("Error: " + err.message);
     }
@@ -34,6 +37,11 @@ const connection = mysql.createConnection({
         console.log("Connected to MySQL!");
     }
 });
+
+// heartbeat for db
+setInterval(() => {
+    connection.query('SELECT 1', (err, res, fields) => {})
+}, 10000);
 
 // Required to get data from user for sessions
 passport.serializeUser((user, done) => {
@@ -69,7 +77,7 @@ app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 app.use(express.static('src/public'))
 
-app.get(`${config.SUBDIR}`, (req, res) => {
+app.get(config.SUBDIR, (req, res) => {
     if (typeof req.user != 'undefined') {
         connection.query('SELECT * FROM wp_player_knife WHERE steamid = ?', [req.user.id], (err, results, fields) => {
             connection.query('SELECT * FROM wp_player_skins WHERE steamid = ?', [req.user.id], (err, results2, fields) => {
@@ -88,10 +96,6 @@ app.get(`${config.SUBDIR}`, (req, res) => {
     } else {
         res.render('index', {config: config, session: req.session, user: req.user, lang: lang, subdir: config.SUBDIR})
     }
-    
-    
-    
-    console.log(req.user, )
 })
 
 app.get(`${config.SUBDIR}api/auth/steam`, passport.authenticate('steam', {failureRedirect: config.SUBDIR}), function (req, res) {
@@ -118,41 +122,42 @@ app.get('/api/delete', (req, res) => {
     })
 })
 
+// do right redirect
 if (config.SUBDIR != '/') {
     app.get('/', (req, res) => {
         res.redirect(config.SUBDIR.slice(0, -1))
     })
 }
 
+// start server
 const server = app.listen(PORT, () => {
     console.log(`App is running on http://localhost:${PORT}`)
 })
 
+// initialize socket.io
 const io = require('socket.io')(server)
 
 io.on('connection', socket => {
     console.log('Socket connected')
     
     socket.on('change-knife', data => {
-        connection.query('SELECT * FROM wp_player_knife WHERE steamid = ?', [data.steamUserId], (err, results, fields) => {
-            if (results.length >= 1) {
-                connection.query('UPDATE wp_player_knife SET knife = ? WHERE steamid = ?', [data.weaponid, data.steamUserId], (err, results, fields) => {
-                    socket.emit('knife-changed', {knife: data.weaponid})
-                })
-            } else {
-                connection.query('INSERT INTO wp_player_knife (steamid, knife) values (?, ?)', [data.steamUserId, data.weaponid], (err, results, fields) => {
-                    socket.emit('knife-changed', {knife: data.weaponid})
-                })
-            }
-        })
+            connection.query('SELECT * FROM wp_player_knife WHERE steamid = ?', [data.steamUserId], (err, results, fields) => {
+                if (results.length >= 1) {
+                    connection.query('UPDATE wp_player_knife SET knife = ? WHERE steamid = ?', [data.weaponid, data.steamUserId], (err, results, fields) => {
+                        socket.emit('knife-changed', {knife: data.weaponid})
+                    })
+                } else {
+                    connection.query('INSERT INTO wp_player_knife (steamid, knife) values (?, ?)', [data.steamUserId, data.weaponid], (err, results, fields) => {
+                        socket.emit('knife-changed', {knife: data.weaponid})
+                    })
+                }
+            })
         
     })
 
     socket.on('change-skin', data => {
         connection.query('SELECT * FROM wp_player_skins WHERE weapon_defindex = ? AND steamid = ?', [data.weaponid, data.steamid], (err, results, fields) => {
-            console.log(results)
             if (results.length >= 1) {
-                console.log('EXISTS')
                 connection.query('UPDATE wp_player_skins SET weapon_paint_id = ? WHERE steamid = ? AND weapon_defindex = ?', [data.paintid, data.steamid, data.weaponid], (err, results, fields) => {
                     connection.query('SELECT * FROM wp_player_skins WHERE steamid = ?', [data.steamid], (err, results2, fields) => {
                         socket.emit('skin-changed', {weaponid: data.weaponid, paintid: data.paintid, newSkins: results2})
@@ -160,7 +165,6 @@ io.on('connection', socket => {
                     
                 })
             } else {
-                console.log('NOT EXISTS')
                 connection.query('INSERT INTO wp_player_skins (steamid, weapon_defindex, weapon_paint_id) VALUES (?, ?, ?)', [data.steamid, data.weaponid, data.paintid], (err, results, fields) => {
                     connection.query('SELECT * FROM wp_player_skins WHERE steamid = ?', [data.steamid], (err, results2, fields) => {
                         socket.emit('skin-changed', {weaponid: data.weaponid, paintid: data.paintid, newSkins: results2})
@@ -177,5 +181,3 @@ io.on('connection', socket => {
         
     })
 })
-
-// https://bymykel.github.io/CSGO-API/api/ru/skins.json
