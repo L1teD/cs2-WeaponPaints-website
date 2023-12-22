@@ -1,0 +1,3 @@
+:a
+node .
+goto:a

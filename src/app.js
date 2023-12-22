@@ -1,6 +1,6 @@
 const express = require('express')
 var passport = require('passport');
-var session = require('cookie-session');
+var session = require('express-session');
 var passportSteam = require('passport-steam');
 var SteamStrategy = passportSteam.Strategy;
 const mysql = require('mysql')
@@ -12,12 +12,12 @@ const app = new express()
 
 const PORT = config.PORT
 
-let returnURL = `https://${config.HOST}/api/auth/steam/return`
-let realm = `https://${config.HOST}/`
+let returnURL = `http://${config.HOST}${config.SUBDIR}api/auth/steam/return`
+let realm = `http://${config.HOST}${config.SUBDIR}`
 
 if (config.HOST == 'localhost' || config.host == '127.0.0.1') {
-    returnURL = `http://${config.HOST}:${config.PORT}/api/auth/steam/return`
-    realm = `http://${config.HOST}:${config.PORT}/`
+    returnURL = `http://${config.HOST}:${config.PORT}${config.SUBDIR}api/auth/steam/return`
+    realm = `http://${config.HOST}:${config.PORT}${config.SUBDIR}`
 }
 
 const connection = mysql.createConnection({
@@ -28,7 +28,7 @@ const connection = mysql.createConnection({
 })
     connection.connect(function(err){
     if (err) {
-        return console.error("Ошибка: " + err.message);
+        return console.error("Error: " + err.message);
     }
     else{
         console.log("Connected to MySQL!");
@@ -69,7 +69,7 @@ app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 app.use(express.static('src/public'))
 
-app.get('/', (req, res) => {
+app.get(`${config.SUBDIR}`, (req, res) => {
     if (typeof req.user != 'undefined') {
         connection.query('SELECT * FROM wp_player_knife WHERE steamid = ?', [req.user.id], (err, results, fields) => {
             connection.query('SELECT * FROM wp_player_skins WHERE steamid = ?', [req.user.id], (err, results2, fields) => {
@@ -80,12 +80,13 @@ app.get('/', (req, res) => {
                     knife: results[0],
                     skins: results2,
                     lang: lang,
+                    subdir: config.SUBDIR
                 })
 
             })
         })
     } else {
-        res.render('index', {config: config, session: req.session, user: req.user, lang: lang})
+        res.render('index', {config: config, session: req.session, user: req.user, lang: lang, subdir: config.SUBDIR})
     }
     
     
@@ -93,17 +94,17 @@ app.get('/', (req, res) => {
     console.log(req.user, )
 })
 
-app.get('/api/auth/steam', passport.authenticate('steam', {failureRedirect: '/skins'}), function (req, res) {
-    res.redirect('/skins')
+app.get(`${config.SUBDIR}api/auth/steam`, passport.authenticate('steam', {failureRedirect: config.SUBDIR}), function (req, res) {
+    res.redirect('/')
 });
 
-app.get('/api/auth/steam/return', passport.authenticate('steam', {failureRedirect: '/skins'}), function (req, res) {
-    res.redirect('/skins')
+app.get(`${config.SUBDIR}api/auth/steam/return`, passport.authenticate('steam', {failureRedirect: config.SUBDIR}), function (req, res) {
+    res.redirect('/')
 });
 
-app.get('/api/logout', (req, res) => {
+app.get(`${config.SUBDIR}api/logout`, (req, res) => {
     req.session.destroy(err => {
-        res.redirect('/skins')
+        res.redirect('/')
     })
 })
 
@@ -116,6 +117,12 @@ app.get('/api/delete', (req, res) => {
         })
     })
 })
+
+if (config.SUBDIR != '/') {
+    app.get('/', (req, res) => {
+        res.redirect(config.SUBDIR.slice(0, -1))
+    })
+}
 
 const server = app.listen(PORT, () => {
     console.log(`App is running on http://localhost:${PORT}`)

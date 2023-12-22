@@ -1,5 +1,12 @@
 const sideBtnHandler = (activeBtn) => {
     // remove active background
+    let allBtns = ['sideBtnKnives', 'sideBtnPistols', 'sideBtnRifles', 'sideBtnPPs', 'sideBtnShotguns']
+    allBtns.forEach(element => {
+        let elms = document.querySelectorAll(`[id='${element}']`);
+ 
+        for(var i = 0; i < elms.length; i++) 
+            elms[i].classList.remove('active-side')
+    });
     document.getElementById('sideBtnKnives').classList.remove('active-side')
     document.getElementById('sideBtnPistols').classList.remove('active-side')
     document.getElementById('sideBtnRifles').classList.remove('active-side')
@@ -7,9 +14,12 @@ const sideBtnHandler = (activeBtn) => {
     document.getElementById('sideBtnShotguns').classList.remove('active-side')
     
     // add active background
-    document.getElementById(activeBtn).classList.add('active-side')
+    let elms = document.querySelectorAll(`[id='${activeBtn}']`);
+ 
+    for(var i = 0; i < elms.length; i++) 
+        elms[i].classList.add('active-side')
 }
-  
+
 const showDefaults = (type) => {
     // clear main container
     document.getElementById('skinsContainer').innerHTML = ''
@@ -17,7 +27,7 @@ const showDefaults = (type) => {
     // STILL INSANE AMOUNT OF SHITCODE BELOW
 
     if (type == 'sfui_invpanel_filter_melee') {
-        getJSON(`https://bymykel.github.io/CSGO-API/api/${lang}/skins.json`, (err, res) => {
+        getJSON(`js/json/skins/${lang}-skins.json`, (err, res) => {
             // make unique object for weapons
             const unique = res.filter((obj, index) => {
                 return index === res.findIndex(o => obj.weapon.id === o.weapon.id);
@@ -59,7 +69,7 @@ const showDefaults = (type) => {
             })
         })
     } else {
-        getJSON(`https://bymykel.github.io/CSGO-API/api/${lang}/skins.json`, (err, res) => {
+        getJSON(`js/json/skins/${lang}-skins.json`, (err, res) => {
             // make unique object for weapons
             const unique = res.filter((obj, index) => {
                 return index === res.findIndex(o => obj.weapon.id === o.weapon.id);
@@ -173,7 +183,7 @@ socket.on('skin-changed', data => {
 const knifeSkins = (knifeType) => {
     console.log(knifeType)
 
-    getJSON(`https://bymykel.github.io/CSGO-API/api/${lang}/skins.json`, (err, res) => {
+    getJSON(`js/json/skins/${lang}-skins.json`, (err, res) => {
         // clear main container
         document.getElementById('skinsContainer').innerHTML = ''
         res.forEach(element => {

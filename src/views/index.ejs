@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     
     <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="<%= subdir %>js/bootstrap/bootstrap.bundle.min.js"></script>
     
     <script src="socket.io/socket.io.js"></script>
     <script src="js/index.js"></script>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="nav-item d-flex align-items-center">
                     <% if (typeof user == 'undefined') { %>
-                        <a class="btn btn-primary my-2 my-sm-0 text-warning" href="api/auth/steam"><%= lang.navLogin %> <i class="bi bi-steam text-secondary ms-1"></i></a>
+                        <a class="btn btn-primary my-2 my-sm-0 text-warning" href="<%= subdir %>api/auth/steam"><%= lang.navLogin %> <i class="bi bi-steam text-secondary ms-1"></i></a>
                     <% } else { %>
                         <li class="nav-item dropdown">
                             <div class="profile-bg p-2 px-3 d-flex align-items-center dropdown-toggle" role="button" data-bs-toggle="dropdown">
@@ -67,8 +67,8 @@
                                 <img src="<%= user.photos[1].value%>" alt="" height="40" class="rounded-pill">
                             </div>
                             <ul class="dropdown-menu bg-nav">
-                                <li><a class="text-decoration-none ms-3 text-danger" href="api/logout"><%= lang.navLogout %></a></li>
-                                <li><a class="text-decoration-none ms-3 text-danger" href="api/delete"><%= lang.navDelete %></a></li>
+                                <li><a class="text-decoration-none ms-3 text-danger" href="<%= subdir %>api/logout"><%= lang.navLogout %></a></li>
+                                <li><a class="text-decoration-none ms-3 text-danger" href="<%= subdir %>api/delete"><%= lang.navDelete %></a></li>
                                 <li><a class="text-decoration-none ms-3 text-warning d-block d-md-none" href="<%= config.connect.url %>"><small><%= lang.connect %></small></a></li>
                             </ul>
                         </li>
@@ -78,7 +78,7 @@
     </nav>
 
     <% if (typeof user == 'undefined') { %>
-        <h5 class="text-center mt-4 text-white"><%= lang.needLogin %> <a class="text-warning" href="api/auth/steam"><%= lang.viaSteam %></a></h5>
+        <h5 class="text-center mt-4 text-white"><%= lang.needLogin %> <a class="text-warning" href="<%= subdir %>api/auth/steam"><%= lang.viaSteam %></a></h5>
     <% } else { %>
 
     <div class="container text-light mt-3">
