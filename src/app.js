@@ -1,6 +1,6 @@
 const express = require('express')
 var passport = require('passport');
-var session = require('express-session');
+var session = require('cookie-session');
 var passportSteam = require('passport-steam');
 var SteamStrategy = passportSteam.Strategy;
 const mysql = require('mysql')
@@ -69,7 +69,7 @@ app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 app.use(express.static('src/public'))
 
-app.get('/skins', (req, res) => {
+app.get('/', (req, res) => {
     if (typeof req.user != 'undefined') {
         connection.query('SELECT * FROM wp_player_knife WHERE steamid = ?', [req.user.id], (err, results, fields) => {
             connection.query('SELECT * FROM wp_player_skins WHERE steamid = ?', [req.user.id], (err, results2, fields) => {
@@ -118,7 +118,7 @@ app.get('/api/delete', (req, res) => {
 })
 
 const server = app.listen(PORT, () => {
-    console.log(`App is running on https://localhost:${PORT}`)
+    console.log(`App is running on http://localhost:${PORT}`)
 })
 
 const io = require('socket.io')(server)
