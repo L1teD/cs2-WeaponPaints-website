@@ -20,6 +20,7 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
         "DB_DB": "table"
     },
     "HOST": "example.com or localhost/127.0.0.1",
+    "SUBDIR": "/skinsExample/ or just /",
     "PORT": 27275,
     "STEAMAPIKEY": "Your Steam Web API Key",
     "connect": {
@@ -32,9 +33,16 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
 
 - And then
 
+If Windows:
 ```bash
   npm i
   npm run start
+```
+
+If Linux:
+```bash
+  npm i
+  npm run startLinux
 ```
 
 ## Support me
