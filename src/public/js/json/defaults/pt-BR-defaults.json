@@ -1,0 +1,426 @@
+[
+    {
+        "weapon_defindex": "26",
+        "weapon_name": "weapon_bizon",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bizon.png",
+        "paint_name": "PP-Bizon",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "17",
+        "weapon_name": "weapon_mac10",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mac10.png",
+        "paint_name": "MAC-10",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "34",
+        "weapon_name": "weapon_mp9",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9.png",
+        "paint_name": "MP9",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "19",
+        "weapon_name": "weapon_p90",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p90.png",
+        "paint_name": "P90",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "24",
+        "weapon_name": "weapon_ump45",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45.png",
+        "paint_name": "UMP-45",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "7",
+        "weapon_name": "weapon_ak47",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47.png",
+        "paint_name": "AK-47",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "8",
+        "weapon_name": "weapon_aug",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_aug.png",
+        "paint_name": "AUG",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "10",
+        "weapon_name": "weapon_famas",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_famas.png",
+        "paint_name": "FAMAS",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "13",
+        "weapon_name": "weapon_galilar",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_galilar.png",
+        "paint_name": "Galil AR",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "16",
+        "weapon_name": "weapon_m4a1",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1.png",
+        "paint_name": "M4A4",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "60",
+        "weapon_name": "weapon_m4a1_silencer",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer.png",
+        "paint_name": "M4A1-S",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "39",
+        "weapon_name": "weapon_sg556",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_sg556.png",
+        "paint_name": "SG 553",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "9",
+        "weapon_name": "weapon_awp",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp.png",
+        "paint_name": "AWP",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "11",
+        "weapon_name": "weapon_g3sg1",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_g3sg1.png",
+        "paint_name": "G3SG1",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "38",
+        "weapon_name": "weapon_scar20",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_scar20.png",
+        "paint_name": "SCAR-20",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "40",
+        "weapon_name": "weapon_ssg08",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ssg08.png",
+        "paint_name": "SSG 08",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "27",
+        "weapon_name": "weapon_mag7",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mag7.png",
+        "paint_name": "MAG-7",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "35",
+        "weapon_name": "weapon_nova",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_nova.png",
+        "paint_name": "Nova",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "29",
+        "weapon_name": "weapon_sawedoff",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_sawedoff.png",
+        "paint_name": "Cano Curto",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "25",
+        "weapon_name": "weapon_xm1014",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_xm1014.png",
+        "paint_name": "XM1014",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "14",
+        "weapon_name": "weapon_m249",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m249.png",
+        "paint_name": "M249",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "28",
+        "weapon_name": "weapon_negev",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_negev.png",
+        "paint_name": "Negev",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "1",
+        "weapon_name": "weapon_deagle",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_deagle.png",
+        "paint_name": "Desert Eagle",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "2",
+        "weapon_name": "weapon_elite",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite.png",
+        "paint_name": "Berettas Duplas",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "3",
+        "weapon_name": "weapon_fiveseven",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_fiveseven.png",
+        "paint_name": "Five-SeveN",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "4",
+        "weapon_name": "weapon_glock",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock.png",
+        "paint_name": "Glock-18",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "32",
+        "weapon_name": "weapon_hkp2000",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_hkp2000.png",
+        "paint_name": "P2000",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "30",
+        "weapon_name": "weapon_tec9",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_tec9.png",
+        "paint_name": "Tec-9",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "61",
+        "weapon_name": "weapon_usp_silencer",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_usp_silencer.png",
+        "paint_name": "USP-S",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "63",
+        "weapon_name": "weapon_cz75a",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_cz75a.png",
+        "paint_name": "CZ75-Auto",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "36",
+        "weapon_name": "weapon_p250",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250.png",
+        "paint_name": "P250",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "23",
+        "weapon_name": "weapon_mp5sd",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp5sd.png",
+        "paint_name": "MP5-SD",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "33",
+        "weapon_name": "weapon_mp7",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7.png",
+        "paint_name": "MP7",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "64",
+        "weapon_name": "weapon_revolver",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_revolver.png",
+        "paint_name": "Revólver R8",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "500",
+        "weapon_name": "weapon_bayonet",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet.png",
+        "paint_name": "Baioneta",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "503",
+        "weapon_name": "weapon_knife_css",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css.png",
+        "paint_name": "Faca Clássica",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "505",
+        "weapon_name": "weapon_knife_flip",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip.png",
+        "paint_name": "Canivete",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "506",
+        "weapon_name": "weapon_knife_gut",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut.png",
+        "paint_name": "Faca Gut Hook",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "507",
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit.png",
+        "paint_name": "Karambit",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "508",
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet.png",
+        "paint_name": "Baioneta M9",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "509",
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical.png",
+        "paint_name": "Faca do Caçador",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "512",
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion.png",
+        "paint_name": "Canivete Falchion",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "514",
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie.png",
+        "paint_name": "Faca Bowie",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "515",
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly.png",
+        "paint_name": "Canivete Borboleta",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "516",
+        "weapon_name": "weapon_knife_push",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push.png",
+        "paint_name": "Adagas Sombrias",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "517",
+        "weapon_name": "weapon_knife_cord",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord.png",
+        "paint_name": "Faca de Cordame",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "518",
+        "weapon_name": "weapon_knife_canis",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis.png",
+        "paint_name": "Faca de Sobrevivência",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "519",
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus.png",
+        "paint_name": "Faca Ursus",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "520",
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife.png",
+        "paint_name": "Faca Navaja",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "521",
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor.png",
+        "paint_name": "Faca Nômade",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "522",
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto.png",
+        "paint_name": "Faca Stiletto",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "523",
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker.png",
+        "paint_name": "Faca Talon",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "525",
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton.png",
+        "paint_name": "Faca Esqueleto",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    }
+]

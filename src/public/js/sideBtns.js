@@ -24,75 +24,44 @@ const showDefaults = (type) => {
     // clear main container
     document.getElementById('skinsContainer').innerHTML = ''
 
-    // STILL INSANE AMOUNT OF SHITCODE BELOW
-
     if (type == 'sfui_invpanel_filter_melee') {
-        getJSON(`js/json/skins/${lang}-skins.json`, (err, res) => {
-            // make unique object for weapons
-            const unique = res.filter((obj, index) => {
-                return index === res.findIndex(o => obj.weapon.id === o.weapon.id);
-            })
-            console.log(unique)
+        getJSON(`js/json/defaults/${lang}-defaults.json`, (err, res) => {
+            res.forEach(knife => {
+                if (knife.weapon_type == 'sfui_invpanel_filter_melee') {
+                    const skinWeapon = selectedSkins.find(element => {
+                        if (element.weapon_defindex == weaponIds[knife.weapon_name]) {
+                            return true
+                        }
+                        return false
+                    })                 
 
-            unique.forEach(element => {
-                if (element.id.includes('vanilla')) {
-                    let card = document.createElement('div')
-                    card.classList.add('col-6', 'col-sm-4', 'col-md-3', 'p-2')
-
-                    element.weapon.id = element.id.slice(13)
-
-                    // check if knife is selected
-                    let active = ''
-                    if (element.weapon.id == selectedKnife.knife) {
-                        active = 'active-card'
-                    }
-
-                    card.innerHTML = `
-                    <div class="rounded-3 d-flex flex-column card-common weapon-card ${active} weapon_knife" id="${element.weapon.id}">
-                        <div style="z-index: 3;" class="loading-card d-flex justify-content-center align-items-center w-100 h-100" id="loading-${element.weapon.id}">
-                            <div class="spinner-border spinner-border-xl" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
-                        </div>
-
-                        <a onclick="changeKnife(\'${element.weapon.id}\', ${selectedKnife.steamid})" class="text-decoration-none d-flex flex-column" style="z-index: 0;">
-                                <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" alt="${element.name}">
-                                
-                                <p class="m-0 text-light weapon-skin-title mx-auto text-center">${element.weapon.name}</p>
-                        </a>
-                        <button onclick="knifeSkins(\'${element.weapon.id}\')" class="btn btn-primary text-warning mx-auto my-2" style="z-index: 1;"><small>${langObject.changeSkin}</small></button>
-                    </div>
-                    `
-
-                    document.getElementById('skinsContainer').appendChild(card)      
+                    if (typeof skinWeapon != 'undefined') {
+                        changeKnifeSkinTemplate(knife, langObject, selectedKnife)
+                        changeSkinCard(knife, skinWeapon)
+                    } else {
+                        knivesTemplate(knife, langObject, selectedKnife)
+                    }    
+                    
                 }
             })
         })
     } else {
-        getJSON(`js/json/skins/${lang}-skins.json`, (err, res) => {
-            // make unique object for weapons
-            const unique = res.filter((obj, index) => {
-                return index === res.findIndex(o => obj.weapon.id === o.weapon.id);
-            })
-            console.log(unique)
+        getJSON(`js/json/defaults/${lang}-defaults.json`, (err, res) => {
+            res.forEach(weapon => {
+                if (weapon.weapon_type == type) {
+                    const skinWeapon = selectedSkins.find(element => {
+                        if (element.weapon_defindex == weaponIds[weapon.weapon_name]) {
+                            return true
+                        }
+                        return false
+                    })                 
 
-            unique.forEach(element => {
-                if (element.category.id == type) {
-                    let card = document.createElement('div')
-                    card.classList.add('col-6', 'col-sm-4', 'col-md-3', 'p-2')
-
-                    card.innerHTML = `
-                    <div class="rounded-3 d-flex flex-column card-common weapon-card weapon_knife" id="${element.weapon.id}">
-                        <a class="text-decoration-none d-flex flex-column" style="z-index: 0;">
-                                <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" alt="${element.name}">
-                                
-                                <p class="m-0 text-light weapon-skin-title mx-auto text-center">${element.weapon.name}</p>
-                        </a>
-                        <button onclick="knifeSkins(\'${element.weapon.id}\')" class="btn btn-primary text-warning mx-auto my-2" style="z-index: 1;"><small>${langObject.changeSkin}</small></button>
-                    </div>
-                    `
-
-                    document.getElementById('skinsContainer').appendChild(card)      
+                    if (typeof skinWeapon != 'undefined') {
+                        changeSkinTemplate(weapon, langObject)
+                        changeSkinCard(weapon, skinWeapon)
+                    } else {
+                        defaultsTemplate(weapon, langObject, lang)
+                    }        
                 }
             })
         })

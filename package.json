@@ -21,6 +21,7 @@
     "socket.io": "^4.7.2"
   },
   "devDependencies": {
+    "get-json": "^1.0.1",
     "nodemon": "^3.0.1"
   }
 }

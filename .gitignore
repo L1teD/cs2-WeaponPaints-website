@@ -1,4 +1,5 @@
 node_modules/
+nonProd/
 sessions/
 src/config.json
 src/views/index -- copy.ejs

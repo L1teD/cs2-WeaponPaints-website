@@ -153,7 +153,7 @@
 }
 
 .card-gold {
-    border-color: rgb(202,171,5) !important;
+    border-color: rgb(202, 171, 5) !important;
     color: rgb(202,171,5);
     background: linear-gradient(135deg, rgba(202,171,5,0.02), rgba(22,22,22,0.6), rgba(202,171,5, 0.15));
 }
