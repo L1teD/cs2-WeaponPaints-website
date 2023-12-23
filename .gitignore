@@ -1,3 +1,4 @@
 node_modules/
+sessions/
 src/config.json
 src/views/index -- copy.ejs

@@ -1,8 +1,9 @@
 const express = require('express')
-const passport = require('passport');
-const session = require('express-session');
-const passportSteam = require('passport-steam');
-const SteamStrategy = passportSteam.Strategy;
+const passport = require('passport')
+const session = require('express-session')
+const FileStore = require('session-file-store')(session)
+const passportSteam = require('passport-steam')
+const SteamStrategy = passportSteam.Strategy
 const mysql = require('mysql')
 const path = require('path')
 
@@ -43,6 +44,8 @@ setInterval(() => {
     connection.query('SELECT 1', (err, res, fields) => {})
 }, 10000);
 
+const fileStoreOptions = {}
+
 // Required to get data from user for sessions
 passport.serializeUser((user, done) => {
         done(null, user);
@@ -63,6 +66,7 @@ passport.serializeUser((user, done) => {
     }
     ));
     app.use(session({
+        store: new FileStore(fileStoreOptions),
         secret: 'Whatever_You_Want',
         saveUninitialized: true,
         resave: false,

@@ -4,7 +4,7 @@
   "description": "Website for cs2-WeaponPaints plugin",
   "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon .",
+    "dev": "nodemon --ignore ./sessions/ .",
     "start": "startWindows.bat",
     "startLinux": "nodemon -x 'node . || touch src/app.js'"
   },
@@ -17,6 +17,7 @@
     "mysql": "^2.18.1",
     "passport": "^0.7.0",
     "passport-steam": "^1.0.18",
+    "session-file-store": "^1.5.0",
     "socket.io": "^4.7.2"
   },
   "devDependencies": {
