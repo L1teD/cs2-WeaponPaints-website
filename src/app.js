@@ -14,8 +14,8 @@ const app = new express()
 
 const PORT = config.PORT
 
-let returnURL = `http://${config.HOST}${config.SUBDIR}api/auth/steam/return`
-let realm = `http://${config.HOST}${config.SUBDIR}`
+let returnURL = `https://${config.HOST}${config.SUBDIR}api/auth/steam/return`
+let realm = `https://${config.HOST}${config.SUBDIR}`
 
 if (config.HOST == 'localhost' || config.host == '127.0.0.1') {
     returnURL = `http://${config.HOST}:${config.PORT}${config.SUBDIR}api/auth/steam/return`

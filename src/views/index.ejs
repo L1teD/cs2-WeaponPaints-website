@@ -16,7 +16,8 @@
     
     <script src="socket.io/socket.io.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/sideBtns.js"></script> 
+    <script src="js/sideBtns.js"></script>
+    
 </head>
 <body class="bg-color">
 
@@ -33,11 +34,20 @@
                     <h5 class="mx-auto"><span id="modalWeapon">Gut knife</span> | <span id="modalPaint">Fade</span></h5>
                     <div class="form-outline mx-auto mb-2">
                         <label class="form-label m-0" for="float">Float</label>
-                        <input type="number" id="float" class="form-control" placeholder="Float" value="0.000001"/>
+                        <input type="range" id="floatSlider" class="slider" min="0" max="1" step="0.000001" value="0.000001" data-bs-theme="dark">
+                        <input type="number" id="float" class="form-control" min="0" max="1" step="0.000001" value="0.000001" data-bs-theme="dark">
+                        <p id="floatText" class="text-center m-0">Factory New</p>
                     </div>
-                    <div class="form-outline mx-auto">
+                    <div class="btn-group mx-auto mb-2">
+                        <button onclick="setFloat(0.0001)" class="btn btn-primary floatButton">FN</button>
+                        <button onclick="setFloat(0.07)" class="btn btn-primary floatButton">MW</button>
+                        <button onclick="setFloat(0.15)" class="btn btn-primary floatButton">FT</button>
+                        <button onclick="setFloat(0.38)" class="btn btn-primary floatButton">WW</button>
+                        <button onclick="setFloat(0.45)" class="btn btn-primary floatButton">BS</button>
+                    </div>
+                    <div class="form-outline mx-auto mt-3">
                         <label class="form-label m-0" for="pattern">Pattern</label>
-                        <input type="number" id="pattern" class="form-control" placeholder="Pattern" value="0"/>
+                        <input type="number" id="pattern" class="form-control" placeholder="Pattern" value="0" data-bs-theme="dark">
                     </div>
                 </div>
                 <div class="modal-footer bg-nav text-light border-dark d-flex justify-content-center">
@@ -50,30 +60,30 @@
     <nav class="navbar navbar-dark bg-nav">
         <div class="container">
             <div class="nav-item d-flex align-items-center">
-                <a class="navbar-brand" href="#"><%= config.name %></a>
+                <a class="navbar-brand" href="#"><%= config.name %></a>      
                 <div class="nav-item d-flex align-items-center">
                     <% if (config.connect.show) { %>
                         <a href="<%= config.connect.url %>" class="btn btn-outline-warning rounded-pill d-none d-md-block"><small><%= lang.connect %></small></a>
                     <% } %>
                 </div>
             </div>
-                <div class="nav-item d-flex align-items-center">
-                    <% if (typeof user == 'undefined') { %>
-                        <a class="btn btn-primary my-2 my-sm-0 text-warning" href="<%= subdir %>api/auth/steam"><%= lang.navLogin %> <i class="bi bi-steam text-secondary ms-1"></i></a>
-                    <% } else { %>
-                        <li class="nav-item dropdown">
-                            <div class="profile-bg p-2 px-3 d-flex align-items-center dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                                <p class="m-0 me-2"><%= user.displayName %></p>
-                                <img src="<%= user.photos[1].value%>" alt="" height="40" class="rounded-pill">
-                            </div>
-                            <ul class="dropdown-menu bg-nav">
-                                <li><a class="text-decoration-none ms-3 text-danger" href="<%= subdir %>api/logout"><%= lang.navLogout %></a></li>
-                                <li><a class="text-decoration-none ms-3 text-danger" href="<%= subdir %>api/delete"><%= lang.navDelete %></a></li>
-                                <li><a class="text-decoration-none ms-3 text-warning d-block d-md-none" href="<%= config.connect.url %>"><small><%= lang.connect %></small></a></li>
-                            </ul>
-                        </li>
-                    <% } %>
-                </div>
+            <div class="nav-item d-flex align-items-center">
+                <% if (typeof user == 'undefined') { %>
+                    <a class="btn btn-primary my-2 my-sm-0 text-warning" href="<%= subdir %>api/auth/steam"><%= lang.navLogin %> <i class="bi bi-steam text-secondary ms-1"></i></a>
+                <% } else { %>
+                    <li class="nav-item dropdown">
+                        <div class="profile-bg p-2 px-3 d-flex align-items-center dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                            <p class="m-0 me-2"><%= user.displayName %></p>
+                            <img src="<%= user.photos[1].value%>" alt="" height="40" class="rounded-pill">
+                        </div>
+                        <ul class="dropdown-menu bg-nav">
+                            <li><a class="text-decoration-none ms-3 text-danger" href="<%= subdir %>api/logout"><%= lang.navLogout %></a></li>
+                            <li><a class="text-decoration-none ms-3 text-danger" href="<%= subdir %>api/delete"><%= lang.navDelete %></a></li>
+                            <li><a class="text-decoration-none ms-3 text-warning d-block d-md-none" href="<%= config.connect.url %>"><small><%= lang.connect %></small></a></li>
+                        </ul>
+                    </li>
+                <% } %>
+            </div>
         </div>
     </nav>
 
@@ -168,6 +178,36 @@
     }
 </script>
 
+<script>
+    function updateFloatText(value) {
+    let text;
+    if (value >= 0 && value < 0.07) {
+        text = "Factory New";
+    } else if (value >= 0.07 && value < 0.15) {
+        text = "Minimal Wear";
+    } else if (value >= 0.15 && value < 0.38) {
+        text = "Field-Tested";
+    } else if (value >= 0.38 && value < 0.45) {
+        text = "Well-Worn";
+    } else if (value >= 0.45 && value <= 1) {
+        text = "Battle-Scarred";
+    }
+    document.getElementById('floatText').textContent = text;
+}
+</script>
+
+<script>
+    document.getElementById('floatSlider').oninput = function() {
+        document.getElementById('float').value = this.value;
+        updateFloatText(parseFloat(this.value));
+    }
+
+    document.getElementById('float').oninput = function() {
+        document.getElementById('floatSlider').value = this.value;
+        updateFloatText(parseFloat(this.value));
+    }
+</script>
+
 <% if (typeof knife != 'undefined') { %>
     <script>    
         selectedKnife = <%- JSON.stringify(knife) %>;
@@ -185,5 +225,16 @@
         let user = <%- JSON.stringify(user) %>;
     </script>
 <% } %>
+
+<script>
+    function setFloat(value) {
+        value = Math.round(value * 10000) / 10000; // Round to 4 decimal places
+        document.getElementById('floatSlider').value = value;
+        document.getElementById('float').value = value;
+        updateFloatText(value);
+    }
+</script>
+
+<script></script>
 
 </html>
