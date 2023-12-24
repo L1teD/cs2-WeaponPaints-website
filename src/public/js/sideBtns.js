@@ -57,7 +57,7 @@ const showDefaults = (type) => {
                     })                 
 
                     if (typeof skinWeapon != 'undefined') {
-                        changeSkinTemplate(weapon, langObject)
+                        changeSkinTemplate(weapon, langObject, selectedKnife)
                         changeSkinCard(weapon, skinWeapon)
                     } else {
                         defaultsTemplate(weapon, langObject, lang)
@@ -118,6 +118,25 @@ const changeSkin = (steamid, weaponid, paintid) => {
     document.getElementById(`loading-${weaponid}-${paintid}`).style.visibility = 'visible'
     document.getElementById(`loading-${weaponid}-${paintid}`).style.opacity = 1
 }
+
+const resetSkin = (weaponid, steamid) => {
+    console.log(steamid, weaponid)
+    socket.emit('reset-skin', {steamid: steamid, weaponid: weaponid})
+}
+
+socket.on('skin-reset', data => {
+    const weapon_name = getKeyByValue(weaponIds, data.weaponid)
+
+    document.getElementById(`img-${weapon_name}`).src = document.getElementById(`img-${weapon_name}`).alt
+    document.getElementById(`img-${weapon_name}`).style = ''
+    document.getElementById(`reset-${weapon_name}`).outerHTML = ''
+
+    const index = selectedSkins.findIndex(x => x.weapon_defindex == data.weaponid)
+    const before = selectedSkins.splice(0, index)
+    const after = selectedSkins.splice(index+1)
+
+    selectedSkins = before.concat(after)
+})
 
 socket.on('knife-changed', data => {
     let elms = document.getElementsByClassName("weapon_knife");

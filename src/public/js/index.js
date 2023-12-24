@@ -16,7 +16,11 @@ const getJSON = function(url, callback) {
         }
     };
     xhr.send();
-};
+}
+
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+}
 
 const weaponIds = {
     "weapon_deagle": 1,

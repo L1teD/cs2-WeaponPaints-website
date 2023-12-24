@@ -175,6 +175,7 @@ io.on('connection', socket => {
                     })
                 })  
             }
+        })
     })
 
     socket.on('change-params', data => {
@@ -182,6 +183,13 @@ io.on('connection', socket => {
             socket.emit('params-changed')
         })
     })
-        
+
+    socket.on('reset-skin', data => {
+        console.log(data)
+        connection.query('DELETE FROM wp_player_skins WHERE steamid = ? AND weapon_defindex = ?', [data.steamid, data.weaponid], (err, results, fields) => {
+            socket.emit('skin-reset', {weaponid: data.weaponid})
+        })
     })
+        
+    
 })

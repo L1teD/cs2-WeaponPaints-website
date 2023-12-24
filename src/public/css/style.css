@@ -209,6 +209,16 @@ li {
     border: none;
 }
 
+.revert {
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    right: 0;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .3s;
+    border: none;
+    background-color: transparent;
+}
+
 .loading-card {
     position: absolute;
     visibility: hidden;
