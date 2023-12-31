@@ -6,7 +6,7 @@
         "DB_USER": "username",
         "DB_PASS": "password",
         "DB_DB": "table",
-        "DB_PORT" "3306"
+        "DB_PORT": "3306"
     },
     "HOST": "example.com or localhost/127.0.0.1",
     "SUBDIR": "/skinsExample/ or just /",
