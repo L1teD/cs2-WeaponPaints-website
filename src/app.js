@@ -28,7 +28,8 @@ const connection = mysql.createConnection({
     host: config.DB.DB_HOST,
     user: config.DB.DB_USER,
     database: config.DB.DB_DB,
-    password: config.DB.DB_PASS
+    password: config.DB.DB_PASS,
+    port: config.DB.DB_PORT
 })
 connection.connect(function(err){
     if (err) {
