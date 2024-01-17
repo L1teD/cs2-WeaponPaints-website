@@ -169,11 +169,10 @@ socket.on('skin-changed', data => {
 })
 
 const knifeSkins = (knifeType) => {
-    console.log(knifeType)
+    // clear main container
+    document.getElementById('skinsContainer').innerHTML = ''
 
     getJSON(`js/json/skins/${lang}-skins.json`, (err, res) => {
-        // clear main container
-        document.getElementById('skinsContainer').innerHTML = ''
         res.forEach(element => {
             if (element.weapon.id == knifeType) {
                 rarities = {
@@ -187,26 +186,24 @@ const knifeSkins = (knifeType) => {
                 }
     
                 let bgColor = 'card-uncommon'
-    
+                let phase  = ''
+                let active = ''
+
+                // Get color of item for card
                 if (element.category.id == 'sfui_invpanel_filter_melee') { 
+                    // Gold if knife
                     bgColor = 'card-gold'
                 } else {
+                    // Anything else
                     bgColor = `card-${rarities[element.rarity.color]}`
                 }
 
-                let phase  = ''
-
+                // Phase for Dopplers
                 if (typeof element.phase != 'undefined') {
                     phase = `(${element.phase})`
                 }
 
-                let active = ''
-                let steamid = user.id
-                let weaponid = weaponIds[element.weapon.id]
-                let paintid = element.paint_index
-                let float = 0.000001
-                let pattern = 0
-
+                // Make outline if this skin is selected
                 selectedSkins.forEach(el => {
                     if (el.weapon_paint_id == element.paint_index && el.weapon_defindex == weaponIds[element.weapon.id]) {
                         active = 'active-card'
@@ -214,7 +211,12 @@ const knifeSkins = (knifeType) => {
                         pattern = el.weapon_seed
                     }
                 })
-
+               
+                let steamid = user.id
+                let weaponid = weaponIds[element.weapon.id]
+                let paintid = element.paint_index
+                let float = 0.000001
+                let pattern = 0
 
                 let card = document.createElement('div')
                 card.classList.add('col-6', 'col-sm-4', 'col-md-3', 'p-2')

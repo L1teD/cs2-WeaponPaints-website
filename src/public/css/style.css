@@ -184,9 +184,9 @@
 }
 
 .profile-bg {
-    border-radius: 999999px;
     color: #fff;
-    background: linear-gradient(to top right, rgba(228,174,57,0.1), rgba(228,174,57, 0.2));
+    background: #242424;
+    border: 1px solid #363636;
 }
 
 li {

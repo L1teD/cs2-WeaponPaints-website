@@ -72,17 +72,18 @@
                 <% if (typeof user == 'undefined') { %>
                     <a class="btn btn-primary my-2 my-sm-0 text-warning" href="<%= subdir %>api/auth/steam"><%= lang.navLogin %> <i class="bi bi-steam text-secondary ms-1"></i></a>
                 <% } else { %>
-                    <li class="nav-item dropdown">
-                        <div class="profile-bg p-2 px-3 d-flex align-items-center dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                            <p class="m-0 me-2"><%= user.displayName %></p>
-                            <img src="<%= user.photos[1].value%>" alt="" height="40" class="rounded-pill">
+                    <div class="nav-item dropdown" data-bs-theme="dark">
+                        <div class="profile-bg rounded p-1 px-2 d-flex align-items-center dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                            <p class="m-0 me-2"><small><%= user.displayName %></small></p>
+                            <img src="<%= user.photos[1].value%>" alt="" height="30" class="rounded-pill">
                         </div>
-                        <ul class="dropdown-menu bg-nav">
-                            <li><a class="text-decoration-none ms-3 text-danger" href="<%= subdir %>api/logout"><%= lang.navLogout %></a></li>
-                            <li><a class="text-decoration-none ms-3 text-danger" href="<%= subdir %>api/delete"><%= lang.navDelete %></a></li>
-                            <li><a class="text-decoration-none ms-3 text-warning d-block d-md-none" href="<%= config.connect.url %>"><small><%= lang.connect %></small></a></li>
-                        </ul>
-                    </li>
+                            <ul class="dropdown-menu">
+                                
+                                <a class="dropdown-item text-danger" href="<%= subdir %>api/logout"><%= lang.navLogout %></a>
+                                <a class="dropdown-item text-danger" href="<%= subdir %>api/delete"><%= lang.navDelete %></a>
+                                <a class="dropdown-item text-warning d-block d-md-none" href="<%= config.connect.url %>"><small><%= lang.connect %></small></a>
+                            </ul>
+                       
                 <% } %>
             </div>
         </div>
@@ -160,9 +161,18 @@
         </div>
     </div>
     <% } %>
+    
+    <!-- Filler for footer -->
+    <div class="container-fluid py-3">
+        <p class="m-0"> </p>
+        <p class="m-0"> </p>
+    </div>
 
     <div class="container-fluid fixed-bottom bg-nav text-light text-center py-3">
-        <a href="https://github.com/L1teD" class="text-decoration-none text-light">L1te</a> @ <%= new Date().getFullYear();%> | <a href="https://github.com/L1teD/cs2-WeaponPaints-website" class="text-decoration-none text-warning">L1teD/cs2-WeaponPaints-website</a>
+        <p class="text-decoration-none text-light m-0"><%= config.name %> | <%= new Date().getFullYear();%> </p>
+        
+        <!-- Please don't change this -->
+        <p class="m-0 text-secondary">Made by <a href="https://github.com/L1teD" class="text-secondary">L1te</a> @ <a href="https://github.com/L1teD/cs2-WeaponPaints-website" class="text-secondary">cs2-WeaponPaints-website</a></p>
     </div>
 
 </body>
