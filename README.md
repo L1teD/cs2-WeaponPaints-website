@@ -48,4 +48,4 @@ If Linux:
 ## Support me
 
 
-[![Steam donations](https://camo.githubusercontent.com/b5f2c42b10192556e0703f1c86dd55954bd5a5e6f14f10e08ba7a576a12e8f04/68747470733a2f2f692e696d6775722e636f6d2f684e49487751452e706e67)](https://steamcommunity.com/tradeoffer/new/?partner=1153616149&token=V-OXvmuV)
+[![Steam donations](https://github.com/Nereziel/cs2-WeaponPaints/assets/32937653/a0d53822-4ca7-4caf-83b4-e1a9b5f8c94e)](https://steamcommunity.com/tradeoffer/new/?partner=1153616149&token=V-OXvmuV)
