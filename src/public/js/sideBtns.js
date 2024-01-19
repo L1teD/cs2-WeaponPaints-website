@@ -188,6 +188,11 @@ const knifeSkins = (knifeType) => {
                 let bgColor = 'card-uncommon'
                 let phase  = ''
                 let active = ''
+                let steamid = user.id
+                let weaponid = weaponIds[element.weapon.id]
+                let paintid = element.paint_index
+                let float = 0.000001
+                let pattern = 0
 
                 // Get color of item for card
                 if (element.category.id == 'sfui_invpanel_filter_melee') { 
@@ -211,12 +216,6 @@ const knifeSkins = (knifeType) => {
                         pattern = el.weapon_seed
                     }
                 })
-               
-                let steamid = user.id
-                let weaponid = weaponIds[element.weapon.id]
-                let paintid = element.paint_index
-                let float = 0.000001
-                let pattern = 0
 
                 let card = document.createElement('div')
                 card.classList.add('col-6', 'col-sm-4', 'col-md-3', 'p-2')
