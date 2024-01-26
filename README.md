@@ -7,6 +7,8 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
 
 ## Installation
 
+### Requires: Node.js *17* or later
+
 - **[Download latest release](https://github.com/L1teD/cs2-WeaponPaints-website/releases/latest/download/cs2-WeaponPaints-website.zip)**
 - In **`src/`** copy **`config.example.json`** to **`config.json`** and fill it:
 ```json
