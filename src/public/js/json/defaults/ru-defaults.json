@@ -430,5 +430,13 @@
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton.png",
         "paint_name": "Скелетный нож",
         "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "526",
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/1/18/CS2_weapon_knife_kukri.png",
+        "paint_name": "Кукри",
+        "weapon_type": "sfui_invpanel_filter_melee"
     }
 ]
