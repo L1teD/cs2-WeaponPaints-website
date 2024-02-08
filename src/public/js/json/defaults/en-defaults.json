@@ -272,6 +272,14 @@
         "weapon_type": "csgo_inventory_weapon_category_pistols"
     },
     {
+        "weapon_defindex": "55",
+        "weapon_name": "weapon_taser",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/a/aa/CS2Taserhud.png",
+        "paint_name": "Zeus X27",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
         "weapon_defindex": "500",
         "weapon_name": "weapon_bayonet",
         "paint": "0",
@@ -421,6 +429,14 @@
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton.png",
         "paint_name": "Skeleton Knife",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "526",
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/1/18/CS2_weapon_knife_kukri.png",
+        "paint_name": "Kukri Knife",
         "weapon_type": "sfui_invpanel_filter_melee"
     }
 ]

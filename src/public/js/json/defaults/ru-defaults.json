@@ -280,6 +280,14 @@
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
+        "weapon_defindex": "55",
+        "weapon_name": "weapon_taser",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/a/aa/CS2Taserhud.png",
+        "paint_name": "Zeus X27",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
         "weapon_defindex": "503",
         "weapon_name": "weapon_knife_css",
         "paint": "0",

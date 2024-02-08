@@ -272,6 +272,14 @@
         "weapon_type": "csgo_inventory_weapon_category_pistols"
     },
     {
+        "weapon_defindex": "55",
+        "weapon_name": "weapon_taser",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/a/aa/CS2Taserhud.png",
+        "paint_name": "Zeus X27",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
         "weapon_defindex": "500",
         "weapon_name": "weapon_bayonet",
         "paint": "0",
