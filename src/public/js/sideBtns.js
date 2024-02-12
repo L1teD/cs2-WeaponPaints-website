@@ -58,6 +58,7 @@ const showDefaults = (type) => {
 
                     if (typeof skinWeapon != 'undefined') {
                         changeSkinTemplate(weapon, langObject, selectedKnife)
+                        console.log(weapon, skinWeapon)
                         changeSkinCard(weapon, skinWeapon)
                     } else {
                         defaultsTemplate(weapon, langObject, lang)

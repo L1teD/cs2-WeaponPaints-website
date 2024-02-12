@@ -92,6 +92,7 @@ const changeSkinCard = (weapon, selectedSkin) => {
                 if (skinWeapon.category.id == 'sfui_invpanel_filter_melee') {
                     skinWeapon.rarity.color = "#caab05"
                 }
+                
                 document.getElementById(`img-${weapon.weapon_name}`).src = skinWeapon.image
                 document.getElementById(`img-${weapon.weapon_name}`).style = `filter: drop-shadow(0px 0px 20px ${skinWeapon.rarity.color});`
             }

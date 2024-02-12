@@ -272,7 +272,7 @@
         "weapon_type": "csgo_inventory_weapon_category_pistols"
     },
     {
-        "weapon_defindex": "55",
+    "weapon_defindex": "31",
         "weapon_name": "weapon_taser",
         "paint": "0",
         "image": "https://static.wikia.nocookie.net/cswikia/images/a/aa/CS2Taserhud.png",
