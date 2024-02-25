@@ -18,14 +18,12 @@ Screenshots taken from private version
 - Private: https://cs.primat.fun/
 
 ## Private
-- *I ACCEPT PAYMENTS BY SKINS*
 - **[Download latest release](https://github.com/L1teD/cs2-WeaponPaints-website/releases/latest/download/cs2-WeaponPaints-website.zip)**
 - Fill config.json (see below), don't fill appKey in it
 - Start with `npm run dev` and then in the console copy your UUID
 <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/Screenshot_12.png?raw=true" width="600">
 
-- Then **[send me trade offer](https://steamcommunity.com/tradeoffer/new/?partner=1153616149&token=V-OXvmuV)** with skins totaling $20 with a message like “Discord: {discord id} UUID: {uuid}”
-- Or pay **[via DonationAlerts](https://www.donationalerts.com/r/l1te_ )**
+- Then pay **[via DonationAlerts](https://www.donationalerts.com/r/l1te_ )** $20 with a message like “Discord: {discord id} UUID: {uuid}”
 
 **Also don't buy skins on official market, buy them on skinsmonkey, lis-skins, cs.money or any other platform you want**
 - After that i'll contact you and send you your app key
