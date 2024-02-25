@@ -25,6 +25,7 @@ Screenshots taken from private version
 <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/Screenshot_12.png?raw=true" width="600">
 
 - Then **[send me trade offer](https://steamcommunity.com/tradeoffer/new/?partner=1153616149&token=V-OXvmuV)** with skins totaling $20 with a message like “Discord: {discord id} UUID: {uuid}”
+- 
 **Also don't buy skins on official market, buy them on skinsmonkey, lis-skins, cs.money or any other platform you want**
 - After that i'll contact you and send you your app key
 
