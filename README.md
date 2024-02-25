@@ -27,6 +27,7 @@ Screenshots taken from private version
 - Then **[send me trade offer](https://steamcommunity.com/tradeoffer/new/?partner=1153616149&token=V-OXvmuV)** with skins totaling $20 with a message like “Discord: {discord id} UUID: {uuid}”
 - After that i'll contact you and send you your app key
 
+**To get admin account go to wps_users, find your account and change admin to 1**
 ## Installation
 
 ### Requires: Node.js *17* or later
