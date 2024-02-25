@@ -3,9 +3,29 @@
 
 Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-WeaponPaints/)** plugin
 
+<div>
+    <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/1.png?raw=true" width="400">
+    <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/2.png?raw=true" width="400">
+    <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/3.png?raw=true" width="400">
+    <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/4.png?raw=true" width="400">
+    <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/5.png?raw=true" width="400">
+</div>
+
+Screenshots taken from private version
+
 ## Preview
 - Public: https://ws.primat.fun/
-- Private (W.I.P): https://cs.primat.fun/
+- Private: https://cs.primat.fun/
+
+## Private
+- *I ACCEPT PAYMENTS BY SKINS*
+- **[Download latest release](https://github.com/L1teD/cs2-WeaponPaints-website/releases/latest/download/cs2-WeaponPaints-website.zip)**
+- Fill config.json (see below), don't fill appKey in it
+- Start with `npm run dev` and then in the console copy your UUID
+<img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/Screenshot_12.png?raw=true" width="600">
+
+- Then **[send me trade offer](https://steamcommunity.com/tradeoffer/new/?partner=1153616149&token=V-OXvmuV)** with skins totaling $20 with a message like “Discord: {discord id} UUID: {uuid}”
+- After that i'll contact you and send you your app key
 
 ## Installation
 
