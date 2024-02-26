@@ -25,7 +25,6 @@ Screenshots taken from private version
 
 - Then pay **[via DonationAlerts](https://www.donationalerts.com/r/l1te_ )** $20 with a message like “Discord: {discord id} UUID: {uuid}”
 
-**Also don't buy skins on official market, buy them on skinsmonkey, lis-skins, cs.money or any other platform you want**
 - After that i'll contact you and send you your app key
 
 **To get admin account go to wps_users, find your account and change admin to 1**
