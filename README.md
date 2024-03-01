@@ -61,13 +61,21 @@ Screenshots taken from private version
 
 If Windows:
 ```bash
+  # public
   npm i
   npm run start
+
+  # private
+  app.exe
 ```
 
 If Linux:
 ```bash
+  # public
   npm i
+  npm run startLinux
+
+  # private
   npm run startLinux
 ```
 
