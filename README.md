@@ -61,22 +61,24 @@ Screenshots taken from private version
 
 If Windows:
 ```bash
-  # public
+  ### public
   npm i
   npm run start
 
-  # private
+  ### private
   app.exe
 ```
 
 If Linux:
 ```bash
-  # public
+  ### public
   npm i
   npm run startLinux
 
-  # private
+  ### private
   src/app
+  # if you using pm2
+  pm2 start "npm run startLinux"
 ```
 
 ## Support me
