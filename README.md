@@ -76,7 +76,7 @@ If Linux:
   npm run startLinux
 
   # private
-  npm run startLinux
+  src/app
 ```
 
 ## Support me
