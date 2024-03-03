@@ -9,19 +9,15 @@ const path = require('path')
 
 // load configuration files
 const config = require('./config.json');
+config.SUBDIR = '/'
 const lang = require(`./lang/${config.lang}.json`)
 
 const app = new express()
 
 const PORT = config.PORT
 
-let returnURL = `https://${config.HOST}${config.SUBDIR}api/auth/steam/return`
-let realm = `https://${config.HOST}${config.SUBDIR}`
-
-if (config.HOST == 'localhost' || config.host == '127.0.0.1') {
-    returnURL = `http://${config.HOST}:${config.PORT}${config.SUBDIR}api/auth/steam/return`
-    realm = `http://${config.HOST}:${config.PORT}${config.SUBDIR}`
-}
+let returnURL = `${config.PROTOCOL}://${config.HOST}${config.SUBDIR}api/auth/steam/return`
+let realm = `${config.PROTOCOL}://${config.HOST}${config.SUBDIR}`
 
 // connect to db
 const connection = mysql.createConnection({
