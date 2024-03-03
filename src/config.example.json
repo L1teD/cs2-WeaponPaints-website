@@ -9,7 +9,7 @@
         "DB_PORT": "3306"
     },
     "HOST": "example.com or localhost/127.0.0.1",
-    "SUBDIR": "/skinsExample/ or just /",
+    "PROTOCOL": "https",
     "PORT": 27275,
     "STEAMAPIKEY": "Your Steam Web API Key",
     "connect": {
