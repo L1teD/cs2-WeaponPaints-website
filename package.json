@@ -1,6 +1,6 @@
 {
   "name": "WeaponPaints",
-  "version": "1.6.1",
+  "version": "1.6.4",
   "description": "Website for cs2-WeaponPaints plugin",
   "main": "src/app.js",
   "scripts": {
