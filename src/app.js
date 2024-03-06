@@ -19,6 +19,11 @@ const PORT = config.PORT
 let returnURL = `${config.PROTOCOL}://${config.HOST}${config.SUBDIR}api/auth/steam/return`
 let realm = `${config.PROTOCOL}://${config.HOST}${config.SUBDIR}`
 
+if (config.HOST == 'localhost' || config.HOST == '127.0.0.1') {
+    returnURL = `${config.PROTOCOL}://${config.HOST}:${config.PORT}${config.SUBDIR}api/auth/steam/return`
+    realm = `${config.PROTOCOL}://${config.HOST}:${config.PORT}${config.SUBDIR}`
+}
+
 // connect to db
 const connection = mysql.createConnection({
     host: config.DB.DB_HOST,
@@ -41,57 +46,59 @@ setInterval(() => {
     connection.query('SELECT 1', (err, res, fields) => {})
 }, 10000);
 
-const fileStoreOptions = {}
-
-// Required to get data from user for sessions
-passport.serializeUser((user, done) => {
-        done(null, user);
-    });
-    passport.deserializeUser((user, done) => {
-        done(null, user);
-    });
-    // Initiate Strategy
-    passport.use(new SteamStrategy({
-        returnURL: returnURL,
-        realm: realm,
-        apiKey: config.STEAMAPIKEY,
-    }, function (identifier, profile, done) {
-        process.nextTick(function () {
-            profile.identifier = identifier;
-            return done(null, profile);
-        });
-    }
-    ));
-    app.use(session({
-        store: new FileStore(fileStoreOptions),
-        secret: 'Whatever_You_Want',
-        saveUninitialized: true,
-        resave: false,
-        cookie: {
-            maxAge: 3600000
-        }
-    }))
-    app.use(passport.initialize());
-    app.use(passport.session());
-
 app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 app.use(express.static('src/public'))
+
+const fileStoreOptions = {logFn: function(){}}
+
+// Required to get data from user for sessions
+passport.serializeUser((user, done) => {
+    done(null, user);
+});
+passport.deserializeUser((user, done) => {
+    done(null, user);
+});
+// Initiate Strategy
+passport.use(new SteamStrategy({
+    returnURL: returnURL,
+    realm: realm,
+    apiKey: config.STEAMAPIKEY,
+}, function (identifier, profile, done) {
+    process.nextTick(function () {
+        profile.identifier = identifier;
+        return done(null, profile);
+    });
+}
+));
+app.use(session({
+    store: new FileStore(fileStoreOptions),
+    secret: 'Whatever_You_Want',
+    saveUninitialized: true,
+    resave: false,
+    cookie: {
+        maxAge: 3600000
+    }
+}))
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get(config.SUBDIR, (req, res) => {
     if (typeof req.user != 'undefined') {
         connection.query('SELECT * FROM wp_player_knife WHERE steamid = ?', [req.user.id], (err, results, fields) => {
             connection.query('SELECT * FROM wp_player_skins WHERE steamid = ?', [req.user.id], (err, results2, fields) => {
-                res.render('index', {
-                    config: config,
-                    session: req.session,
-                    user: req.user,
-                    knife: results[0],
-                    skins: results2,
-                    lang: lang,
-                    subdir: config.SUBDIR
+                connection.query('SELECT * FROM wp_player_agents WHERE steamid = ?', [req.user.id], (err, results3, fields) => {
+                    res.render('index', {
+                        config: config,
+                        session: req.session,
+                        user: req.user,
+                        knife: results[0],
+                        skins: results2,
+                        agents: results3[0],
+                        lang: lang,
+                        subdir: config.SUBDIR
+                    })
                 })
-
             })
         })
     } else {
@@ -169,6 +176,30 @@ io.on('connection', socket => {
                 connection.query('INSERT INTO wp_player_skins (steamid, weapon_defindex, weapon_paint_id) VALUES (?, ?, ?)', [data.steamid, data.weaponid, data.paintid], (err, results, fields) => {
                     connection.query('SELECT * FROM wp_player_skins WHERE steamid = ?', [data.steamid], (err, results2, fields) => {
                         socket.emit('skin-changed', {weaponid: data.weaponid, paintid: data.paintid, newSkins: results2})
+                    })
+                })  
+            }
+        })
+    })
+
+    socket.on('change-agent', data => {   
+        connection.query('SELECT * FROM wp_player_agents WHERE steamid = ?', [data.steamid], (err, results, fields) => {
+            if (err) throw err;
+            if (results.length >= 1) {
+                connection.query(`UPDATE wp_player_agents SET agent_${data.team} = ? WHERE steamid = ?`, [data.model, data.steamid], (err, results, fields) => {
+                    if (err) throw err;
+                    connection.query('SELECT * FROM wp_player_agents WHERE steamid = ?', [data.steamid], (err, results2, fields) => {
+                        if (err) throw err;
+                        socket.emit('agent-changed', {agents: results2, currentAgent: data.model})
+                    })
+                    
+                })
+            } else {
+                connection.query(`INSERT INTO wp_player_agents (steamid, agent_${data.team}) VALUES (?, ?)`, [data.steamid, data.model], (err, results, fields) => {
+                    if (err) throw err;
+                    connection.query('SELECT * FROM wp_player_agents WHERE steamid = ?', [data.steamid], (err, results2, fields) => {
+                        if (err) throw err;
+                        socket.emit('agent-changed', {agents: results2, currentAgent: data.model})
                     })
                 })  
             }

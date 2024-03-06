@@ -11,7 +11,9 @@
         "rifles": "Rifles",
         "sniperRifles": "Sniper Rifles",
         "SMGs": "SMGs",
-        "heavy": "Heavy"
+        "heavy": "Heavy",
+        "ctAgents": "CT Agents",
+        "tAgents": "T Agents"
     },
     "selectCategory": "Selecione a Categoria",
     "needLogin": "Você precisa fazer login",

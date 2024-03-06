@@ -144,9 +144,19 @@
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.SMGs %></small></p>
                     </button>
     
-                    <button onclick="showShotguns()" id="sideBtnShotguns" class="btn btn-primary w-100 d-flex align-items-center">
+                    <button onclick="showShotguns()" id="sideBtnShotguns" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
                         <img src="icons/weapon_negev.svg" style="filter: invert();" width="35px">
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.heavy %></small></p>
+                    </button>
+
+                    <button onclick="showCTAgents()" id="sideBtnCTAgents" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
+                        <i class="fa-solid fa-person-rifle ms-2 me-2 my-auto"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.ctAgents %></small></p>
+                    </button>
+                    
+                    <button onclick="showTAgents()" id="sideBtnTAgents" class="btn btn-primary w-100 d-flex align-items-center">
+                        <i class="fa-solid fa-person-rifle ms-2 me-2 my-auto"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.tAgents %></small></p>
                     </button>
                 </div>
 
@@ -186,6 +196,11 @@
     let selectedKnife = {
         knife: undefined,
         steamid: undefined,
+    }
+    let selectedAgents = {
+        steamid: undefined,
+        agent_t: undefined,
+        agent_ct: undefined
     }
 </script>
 
@@ -230,6 +245,13 @@
         let selectedSkins = <%- JSON.stringify(skins) %>;
     </script>
 <% } %>
+
+<% if (typeof agents != 'undefined') { %>
+    <script>    
+        selectedAgents = <%- JSON.stringify(agents) %>;
+    </script>
+<% } %>
+
 
 <% if (typeof user != 'undefined') { %>
     <script>    

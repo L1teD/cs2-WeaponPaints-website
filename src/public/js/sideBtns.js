@@ -1,6 +1,6 @@
 const sideBtnHandler = (activeBtn) => {
     // remove active background
-    let allBtns = ['sideBtnKnives', 'sideBtnPistols', 'sideBtnRifles', 'sideBtnPPs', 'sideBtnShotguns']
+    let allBtns = ['sideBtnKnives', 'sideBtnPistols', 'sideBtnRifles', 'sideBtnPPs', 'sideBtnShotguns', 'sideBtnCTAgents', 'sideBtnTAgents']
     allBtns.forEach(element => {
         let elms = document.querySelectorAll(`[id='${element}']`);
  
@@ -12,6 +12,8 @@ const sideBtnHandler = (activeBtn) => {
     document.getElementById('sideBtnRifles').classList.remove('active-side')
     document.getElementById('sideBtnPPs').classList.remove('active-side')
     document.getElementById('sideBtnShotguns').classList.remove('active-side')
+    document.getElementById('sideBtnCTAgents').classList.remove('active-side')
+    document.getElementById('sideBtnTAgents').classList.remove('active-side')
     
     // add active background
     let elms = document.querySelectorAll(`[id='${activeBtn}']`);
@@ -108,6 +110,16 @@ const showP = () => {
     showDefaults('csgo_inventory_weapon_category_heavy')
 }
 
+const showCTAgents = () => {
+    sideBtnHandler('sideBtnCTAgents')
+    showAgents('ct')
+}
+
+const showTAgents = () => {
+    sideBtnHandler('sideBtnTAgents')
+    showAgents('t')
+}
+
 const changeKnife = (weaponid) => {
     socket.emit('change-knife', {weaponid: weaponid, steamUserId: user.id})
     document.getElementById(`loading-${weaponid}`).style.visibility = 'visible'
@@ -118,6 +130,13 @@ const changeSkin = (steamid, weaponid, paintid) => {
     socket.emit('change-skin', {steamid: steamid, weaponid: weaponid, paintid: paintid})
     document.getElementById(`loading-${weaponid}-${paintid}`).style.visibility = 'visible'
     document.getElementById(`loading-${weaponid}-${paintid}`).style.opacity = 1
+}
+
+const changeAgent = (steamid, model, team) => {
+    console.log(steamid, model, team)
+    socket.emit('change-agent', {steamid: steamid, model: model, team: team})
+    document.getElementById(`loading-${model}`).style.visibility = 'visible'
+    document.getElementById(`loading-${model}`).style.opacity = 1
 }
 
 const resetSkin = (weaponid, steamid) => {
@@ -167,6 +186,20 @@ socket.on('skin-changed', data => {
     document.getElementById(`weapon-${data.weaponid}-${data.paintid}`).classList.add('active-card')
     document.getElementById(`loading-${data.weaponid}-${data.paintid}`).style.opacity = 0
     document.getElementById(`loading-${data.weaponid}-${data.paintid}`).style.visibility = 'hidden'
+})
+
+socket.on('agent-changed', data => {
+    let elms = document.getElementsByClassName("weapon-card")
+ 
+    for(var i = 0; i < elms.length; i++) {
+        elms[i].classList.remove('active-card')
+    }
+
+    selectedAgents = data.agents[0]
+
+    document.getElementById(`agent-${data.currentAgent}`).classList.add('active-card')
+    document.getElementById(`loading-${data.currentAgent}`).style.opacity = 0
+    document.getElementById(`loading-${data.currentAgent}`).style.visibility = 'hidden'
 })
 
 const knifeSkins = (knifeType) => {

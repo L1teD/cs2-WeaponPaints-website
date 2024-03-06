@@ -129,3 +129,67 @@ const knivesTemplate = (knife, langObject, selectedKnife) => {
 
     document.getElementById('skinsContainer').appendChild(card)    
 }
+
+window.showAgents = (type) => {
+    let team = {
+        'ct': 3,
+        't': 2
+    }
+
+    // clear main container
+    document.getElementById('skinsContainer').innerHTML = ''
+
+    getJSON(`js/json/skins/agents.json`, (err, res) => {
+        res.forEach(element => {
+            console.log(element.team, team.type)
+            if (element.team == team[type]) {
+                let rarities = {
+                    "#b0c3d9": "common",
+                    "#5e98d9": "uncommon",
+                    "#4b69ff": "rare",
+                    "#8847ff": "mythical",
+                    "#d32ce6": "legendary",
+                    "#eb4b4b": "ancient",
+                    "#e4ae39": "contraband"
+                }
+
+                let bgColor = 'card-uncommon'
+                let phase  = ''
+                let active = ''
+                let steamid = user.id
+
+                // Make outline if this skin is selected
+                
+                if (selectedAgents.agent_t == element.model || selectedAgents.agent_ct == element.model) {
+                    active = 'active-card'
+                }
+                
+                let card = document.createElement('div')
+                card.classList.add('col-6', 'col-sm-4', 'col-md-3', 'p-2')
+
+                card.innerHTML = `
+                    <div onclick="changeAgent(\'${steamid}\', \'${element.model}\', \'${type}\')" id="agent-${element.model}" class="weapon-card rounded-3 d-flex flex-column ${active} ${bgColor} contrast-reset pb-2" data-type="skinCard" data-btn-type="">
+                    
+                        <div style="z-index: 3;" class="loading-card d-flex justify-content-center align-items-center w-100 h-100" id="loading-${element.model}">
+                            <div class="spinner-border spinner-border-xl" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+
+                        <img src="${element.image}" class="weapon-img mx-auto my-3" loading="lazy" width="181px" height="136px" alt=" ">
+                        
+                        <div class="d-flex align-items-center g-3">
+                        
+                        </div>
+                        
+                        <h5 class="weapon-skin-title text-roboto ms-3">
+                            ${element.agent_name}
+                        </h5>
+                    </div>
+                `
+
+                document.getElementById('skinsContainer').appendChild(card)
+            }
+        });
+    });
+}
