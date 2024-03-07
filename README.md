@@ -43,7 +43,7 @@ Screenshots taken from private version
         "DB_HOST": "host",
         "DB_USER": "username",
         "DB_PASS": "password",
-        "DB_DB": "table"
+        "DB_DB": "database name"
     },
     "HOST": "example.com or localhost/127.0.0.1",
     "SUBDIR": "/skinsExample/ or just /",
