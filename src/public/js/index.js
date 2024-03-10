@@ -3,20 +3,61 @@ const socket = io()
 let currentWeaponId = ''
 let currentPaintId = ''
 
-const getJSON = function(url, callback) {
+const getJsonRequest = function (url) {
+  return new Promise(function (resolve, reject) {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-        var status = xhr.status;
-        if (status === 200) {
-            callback(null, xhr.response);
-        } else {
-            callback(status, xhr.response);
-        }
+    xhr.open("GET", url, true);
+    xhr.responseType = "json";
+    xhr.onload = function () {
+      var status = xhr.status;
+      if (status === 200) {
+        resolve(xhr.response);
+      } else {
+        reject(status);
+      }
+    };
+    xhr.onerror = function () {
+      reject("Network error");
     };
     xhr.send();
-}
+  });
+};
+
+const getRequestFilename = function (url) {
+  return url.split("/").pop().split(".").shift();
+};
+
+const pendingRequests = {};
+
+const getJSON = function (url, callback) {
+  const propName = getRequestFilename(url);
+  const savedData = localStorage.getItem(propName);
+
+  if (savedData !== null) {
+    callback(null, JSON.parse(savedData));
+  } else {
+    if (!pendingRequests[url]) {
+      pendingRequests[url] = getJsonRequest(url)
+        .then(
+          (data) => {
+            localStorage.setItem(propName, JSON.stringify(data));
+            return data;
+          },
+          (error) => {
+            throw error;
+          }
+        )
+        .finally(() => {
+          delete pendingRequests[url];
+        });
+    }
+
+    pendingRequests[url].then(
+      (data) => callback(null, data),
+      (error) => callback(error, null)
+    );
+  }
+};
 
 function getKeyByValue(object, value) {
     return Object.keys(object).find(key => object[key] === value);
