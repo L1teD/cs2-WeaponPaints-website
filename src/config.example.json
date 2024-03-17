@@ -12,6 +12,7 @@
     "PROTOCOL": "https",
     "PORT": 27275,
     "STEAMAPIKEY": "Your Steam Web API Key",
+    "SESSION_SECRET": "Some random and secure string containing letters, numbers and special characters like !@#$%^&*(). Atleast 32 chars long.",
     "connect": {
         "show": true,
         "url": "steam://connect/[IP:PORT]?appid=730/[Server password if needed]"

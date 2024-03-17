@@ -15,6 +15,7 @@ const lang = require(`./lang/${config.lang}.json`)
 const app = new express()
 
 const PORT = config.PORT
+const DBTables = ["wp_player_agents", "wp_player_gloves", "wp_player_knife", "wp_player_music","wp_player_skins"]
 
 let returnURL = `${config.PROTOCOL}://${config.HOST}${config.SUBDIR}api/auth/steam/return`
 let realm = `${config.PROTOCOL}://${config.HOST}${config.SUBDIR}`
@@ -37,7 +38,14 @@ connection.connect(function(err){
         return console.error("Error: " + err.message);
     }
     else{
-        console.log("Connected to MySQL!");
+        console.log("Connected to MySQL!\nRunning table check...");
+        connection.query(`SELECT COUNT(table_name) AS table_count FROM information_schema.tables WHERE table_schema = ? AND table_name IN (?)`, [config.DB.DB_DB, DBTables], (err, results, fields) => {
+            if (results[0].table_count < DBTables.length) {
+                throw new Error("Check failed! - Needed database tables are missing!")
+            } else {
+                console.log("Check OK! - All tables are present!")
+            }
+        })
     }
 });
 
@@ -73,7 +81,7 @@ passport.use(new SteamStrategy({
 ));
 app.use(session({
     store: new FileStore(fileStoreOptions),
-    secret: 'Whatever_You_Want',
+    secret: config.SESSION_SECRET,
     saveUninitialized: true,
     resave: false,
     cookie: {
