@@ -41,7 +41,7 @@ connection.connect(function(err){
         console.log("Connected to MySQL!\nRunning table check...");
         connection.query(`SELECT COUNT(table_name) AS table_count FROM information_schema.tables WHERE table_schema = ? AND table_name IN (?)`, [config.DB.DB_DB, DBTables], (err, results, fields) => {
             if (results[0].table_count < DBTables.length) {
-                throw new Error("Needed database tables are missing!")
+                throw new Error("Check failed! - Needed database tables are missing!")
             } else {
                 console.log("Check OK! - All tables are present!")
             }

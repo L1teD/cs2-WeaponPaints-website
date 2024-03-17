@@ -49,12 +49,16 @@ Screenshots taken from private version
     "SUBDIR": "/skinsExample/ or just /",
     "PORT": 27275,
     "STEAMAPIKEY": "Your Steam Web API Key",
+    "SESSION_SECRET": "Some random and secure string containing letters, numbers and special characters like !@#$%^&*(). Atleast 32 chars long.",
     "connect": {
         "show": true,
         "url": "steam://connect/[IP:PORT]?appid=730/[Server password if needed]"
     }
 }
 ```
+
+- Make sure the database that you specified in the config is the same as in the WeaponPaints plugin. Otherwise the needed tables won't exist and the website won't work.
+
 - Supported languages **`ru, en, pt-BR`**
 
 - And then

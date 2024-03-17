@@ -15,6 +15,36 @@
         "ctAgents": "Агенты T",
         "tAgents": "Агенты CT"
     },
+    "modal": {
+        "title": "Float and pattern",
+        "float": "Float",
+
+        "patternButtons": [
+            {
+                "shortName": "FN",
+                "longName": "Factory New"
+            },
+            {
+                "shortName": "MW",
+                "longName": "Minimal Wear"
+            },
+            {
+                "shortName": "FT",
+                "longName": "Field-Tested"
+            },
+            {
+                "shortName": "WW",
+                "longName": "Well-Worn"
+            },
+            {
+                "shortName": "BS",
+                "longName": "Battle-Scarred"
+            }
+
+        ],
+        "pattern": "Pattern"
+
+    },
     "selectCategory": "Выберите категорию",
     "needLogin": "Нужно войти",
     "viaSteam": "через Steam",
