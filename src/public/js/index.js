@@ -1,3 +1,5 @@
+const socket = io()
+
 let currentWeaponId = ''
 let currentPaintId = ''
 
