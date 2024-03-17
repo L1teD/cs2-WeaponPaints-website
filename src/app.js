@@ -73,7 +73,7 @@ passport.use(new SteamStrategy({
 ));
 app.use(session({
     store: new FileStore(fileStoreOptions),
-    secret: 'Whatever_You_Want',
+    secret: config.SESSION_SECRET,
     saveUninitialized: true,
     resave: false,
     cookie: {

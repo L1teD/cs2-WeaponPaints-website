@@ -27,27 +27,27 @@
         <div class="modal-dialog">
             <div class="modal-content" style="background-color: transparent !important;">
                 <div class="modal-header bg-nav text-light border-dark">
-                    <h5 class="modal-title" id="patternFloatLabel">Float and pattern</h5>
+                    <h5 class="modal-title" id="patternFloatLabel"><%= lang.modal.title %></h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body bg-color d-flex flex-column text-light">
                     <img id="modalImg" class="mx-auto" src="https://raw.githubusercontent.com/ByMykel/CSGO-API/efe25483a04a03414dea9c61d4b0e958a373cdfd/public/images/econ/default_generated/weapon_knife_gut_aa_fade_light.png" width="40%">
                     <h5 class="mx-auto"><span id="modalWeapon">Gut knife</span> | <span id="modalPaint">Fade</span></h5>
                     <div class="form-outline mx-auto mb-2">
-                        <label class="form-label m-0" for="float">Float</label>
+                        <label class="form-label m-0" for="float"><%= lang.modal.float %></label>
                         <input type="range" id="floatSlider" class="slider" min="0" max="1" step="0.000001" value="0.000001" data-bs-theme="dark">
                         <input type="number" id="float" class="form-control" min="0" max="1" step="0.000001" value="0.000001" data-bs-theme="dark">
-                        <p id="floatText" class="text-center m-0">Factory New</p>
+                        <p id="floatText" class="text-center m-0"><%= lang.modal.patternButtons[0].longName %></p>
                     </div>
                     <div class="btn-group mx-auto mb-2">
-                        <button onclick="setFloat(0.0001)" class="btn btn-primary floatButton">FN</button>
-                        <button onclick="setFloat(0.07)" class="btn btn-primary floatButton">MW</button>
-                        <button onclick="setFloat(0.15)" class="btn btn-primary floatButton">FT</button>
-                        <button onclick="setFloat(0.38)" class="btn btn-primary floatButton">WW</button>
-                        <button onclick="setFloat(0.45)" class="btn btn-primary floatButton">BS</button>
+                        <button onclick="setFloat(0.0001)" class="btn btn-primary floatButton"><%= lang.modal.patternButtons[0].shortName %></button>
+                        <button onclick="setFloat(0.07)" class="btn btn-primary floatButton"><%= lang.modal.patternButtons[1].shortName %></button>
+                        <button onclick="setFloat(0.15)" class="btn btn-primary floatButton"><%= lang.modal.patternButtons[2].shortName %></button>
+                        <button onclick="setFloat(0.38)" class="btn btn-primary floatButton"><%= lang.modal.patternButtons[3].shortName %></button>
+                        <button onclick="setFloat(0.45)" class="btn btn-primary floatButton"><%= lang.modal.patternButtons[4].shortName %></button>
                     </div>
                     <div class="form-outline mx-auto mt-3">
-                        <label class="form-label m-0" for="pattern">Pattern</label>
+                        <label class="form-label m-0" for="pattern"><%= lang.modal.pattern %></label>
                         <input type="number" id="pattern" class="form-control" placeholder="Pattern" value="0" data-bs-theme="dark">
                     </div>
                 </div>
@@ -205,18 +205,18 @@
 </script>
 
 <script>
-    function updateFloatText(value) {
+function updateFloatText(value) {
     let text;
     if (value >= 0 && value < 0.07) {
-        text = "Factory New";
+        text = langObject.modal.patternButtons[0].longName;
     } else if (value >= 0.07 && value < 0.15) {
-        text = "Minimal Wear";
+        text = langObject.modal.patternButtons[1].longName;
     } else if (value >= 0.15 && value < 0.38) {
-        text = "Field-Tested";
+        text = langObject.modal.patternButtons[2].longName;
     } else if (value >= 0.38 && value < 0.45) {
-        text = "Well-Worn";
+        text = langObject.modal.patternButtons[3].longName;
     } else if (value >= 0.45 && value <= 1) {
-        text = "Battle-Scarred";
+        text = langObject.modal.patternButtons[4].longName;
     }
     document.getElementById('floatText').textContent = text;
 }
