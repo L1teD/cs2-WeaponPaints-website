@@ -154,7 +154,7 @@ if (config.SUBDIR != '/') {
 
 // start server
 const server = app.listen(config.PORT, config.INTERNAL_HOST, () => {
-    console.log(`App is running on http://localhost:${config.PORT}`)
+    console.log(`App is running on http://${(config.INTERNAL_HOST === undefined)? "localhost": config.INTERNAL_HOST}:${config.PORT}`)
 })
 
 // initialize socket.io
