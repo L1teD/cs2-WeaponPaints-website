@@ -48,6 +48,7 @@ Screenshots taken from private version
     "HOST": "example.com or localhost/127.0.0.1",
     "SUBDIR": "/skinsExample/ or just /",
     "PORT": 27275,
+    "INTERNAL_HOST": "127.0.0.1 [Or if you know what are you doing and need it. Use 0.0.0.0 for all interfaces.]",
     "STEAMAPIKEY": "Your Steam Web API Key",
     "SESSION_SECRET": "Some random and secure string containing letters, numbers and special characters like !@#$%^&*(). Atleast 32 chars long.",
     "connect": {
