@@ -48,6 +48,7 @@ Screenshots taken from private version
     "HOST": "example.com or localhost/127.0.0.1",
     "SUBDIR": "/skinsExample/ or just /",
     "PORT": 27275,
+    "INTERNAL_HOST": "127.0.0.1 [For advanced use cases and users only. Read notes.]",
     "STEAMAPIKEY": "Your Steam Web API Key",
     "SESSION_SECRET": "Some random and secure string containing letters, numbers and special characters like !@#$%^&*(). Atleast 32 chars long.",
     "connect": {
@@ -58,6 +59,8 @@ Screenshots taken from private version
 ```
 
 - Make sure the database that you specified in the config is the same as in the WeaponPaints plugin. Otherwise the needed tables won't exist and the website won't work.
+
+- If you are running in docker or running some special server setup. You might encounter issues with the internal expressjs server. As its default running on 127.0.0.1. If you need to change this. You can do so via config option **`INTERNAL_HOST`** and set it to whatever interface you need. For most advanced use cases like reverse proxy 0.0.0.0 can be used.
 
 - Supported languages **`ru, en, pt-BR`**
 

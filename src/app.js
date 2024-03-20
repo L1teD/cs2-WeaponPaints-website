@@ -14,7 +14,6 @@ const lang = require(`./lang/${config.lang}.json`)
 
 const app = new express()
 
-const PORT = config.PORT
 const DBTables = ["wp_player_agents", "wp_player_gloves", "wp_player_knife", "wp_player_music","wp_player_skins"]
 
 let returnURL = `${config.PROTOCOL}://${config.HOST}${config.SUBDIR}api/auth/steam/return`
@@ -39,11 +38,19 @@ connection.connect(function(err){
     }
     else{
         console.log("Connected to MySQL!\nRunning table check...");
-        connection.query(`SELECT COUNT(table_name) AS table_count FROM information_schema.tables WHERE table_schema = ? AND table_name IN (?)`, [config.DB.DB_DB, DBTables], (err, results, fields) => {
-            if (results[0].table_count < DBTables.length) {
-                throw new Error("Check failed! - Needed database tables are missing!")
-            } else {
+        connection.query(`SELECT table_name FROM information_schema.tables WHERE table_schema = ? AND table_name IN (?)`, [config.DB.DB_DB, DBTables], (err, results, fields) => {
+            let tables = results.map(result => result.table_name);
+            let missingTables = [];
+
+            if (tables.length === 0) throw new Error("Check failed! - No tables found!")
+            
+            DBTables.forEach(StaticTable => {
+                if (!tables.includes(StaticTable)) missingTables.push(StaticTable); 
+            });
+            if (missingTables.length === 0) {
                 console.log("Check OK! - All tables are present!")
+            } else {
+                throw new Error("Check failed! - Needed database tables are missing!"+missingTables.map(missingTable => `\nMissing Table: ${missingTable}`))
             }
         })
     }
@@ -146,8 +153,8 @@ if (config.SUBDIR != '/') {
 }
 
 // start server
-const server = app.listen(PORT, () => {
-    console.log(`App is running on http://localhost:${PORT}`)
+const server = app.listen(config.PORT, config.INTERNAL_HOST, () => {
+    console.log(`App is running on http://${(config.INTERNAL_HOST === undefined)? "localhost": config.INTERNAL_HOST}:${config.PORT}`)
 })
 
 // initialize socket.io
