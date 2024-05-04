@@ -46,6 +46,7 @@ Screenshots taken from private version
         "DB_DB": "database name"
     },
     "HOST": "example.com or localhost/127.0.0.1",
+    "PROTOCOL": "https/http",
     "SUBDIR": "/skinsExample/ or just /",
     "PORT": 27275,
     "INTERNAL_HOST": "127.0.0.1 [For advanced use cases and users only. Read notes.]",
