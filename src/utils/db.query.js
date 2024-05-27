@@ -68,7 +68,6 @@ async function getLoggedInUserInfo(req) {
         gloves, 
         agents,
         music,
-        userinfo
     ] = await Promise.all(
         [
             query(`SELECT * FROM wp_player_knife WHERE steamid = ${req.user.id}`),
@@ -76,17 +75,13 @@ async function getLoggedInUserInfo(req) {
             query(`SELECT * FROM wp_player_gloves WHERE steamid = ${req.user.id}`),
             query(`SELECT * FROM wp_player_agents WHERE steamid = ${req.user.id}`),
             query(`SELECT * FROM wp_player_music WHERE steamid = ${req.user.id}`),
-            query(`SELECT * FROM wps_users WHERE steamid = ${req.user.id}`),
         ]
     )
     
     knife = knife[0]
     gloves = gloves[0]
     agents = agents[0]
-    userinfo = userinfo[0]
     music = music[0]
-
-    const itemIdKey = 10000 + userinfo.id
 
     return {
         config: config,
@@ -96,8 +91,6 @@ async function getLoggedInUserInfo(req) {
         agents: agents,
         music: music,
         lang: lang,
-        userinfo: userinfo,
-        itemIdKey: itemIdKey,
         session: session,
         user: req.user
     }
@@ -112,7 +105,6 @@ async function getNotLoggedInUserInfo(req) {
         session: session,
         user: req.user,
         lang: lang,
-        userinfo: {},
     }
 }
 
