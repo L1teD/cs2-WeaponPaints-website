@@ -4,7 +4,7 @@
         "weapon_name": "weapon_bizon",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bizon.png",
-        "paint_name": "PP-Bizon",
+        "paint_name": "ПП-19 «Бизон»",
         "weapon_type": "csgo_inventory_weapon_category_smgs"
     },
     {
@@ -68,7 +68,7 @@
         "weapon_name": "weapon_galilar",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_galilar.png",
-        "paint_name": "Galil AR",
+        "paint_name": "Автомат «Галиль»",
         "weapon_type": "csgo_inventory_weapon_category_rifles"
     },
     {
@@ -148,7 +148,7 @@
         "weapon_name": "weapon_sawedoff",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_sawedoff.png",
-        "paint_name": "Cano Curto",
+        "paint_name": "Sawed-Off",
         "weapon_type": "csgo_inventory_weapon_category_heavy"
     },
     {
@@ -172,7 +172,7 @@
         "weapon_name": "weapon_negev",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_negev.png",
-        "paint_name": "Negev",
+        "paint_name": "Негев",
         "weapon_type": "csgo_inventory_weapon_category_heavy"
     },
     {
@@ -188,8 +188,16 @@
         "weapon_name": "weapon_elite",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite.png",
-        "paint_name": "Berettas Duplas",
+        "paint_name": "Dual Berettas",
         "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "31",
+        "weapon_name": "weapon_taser",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/a/aa/CS2Taserhud.png",
+        "paint_name": "Zeus X27",
+        "weapon_type": "csgo_inventory_weapon_category_utility"
     },
     {
         "weapon_defindex": "3",
@@ -268,15 +276,7 @@
         "weapon_name": "weapon_revolver",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_revolver.png",
-        "paint_name": "Revólver R8",
-        "weapon_type": "csgo_inventory_weapon_category_pistols"
-    },
-    {
-    "weapon_defindex": "31",
-        "weapon_name": "weapon_taser",
-        "paint": "0",
-        "image": "https://static.wikia.nocookie.net/cswikia/images/a/aa/CS2Taserhud.png",
-        "paint_name": "Zeus X27",
+        "paint_name": "Револьвер R8",
         "weapon_type": "csgo_inventory_weapon_category_pistols"
     },
     {
@@ -284,7 +284,7 @@
         "weapon_name": "weapon_bayonet",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet.png",
-        "paint_name": "Baioneta",
+        "paint_name": "Штык-нож",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -292,7 +292,7 @@
         "weapon_name": "weapon_knife_css",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css.png",
-        "paint_name": "Faca Clássica",
+        "paint_name": "Классический нож",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -300,7 +300,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip.png",
-        "paint_name": "Canivete",
+        "paint_name": "Складной нож",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -308,7 +308,7 @@
         "weapon_name": "weapon_knife_gut",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut.png",
-        "paint_name": "Faca Gut Hook",
+        "paint_name": "Нож с лезвием-крюком",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -316,7 +316,7 @@
         "weapon_name": "weapon_knife_karambit",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit.png",
-        "paint_name": "Karambit",
+        "paint_name": "Керамбит",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -324,7 +324,7 @@
         "weapon_name": "weapon_knife_m9_bayonet",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet.png",
-        "paint_name": "Baioneta M9",
+        "paint_name": "Штык-нож M9",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -332,7 +332,7 @@
         "weapon_name": "weapon_knife_tactical",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical.png",
-        "paint_name": "Faca do Caçador",
+        "paint_name": "Охотничий нож",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -340,7 +340,7 @@
         "weapon_name": "weapon_knife_falchion",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion.png",
-        "paint_name": "Canivete Falchion",
+        "paint_name": "Фальшион",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -348,7 +348,7 @@
         "weapon_name": "weapon_knife_survival_bowie",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie.png",
-        "paint_name": "Faca Bowie",
+        "paint_name": "Нож Боуи",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -356,7 +356,7 @@
         "weapon_name": "weapon_knife_butterfly",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly.png",
-        "paint_name": "Canivete Borboleta",
+        "paint_name": "Нож-бабочка",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -364,7 +364,7 @@
         "weapon_name": "weapon_knife_push",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push.png",
-        "paint_name": "Adagas Sombrias",
+        "paint_name": "Тычковые ножи",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -372,7 +372,7 @@
         "weapon_name": "weapon_knife_cord",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord.png",
-        "paint_name": "Faca de Cordame",
+        "paint_name": "Паракорд-нож",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -380,7 +380,7 @@
         "weapon_name": "weapon_knife_canis",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis.png",
-        "paint_name": "Faca de Sobrevivência",
+        "paint_name": "Нож выживания",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -388,7 +388,7 @@
         "weapon_name": "weapon_knife_ursus",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus.png",
-        "paint_name": "Faca Ursus",
+        "paint_name": "Медвежий нож",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -396,7 +396,7 @@
         "weapon_name": "weapon_knife_gypsy_jackknife",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife.png",
-        "paint_name": "Faca Navaja",
+        "paint_name": "Наваха",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -404,7 +404,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor.png",
-        "paint_name": "Faca Nômade",
+        "paint_name": "Нож «Бродяга»",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -412,7 +412,7 @@
         "weapon_name": "weapon_knife_stiletto",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto.png",
-        "paint_name": "Faca Stiletto",
+        "paint_name": "Стилет",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -420,7 +420,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker.png",
-        "paint_name": "Faca Talon",
+        "paint_name": "Коготь",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -428,8 +428,72 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton.png",
-        "paint_name": "Faca Esqueleto",
+        "paint_name": "Скелетный нож",
         "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "5027",
+        "weapon_name": "studded_bloodhound_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/f/f6/Inventory_icon_studded_bloodhound_gloves.png",
+        "paint_name": "Bloodhound gloves",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5030",
+        "weapon_name": "sporty_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/6/65/Inventory_icon_sporty_gloves.png",
+        "paint_name": "Sport gloves",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5031",
+        "weapon_name": "slick_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/6/67/Inventory_icon_slick_gloves.png",
+        "paint_name": "Driver gloves",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5032",
+        "weapon_name": "leather_handwraps",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/0/06/Inventory_icon_leather_handwraps.png",
+        "paint_name": "Hand wraps",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5033",
+        "weapon_name": "motorcycle_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/5/53/Inventory_icon_motorcycle_gloves.png",
+        "paint_name": "Motorcycle gloves",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5034",
+        "weapon_name": "specialist_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/b/b1/Inventory_icon_specialist_gloves.png",
+        "paint_name": "Specialist gloves",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5035",
+        "weapon_name": "studded_hydra_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/f/f6/Inventory_icon_studded_bloodhound_gloves.png",
+        "paint_name": "Hydra gloves",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "4725",
+        "weapon_name": "studded_brokenfang_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/f/f6/Inventory_icon_studded_bloodhound_gloves.png",
+        "paint_name": "Hydra gloves",
+        "weapon_type": "sfui_invpanel_filter_gloves"
     },
     {
         "weapon_defindex": "526",

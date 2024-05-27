@@ -145,6 +145,7 @@ const weaponIds = {
     "weapon_knife_widowmaker": 523,
     "weapon_knife_skeleton": 525,
     "weapon_knife_kukri": 526,
+    "studded_brokenfang_gloves": 4725,
     "studded_bloodhound_gloves": 5027,
     "t_gloves": 5028,
     "ct_gloves": 5029,

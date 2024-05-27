@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(125,125,125,0.1);
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(125,125,125,0.3);
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: #323232;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-bottom: 10px;
+}
+  
+.slider:hover {
+    opacity: 1;
+}
+  
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #ffc107;
+    cursor: pointer;
+}
+  
+.slider::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+      border-radius: 50%;
+    background-image: url('https://img.icons8.com/material-outlined/344/average-2.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.form-control {
+    background-color: #0e0e0e !important;
+}
+
+.bg-color {
+    background-color: #b8b8c4; 
+}
+
+.bg-nav {
+    background-color: #d2d3db !important;
+}
+
+.btn-primary {
+    background-color: #e4e5f1 !important;
+    border: 1px solid #484b6a !important;
+}
+
+.btn-primary:hover {
+    background-color: #d2d3db !important;
+}
+
+.btn-primary:active {
+    background-color: #cbcde2 !important;
+}
+
+.active-side {
+    background-color: #cbcde2 !important;
+    border: 1px solid #484b6a !important;
+}
+
+.weapon-img {
+    position: relative;
+    width: 70%;
+}
+
+.weapon_card {
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .3s;
+}
+
+.weapon-skin-title {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.sideBtnI {
+    filter: invert();
+}
+
+:root {
+    --card-op-1: 0.4;
+    --card-op-2: 0.2;
+    --card-op-3: 0.4;
+    --card-common: 129, 140, 154;
+    --card-middle-color: 100, 100, 100;
+}
+
+.card-common {
+    border-color: rgb(129,140,154) !important;
+    color: rgb(129,140,154);
+    background: linear-gradient(135deg, rgba(var(--card-common),var(--card-op-1)), rgba(var(--card-middle-color),var(--card-op-2)), rgba(129,140,154, var(--card-op-3)));
+}
+
+
+.card-uncommon {
+    border-color: rgb(94,152,217) !important;
+    color: rgb(94,152,217);
+    background: linear-gradient(135deg, rgba(94,152,217,var(--card-op-1)), rgba(var(--card-middle-color),var(--card-op-2)), rgba(94,152,217, var(--card-op-3)));
+}
+
+.card-rare {
+    border-color: rgb(75,105,205) !important;
+    color: rgb(75,105,205);
+    background: linear-gradient(135deg, rgba(75,105,205,var(--card-op-1)), rgba(var(--card-middle-color),var(--card-op-2)), rgba(75,105,205, var(--card-op-3)));
+}
+
+.card-mythical {
+    border-color: rgb(136,71,255)!important;
+    color: rgb(136,71,255);
+    background: linear-gradient(135deg, rgba(136,71,255,var(--card-op-1)), rgba(var(--card-middle-color),var(--card-op-2)), rgba(136,71,255, var(--card-op-3)));
+}
+
+.card-legendary {
+    border-color: rgb(211,44,230) !important;
+    color: rgb(211,44,230);
+    background: linear-gradient(135deg, rgba(211,44,230,var(--card-op-1)), rgba(var(--card-middle-color),var(--card-op-2)), rgba(211,44,230, var(--card-op-3)));
+}
+
+.card-ancient {
+    border-color: rgb(235,75,75) !important;
+    color: rgb(235,75,75);
+    background: linear-gradient(135deg, rgba(235,75,75,var(--card-op-1)), rgba(var(--card-middle-color),var(--card-op-2)), rgba(235,75,75, var(--card-op-3)));
+}
+
+.card-gold {
+    border-color: rgb(202, 171, 5) !important;
+    color: rgb(202,171,5);
+    background: linear-gradient(135deg, rgba(202,171,5,var(--card-op-1)), rgba(var(--card-middle-color),var(--card-op-2)), rgba(202,171,5, var(--card-op-3)));
+}
+
+.card-contraband {
+    border-color: rgb(228,174,57) !important;
+    color: rgb(228,174,57);
+    background: linear-gradient(135deg, rgba(228,174,57,var(--card-op-1)), rgba(var(--card-middle-color),var(--card-op-2)), rgba(228,174,57, var(--card-op-3)));
+}
+
+.weapon-card {
+    position: relative;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1), .3s;
+}
+
+.weapon-card:hover {
+    backdrop-filter: contrast(120%);
+}
+
+.active-card {
+    margin: -2px;
+    border: 2px solid rgba(228,174,57);
+}
+
+.active-card > .settings {
+    visibility: visible;
+    opacity: 1;
+}
+
+.profile-bg {
+    background: #e4e5f1;
+    border: 1px solid #363636;
+}
+
+li {
+    list-style-type: none;
+}
+
+.parent-weapon-card {
+    position: relative;
+}
+
+.settings {
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    right: 0;
+    margin: 8px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .3s;
+    border: none;
+}
+
+.revert {
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    right: 0;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .3s;
+    border: none;
+    background-color: transparent;
+}
+
+.loading-card {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .3s;
+    backdrop-filter: blur(15px);
+}
+
+.settings:hover {
+    background-color: rgb(179, 179, 179) !important;
+}
+
+.bg-opacity {
+    background-color: rgba(0,0,0,0.3);
+}
+
+.text-roboto {
+    font-family: 'Roboto Condensed', sans-serif;
+}

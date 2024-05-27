@@ -1,23 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles/default.css">
     <title>SkinChanger</title>
 
     <link rel="stylesheet" href="css/fontawesome/all.min.css">
 
     <link rel="stylesheet" href="css/bootstrap/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script src="<%= subdir %>js/bootstrap/bootstrap.bundle.min.js"></script>
-    
-    <script src="socket.io/socket.io.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/templates.js"></script>
-    <script src="js/sideBtns.js"></script>
     
 </head>
 <body class="bg-color">
@@ -64,13 +57,13 @@
                 <a class="navbar-brand" href="#"><%= config.name %></a>      
                 <div class="nav-item d-flex align-items-center">
                     <% if (config.connect.show) { %>
-                        <a href="<%= config.connect.url %>" class="btn btn-outline-warning rounded-pill d-none d-md-block"><small><%= lang.connect %></small></a>
+                        <a href="steam://connect/<%= config.connect.serverIp %>:<%= config.connect.serverPort %>?appid=730/<%= config.connect.serverPassword %>" class="btn btn-outline-warning rounded-pill d-none d-md-block"><small><%= lang.connect %></small></a>
                     <% } %>
                 </div>
             </div>
             <div class="nav-item d-flex align-items-center">
                 <% if (typeof user == 'undefined') { %>
-                    <a class="btn btn-primary my-2 my-sm-0 text-warning" href="<%= subdir %>api/auth/steam"><%= lang.navLogin %> <i class="bi bi-steam text-secondary ms-1"></i></a>
+                    <a class="btn btn-primary my-2 my-sm-0 text-warning" href="api/auth/steam"><%= lang.navLogin %> <i class="bi bi-steam text-secondary ms-1"></i></a>
                 <% } else { %>
                     <div class="nav-item dropdown" data-bs-theme="dark">
                         <div class="profile-bg rounded p-1 px-2 d-flex align-items-center dropdown-toggle" role="button" data-bs-toggle="dropdown">
@@ -79,8 +72,8 @@
                         </div>
                             <ul class="dropdown-menu">
                                 
-                                <a class="dropdown-item text-danger" href="<%= subdir %>api/logout"><%= lang.navLogout %></a>
-                                <a class="dropdown-item text-danger" href="<%= subdir %>api/delete"><%= lang.navDelete %></a>
+                                <a class="dropdown-item text-danger" href="api/logout"><%= lang.navLogout %></a>
+                                <a class="dropdown-item text-danger" href="api/delete"><%= lang.navDelete %></a>
                                 <a class="dropdown-item text-warning d-block d-md-none" href="<%= config.connect.url %>"><small><%= lang.connect %></small></a>
                             </ul>
                        
@@ -90,7 +83,7 @@
     </nav>
 
     <% if (typeof user == 'undefined') { %>
-        <h5 class="text-center mt-4 text-white"><%= lang.needLogin %> <a class="text-warning" href="<%= subdir %>api/auth/steam"><%= lang.viaSteam %></a></h5>
+        <h5 class="text-center mt-4 text-white"><%= lang.needLogin %> <a class="text-warning" href="api/auth/steam"><%= lang.viaSteam %></a></h5>
     <% } else { %>
 
     <div class="container text-light mt-3">
@@ -125,38 +118,54 @@
 
                 <div class="bg-nav p-0 p-2 rounded">
                     <button onclick="showKnives()" id="sideBtnKnives" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <img src="icons/weapon_knife_karambit.svg" style="filter: invert();" width="35px">
+                        <img src="icons/weapon_knife_karambit.svg" class="sideBtnImg" width="35px">
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.knives %></small></p>
                     </button>
 
+                    <button onclick="showGloves()" id="sideBtnGloves" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
+                        <i class="fa-solid fa-mitten ms-2 me-2 my-auto sideBtnI"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.gloves %></small></p>
+                    </button>
+
+
                     <button onclick="showPistols()" id="sideBtnPistols" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <img src="icons/weapon_deagle.svg" style="filter: invert();" width="35px">
+                        <img src="icons/weapon_deagle.svg" class="sideBtnImg" width="35px">
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.pistols %></small></p>
                     </button>
     
                     <button onclick="showRifles()" id="sideBtnRifles" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <img src="icons/weapon_ak47.svg" style="filter: invert();" width="35px">
+                        <img src="icons/weapon_ak47.svg" class="sideBtnImg" width="35px">
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.rifles %></small></p>
                     </button>
     
                     <button onclick="showPPs()" id="sideBtnPPs" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <img src="icons/weapon_mac10.svg" style="filter: invert();" width="35px">
+                        <img src="icons/weapon_mac10.svg" class="sideBtnImg" width="35px">
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.SMGs %></small></p>
                     </button>
     
                     <button onclick="showShotguns()" id="sideBtnShotguns" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <img src="icons/weapon_negev.svg" style="filter: invert();" width="35px">
+                        <img src="icons/weapon_negev.svg" class="sideBtnImg" width="35px">
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.heavy %></small></p>
                     </button>
 
+                    <button onclick="showUtility()" id="sideBtnUtility" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
+                        <i class="fa-solid fa-bomb ms-2 me-2 my-auto sideBtnI"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.utility %></small></p>
+                    </button>
+
                     <button onclick="showCTAgents()" id="sideBtnCTAgents" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
-                        <i class="fa-solid fa-person-rifle ms-2 me-2 my-auto"></i>
+                        <i class="fa-solid fa-person-rifle ms-2 me-2 my-auto sideBtnI"></i>
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.ctAgents %></small></p>
                     </button>
                     
-                    <button onclick="showTAgents()" id="sideBtnTAgents" class="btn btn-primary w-100 d-flex align-items-center">
-                        <i class="fa-solid fa-person-rifle ms-2 me-2 my-auto"></i>
+                    <button onclick="showTAgents()" id="sideBtnTAgents" class="btn btn-primary w-100 d-flex mb-2 align-items-center">
+                        <i class="fa-solid fa-person-rifle ms-2 me-2 my-auto sideBtnI"></i>
                         <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.tAgents %></small></p>
+                    </button>
+
+                    <button onclick="showMusic()" id="sideBtnMusic" class="btn btn-primary w-100 d-flex align-items-center">
+                        <i class="fa-solid fa-music ms-2 me-2 my-auto sideBtnI"></i>
+                        <p class="p-0 m-0 mx-auto"><small><%= lang.sideMenu.musicKits %></small></p>
                     </button>
                 </div>
 
@@ -187,7 +196,14 @@
 
 </body>
 
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
 
+<script src="socket.io/socket.io.js"></script>
+<script src="js/index.js"></script>
+
+<script type="module" src="js/templates.js"></script>
+<script type="module" src="js/sideBtns.js"></script>
 
 
 <script>
@@ -197,10 +213,18 @@
         knife: undefined,
         steamid: undefined,
     }
-    let selectedAgents = {
+    let selectedGloves = {
+        weapon_defindex: undefined,
         steamid: undefined,
+    }
+    let selectedAgents = {
+        agent_ct: undefined,
         agent_t: undefined,
-        agent_ct: undefined
+        steamid: undefined,
+    }
+    let selectedMusic = {
+        music_id: undefined,
+        steamid: undefined,
     }
 </script>
 
@@ -246,18 +270,30 @@ function updateFloatText(value) {
     </script>
 <% } %>
 
+<% if (typeof gloves != 'undefined') { %>
+    <script>
+        selectedGloves = <%- JSON.stringify(gloves) %>;
+    </script>
+<% } %>
+
 <% if (typeof agents != 'undefined') { %>
-    <script>    
+    <script>
         selectedAgents = <%- JSON.stringify(agents) %>;
     </script>
 <% } %>
 
+<% if (typeof music != 'undefined') { %>
+    <script>
+        selectedMusic = <%- JSON.stringify(music) %>;
+    </script>
+<% } %>
 
 <% if (typeof user != 'undefined') { %>
     <script>    
         let user = <%- JSON.stringify(user) %>;
     </script>
 <% } %>
+
 
 <script>
     function setFloat(value) {

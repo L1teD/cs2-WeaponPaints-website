@@ -1,27 +1,48 @@
 {
   "name": "WeaponPaints",
-  "version": "1.6.4",
+  "version": "2.0.0",
   "description": "Website for cs2-WeaponPaints plugin",
-  "main": "src/app.js",
+  "main": ".",
   "scripts": {
-    "dev": "nodemon --ignore ./sessions/ .",
+    "dev": "nodemon --ignore ./sessions/ --ignore ./src/public/ .",
     "start": "startWindows.bat",
-    "startLinux": "nodemon -x 'node . || touch src/app.js'"
+    "startLinux": "src/app",
+    "build": "node builder.js",
+    "updateApi": "node updateApi.js"
   },
   "author": "L1teD",
   "license": "LGPL-3.0-or-later",
+  "pkg": {
+    "scripts": "require.js"
+  },
   "dependencies": {
+    "-": "^0.0.1",
+    "axios": "^1.6.7",
+    "buffer": "^6.0.3",
+    "crypto": "^1.0.1",
     "ejs": "^3.1.9",
-    "express": "^4.18.2",
+    "express": "^4.18.3",
+    "express-mysql-session": "^3.0.1",
     "express-session": "^1.17.3",
-    "mysql": "^2.18.1",
-    "passport": "^0.7.0",
+    "gamedig": "^5.0.0-beta.2",
+    "log4js": "^6.9.1",
+    "macaddress": "^0.5.3",
+    "mysql2": "^3.9.1",
+    "node-machine-id": "^1.1.12",
+    "passport": "0.7.0",
     "passport-steam": "^1.0.18",
+    "request": "^2.88.2",
     "session-file-store": "^1.5.0",
     "socket.io": "^4.7.2"
   },
   "devDependencies": {
+    "big-json": "^3.2.0",
     "get-json": "^1.0.1",
-    "nodemon": "^3.0.1"
+    "javascript-obfuscator": "^4.1.0",
+    "nexe": "^4.0.0-rc.4",
+    "node-archiver": "^0.3.0",
+    "nodemon": "^3.0.1",
+    "pkg": "^5.8.1",
+    "zip-a-folder": "^3.1.6"
   }
 }

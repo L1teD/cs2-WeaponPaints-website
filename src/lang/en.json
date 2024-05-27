@@ -12,8 +12,10 @@
         "sniperRifles": "Sniper rifles",
         "SMGs": "SMGs",
         "heavy": "Heavy",
+        "utility": "Utility",
         "ctAgents": "CT Agents",
-        "tAgents": "T Agents"
+        "tAgents": "T Agents",
+        "musicKits": "Music kits"
     },
     "modal": {
         "title": "Float and pattern",

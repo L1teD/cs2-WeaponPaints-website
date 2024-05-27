@@ -24,6 +24,14 @@
         "weapon_type": "csgo_inventory_weapon_category_smgs"
     },
     {
+        "weapon_defindex": "31",
+        "weapon_name": "weapon_taser",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/a/aa/CS2Taserhud.png",
+        "paint_name": "Zeus X27",
+        "weapon_type": "csgo_inventory_weapon_category_utility"
+    },
+    {
         "weapon_defindex": "19",
         "weapon_name": "weapon_p90",
         "paint": "0",
@@ -148,7 +156,7 @@
         "weapon_name": "weapon_sawedoff",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_sawedoff.png",
-        "paint_name": "Sawed-Off",
+        "paint_name": "Cano Curto",
         "weapon_type": "csgo_inventory_weapon_category_heavy"
     },
     {
@@ -188,7 +196,7 @@
         "weapon_name": "weapon_elite",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite.png",
-        "paint_name": "Dual Berettas",
+        "paint_name": "Berettas Duplas",
         "weapon_type": "csgo_inventory_weapon_category_pistols"
     },
     {
@@ -268,15 +276,7 @@
         "weapon_name": "weapon_revolver",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_revolver.png",
-        "paint_name": "R8 Revolver",
-        "weapon_type": "csgo_inventory_weapon_category_pistols"
-    },
-    {
-        "weapon_defindex": "31",
-        "weapon_name": "weapon_taser",
-        "paint": "0",
-        "image": "https://static.wikia.nocookie.net/cswikia/images/a/aa/CS2Taserhud.png",
-        "paint_name": "Zeus X27",
+        "paint_name": "Revólver R8",
         "weapon_type": "csgo_inventory_weapon_category_pistols"
     },
     {
@@ -284,7 +284,7 @@
         "weapon_name": "weapon_bayonet",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet.png",
-        "paint_name": "Bayonet",
+        "paint_name": "Baioneta",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -292,7 +292,7 @@
         "weapon_name": "weapon_knife_css",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css.png",
-        "paint_name": "Classic Knife",
+        "paint_name": "Faca Clássica",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -300,7 +300,7 @@
         "weapon_name": "weapon_knife_flip",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip.png",
-        "paint_name": "Flip Knife",
+        "paint_name": "Canivete",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -308,7 +308,7 @@
         "weapon_name": "weapon_knife_gut",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut.png",
-        "paint_name": "Gut Knife",
+        "paint_name": "Faca Gut Hook",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -324,7 +324,7 @@
         "weapon_name": "weapon_knife_m9_bayonet",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet.png",
-        "paint_name": "M9 Bayonet",
+        "paint_name": "Baioneta M9",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -332,7 +332,7 @@
         "weapon_name": "weapon_knife_tactical",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical.png",
-        "paint_name": "Huntsman Knife",
+        "paint_name": "Faca do Caçador",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -340,7 +340,7 @@
         "weapon_name": "weapon_knife_falchion",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion.png",
-        "paint_name": "Falchion Knife",
+        "paint_name": "Canivete Falchion",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -348,7 +348,7 @@
         "weapon_name": "weapon_knife_survival_bowie",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie.png",
-        "paint_name": "Bowie Knife",
+        "paint_name": "Faca Bowie",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -356,7 +356,7 @@
         "weapon_name": "weapon_knife_butterfly",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly.png",
-        "paint_name": "Butterfly Knife",
+        "paint_name": "Canivete Borboleta",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -364,7 +364,7 @@
         "weapon_name": "weapon_knife_push",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push.png",
-        "paint_name": "Shadow Daggers",
+        "paint_name": "Adagas Sombrias",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -372,7 +372,7 @@
         "weapon_name": "weapon_knife_cord",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord.png",
-        "paint_name": "Paracord Knife",
+        "paint_name": "Faca de Cordame",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -380,7 +380,7 @@
         "weapon_name": "weapon_knife_canis",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis.png",
-        "paint_name": "Survival Knife",
+        "paint_name": "Faca de Sobrevivência",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -388,7 +388,7 @@
         "weapon_name": "weapon_knife_ursus",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus.png",
-        "paint_name": "Ursus Knife",
+        "paint_name": "Faca Ursus",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -396,7 +396,7 @@
         "weapon_name": "weapon_knife_gypsy_jackknife",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife.png",
-        "paint_name": "Navaja Knife",
+        "paint_name": "Faca Navaja",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -404,7 +404,7 @@
         "weapon_name": "weapon_knife_outdoor",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor.png",
-        "paint_name": "Nomad Knife",
+        "paint_name": "Faca Nômade",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -412,7 +412,7 @@
         "weapon_name": "weapon_knife_stiletto",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto.png",
-        "paint_name": "Stiletto Knife",
+        "paint_name": "Faca Stiletto",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -420,7 +420,7 @@
         "weapon_name": "weapon_knife_widowmaker",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker.png",
-        "paint_name": "Talon Knife",
+        "paint_name": "Faca Talon",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {
@@ -428,7 +428,7 @@
         "weapon_name": "weapon_knife_skeleton",
         "paint": "0",
         "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton.png",
-        "paint_name": "Skeleton Knife",
+        "paint_name": "Faca Esqueleto",
         "weapon_type": "sfui_invpanel_filter_melee"
     },
     {

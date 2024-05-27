@@ -115,6 +115,14 @@
     text-overflow: ellipsis;
 }
 
+.sideBtnImg {
+    filter: invert();
+}
+
+.sideBtnI {
+
+}
+
 .card-common {
     border-color: rgb(129,140,154) !important;
     color: rgb(129,140,154);

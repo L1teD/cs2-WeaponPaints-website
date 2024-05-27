@@ -2,20 +2,23 @@
     "name": "Title of your website",
     "lang": "en", 
     "DB": {
-        "DB_HOST": "host",
-        "DB_USER": "username",
-        "DB_PASS": "password",
-        "DB_DB": "table",
-        "DB_PORT": "3306"
+        "host": "host",
+        "user": "username",
+        "password": "password",
+        "database": "table",
+        "port": 3306
     },
     "HOST": "example.com or localhost/127.0.0.1",
     "PROTOCOL": "https",
     "PORT": 27275,
-    "INTERNAL_HOST": "127.0.0.1",
+    "INTERNAL_HOST": "0.0.0.0",
     "STEAMAPIKEY": "Your Steam Web API Key",
     "SESSION_SECRET": "Some random and secure string containing letters, numbers and special characters like !@#$%^&*(). Atleast 32 chars long.",
     "connect": {
-        "show": true,
-        "url": "steam://connect/[IP:PORT]?appid=730/[Server password if needed]"
-    }
+        "show": false,
+        "serverIp": "Server IP",
+        "serverPort": "Server Port",
+        "serverPassword": "Server Password"
+    },
+    "LOG_LEVEL": "info"
 }
