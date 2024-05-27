@@ -4,9 +4,7 @@
   "description": "Website for cs2-WeaponPaints plugin",
   "main": ".",
   "scripts": {
-    "dev": "nodemon --ignore ./sessions/ --ignore ./src/public/ .",
-    "start": "startWindows.bat",
-    "startLinux": "src/app",
+    "dev": "nodemon --ignore ./web/ .",
     "build": "node builder.js",
     "updateApi": "node updateApi.js"
   },
