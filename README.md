@@ -74,7 +74,7 @@ If Windows:
 ```bash
   ### public
   npm i
-  npm run start
+  npm run dev
 
   ### private
   app.exe
@@ -84,7 +84,7 @@ If Linux:
 ```bash
   ### public
   npm i
-  npm run startLinux
+  npm run dev
 
   ### private
   src/app
