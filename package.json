@@ -25,7 +25,7 @@
     "gamedig": "^5.0.0-beta.2",
     "log4js": "^6.9.1",
     "macaddress": "^0.5.3",
-    "mysql2": "^3.9.1",
+    "mysql2": "^3.9.7",
     "node-machine-id": "^1.1.12",
     "passport": "0.7.0",
     "passport-steam": "^1.0.18",
