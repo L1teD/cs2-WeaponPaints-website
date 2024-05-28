@@ -61,7 +61,7 @@ module.exports = (io, socket) => {
         if (getMusic.length >= 1) {
             await query(`UPDATE wp_player_music SET music_id = ${data.id} WHERE steamid = ${data.steamid}`)
         } else {
-            await query(`INSERT INTO wp_player_ьгышс (steamid, music_id) VALUES ( ${data.steamid}, ${data.id} )`)
+            await query(`INSERT INTO wp_player_music (steamid, music_id) VALUES ( ${data.steamid}, ${data.id} )`)
         }
 
         const newMusic = await query(`SELECT * FROM wp_player_music WHERE steamid = ${data.steamid}`)
