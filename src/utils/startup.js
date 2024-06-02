@@ -45,7 +45,7 @@ async function checkTables() {
 
     const results = await query(`SELECT table_name FROM information_schema.tables WHERE table_schema = "${config.DB.database}" AND table_name IN (${quotedDBTables})`)
 
-    let tables = results.map(result => result.table_name);
+    let tables = results.map(result => result.table_name || result.TABLE_NAME);
     let missingTables = [];
 
     if (tables.length === 0) throw new Error(
