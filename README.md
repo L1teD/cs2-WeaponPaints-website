@@ -18,22 +18,12 @@ Screenshots taken from private version
 - Private: https://cs.primat.fun/
 
 ## Private
-- **[Download latest release](https://github.com/L1teD/cs2-WeaponPaints-website/releases/latest/download/cs2-WeaponPaints-website.zip)**
-- Fill config.json (see below), don't fill appKey in it
-- Start if linux `npm run startLinux` or if windows just open app.exe
-- Then in the console copy your _**UUID**_
-<img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/Screenshot_12.png?raw=true" width="600">
-
-- Then pay **[via DonationAlerts](https://www.donationalerts.com/r/l1te_ )** $20 with a message like “Discord: {discord id} UUID: {uuid}”
-
-- After that i'll contact you and send you your app key
-
-**To get admin account go to wps_users, find your account and change admin to 1**
+- **[See PRIVATE.md](https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/PRIVATE.md)**
 ## Installation
 
 ### Requires: Node.js *17* or later
 
-- **[Download latest release](https://github.com/L1teD/cs2-WeaponPaints-website/releases/latest/download/cs2-WeaponPaints-website.zip)**
+- **[Download latest release](https://github.com/L1teD/cs2-WeaponPaints-website/releases/latest/download/cs2-WeaponPaints-website-main.zip)**
 - In **`src/`** copy **`config.example.json`** to **`config.json`** and fill it:
 ```json
 {
@@ -72,12 +62,8 @@ Screenshots taken from private version
 
 If Windows:
 ```bash
-  ### public
   npm i
   npm run dev
-
-  ### private
-  app.exe
 ```
 
 If Linux:
@@ -85,11 +71,6 @@ If Linux:
   ### public
   npm i
   npm run dev
-
-  ### private
-  src/app
-  # if you using pm2
-  pm2 start "npm run startLinux"
 ```
 
 ## Support me
