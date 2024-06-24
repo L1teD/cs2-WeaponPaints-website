@@ -116,7 +116,7 @@
 
 - Please don't try to run it in docker, since UUID will reset every restart
 
-- Supported languages **`ru, en, pt-BR`**
+- Supported languages **`bg, cs, da, de, el, en, es-ES, fi, fr, hu, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, uk, vi, zh-CN, zh-TW`**
 
 - Supported styles **`legacy/gold, legacy/purple, public/default, cybershoke/default`**
 
