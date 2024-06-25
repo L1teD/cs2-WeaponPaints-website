@@ -4,12 +4,14 @@ const config = require('../../config.json');
 const connection = mysql.createConnection(config.DB);
 
 async function query(sql, params) {
-    let con = await connection
-   
-    let results = await con.query(sql)
-    results = results[0]
-
-    return results;
+    let connection = mysql.createPool(config.DB)
+    try {
+        let results = await connection.query(sql)
+        results = results[0]
+        return results;
+    } finally {
+        connection.releaseConnection();
+    }  
 }
 
 module.exports = {
