@@ -21,9 +21,9 @@ Screenshots taken from private version
 - **[See PRIVATE.md](https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/PRIVATE.md)**
 # Installation
 Requirements:
-- Node.JS 17^
-- Nginx
-- WeaponPaints installed
+- [Node.JS](https://nodejs.org/en) 17^
+- [Nginx](https://nginx.org/ru/download.html)
+- [WeaponPaints](https://github.com/Nereziel/cs2-WeaponPaints) installed
 
 #### Step 1:
 
