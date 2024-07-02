@@ -42,6 +42,21 @@
         "serverPort": "Server Port",
         "serverPassword": "Server Password"
     },
+    "payment": {
+        "enabled": true,
+        "info": "Payment system is under sandbox mode!<br>Use this card credentials to try premium:<br><br>Card number: 4111 1111 1111 1111<br>MM/YY: 12/40<br>CVV: 123<br>Zip: 12345",
+        "price": "Price: <span class='text-success'>$1.99</span>",
+        "duration": "Duration: <span class='text-warning'>1 Month</span>",
+        "contacts": "Contacts: <a href='https://discord.gg/inviteId' class='text-decoration-none text-info'>Discord</a>, <a href='https://steamcommunity.com/id/tupoyvacban/' class='text-decoration-none'>Steam</a>",
+        "xsolla": {
+            "sandbox": true,
+            "enabled": true,
+            "apiKey": "xsolla api key",
+            "userID": "xsolla user id",
+            "projectID": "xsolla project id",
+            "subscriptionPlanID": "xsolla sub plan id"
+        }
+    },
     "LOG_LEVEL": "info",
     "startPage": {
         "_comment": "Icons can be found there https://fontawesome.com/icons under the brands category",
