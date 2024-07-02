@@ -1,21 +1,16 @@
 ## **WARNING**
 **If you used private <=2.4.1 then remove `wps_users` and `wps_workshop` tables since newer version is using a bit different layout for them**
 
-## Private
-- **[Download latest release](https://github.com/L1teD/cs2-WeaponPaints-website/releases/latest/download/cs2-WeaponPaints-website.zip)**
-- Fill config.json (see below)
-- Start if linux `./app` or if windows just open app.exe
-- Then in the console copy your _**UUID**_
-<img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/Screenshot_12.png?raw=true" width="600">
+# Installation
+Requirements:
+- [Node.JS](https://nodejs.org/en) 17^
+- [Nginx](https://nginx.org/ru/download.html)
+- [WeaponPaints](https://github.com/Nereziel/cs2-WeaponPaints) installed
 
-- Then pay **[via DonationAlerts](https://www.donationalerts.com/r/l1te_ )** $20 with a message like “Discord: {discord id} UUID: {uuid}”
+#### Step 1:
 
-- After that i'll contact you and send you your app key
-## Installation
-
-### Requires: Node.js *17* or later
-
-- **[Download latest release](https://github.com/L1teD/cs2-WeaponPaints-website/releases/latest/download/cs2-WeaponPaints-website.zip)**
+**[Download latest release](https://github.com/L1teD/cs2-WeaponPaints-website/releases/latest/download/cs2-WeaponPaints-website-main.zip)**
+Unpack it wherever you want
 - Create file **`config.json`** and fill it:
 ```json
 {
@@ -129,24 +124,68 @@
 
 - Make sure the database that you specified in the config is the same as in the WeaponPaints plugin. Otherwise the needed tables won't exist and the website won't work.
 
-- Please don't try to run it in docker, since UUID will reset every restart
+- If you are running in docker or running some special server setup. You might encounter issues with the internal expressjs server. As its default running on 127.0.0.1. If you need to change this. You can do so via config option **`INTERNAL_HOST`** and set it to whatever interface you need. For most advanced use cases like reverse proxy 0.0.0.0 can be used.
+
+- **Please don't try to run it in docker, since UUID will reset every restart**
 
 - Supported languages **`bg, cs, da, de, el, en, es-ES, fi, fr, hu, it, ja, ko, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, uk, vi, zh-CN, zh-TW`**
 
 - Supported styles **`legacy/gold, legacy/purple, public/default, cybershoke/default`**
 
-- And then
+#### Step 2:
+Configure Nginx reverse proxy
+- In Nginx folder at `sites-enabled` folder create file `ws-site.conf`
+- Fill it like this:
+```nginx
+server {
+        listen 80;
+        listen 443 ssl; # Include this if you want SSL support! You wont usually need this if you plan on proxying through CF. 
 
-If Windows:
+        # The domain or URL you want this to run SkinChanger off of.
+        server_name subdomain.example.com;
+
+        # NOTE: You'll want to change these to your own SSL certificate if any. You wont usually need this if you plan on proxying through CF.
+        ssl_certificate     /etc/letsencrypt/live/subdomain.example.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/subdomain.example.com/privkey.pem;
+
+        # SkinChanger
+        location / {
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header Host $http_host;
+                add_header Access-Control-Allow-Origin *;
+                proxy_redirect off;
+				# Change port in case you edited it in config.json
+                proxy_pass http://127.0.0.1:27275;
+        }
+}
+```
+
+#### Step 3:
+Run app with following commands:
+
+If Windows
 ```bash
     app.exe
 ```
 
-If Linux:
+If Linux
 ```bash
     chmod +x app
     ./app
 ```
+
+#### Step 4:
+- Copy your in the console _**UUID**_
+<img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/Screenshot_12.png?raw=true" width="600">
+
+- Then pay **[via DonationAlerts](https://www.donationalerts.com/r/l1te_ )** $20 with a message like “Discord: {discord id} UUID: {uuid}”
+
+- After that i'll contact you and send you your app key
+
+`For all questions contact me on discord "l1tedxd"`
+
+And after all of this, site should be available at domain you configured in Nginx config
 
 ## Support me
 
