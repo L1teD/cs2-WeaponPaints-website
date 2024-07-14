@@ -139,8 +139,6 @@ window.glovesTemplate = (gloves, langObject, selectedGloves) => {
 
     if (gloves.weapon_defindex == selectedGloves.weapon_defindex) {
         active = 'active-card'
-        buttonInner = langObject.changeSkin
-        buttonFunc =  `knifeSkins(\'${gloves.weapon_name}\')`
     }
 
     card.innerHTML = `
