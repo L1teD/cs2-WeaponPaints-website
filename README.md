@@ -9,6 +9,7 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
     <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/3.png?raw=true" width="400">
     <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/4.png?raw=true" width="400">
     <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/5.png?raw=true" width="400">
+    <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/6.png?raw=true" width="400">
 </div>
 
 Screenshots taken from private version
