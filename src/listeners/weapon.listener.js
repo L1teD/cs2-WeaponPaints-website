@@ -74,6 +74,9 @@ module.exports = (io, socket) => {
     }
 
     async function changeParams(data) {
+        data.float = (data.float == '') ? '0.000001' : data.float
+        data.pattern = (data.pattern == '') ? '1' : data.pattern
+        
         await query(`UPDATE wp_player_skins SET weapon_wear = ${data.float}, weapon_seed = ${data.pattern} WHERE steamid = '${data.steamid}' AND weapon_defindex = ${data.weaponid} AND weapon_paint_id = ${data.paintid}`)
         socket.emit('params-changed')
     }
