@@ -24,6 +24,12 @@ Unpack it wherever you want
         "database": "table",
         "port": 3306
     },
+    "rcon": {
+        "enabled": true,
+        "host": "ip address",
+        "port": 27015,
+        "password": "server rcon password"
+    },
     "style": "legacy/gold",
     "HOST": "example.com or localhost/127.0.0.1",
     "PROTOCOL": "https",
@@ -103,6 +109,13 @@ Unpack it wherever you want
                     "user": "user","password": "passowrd",
                     "database": "database",
                     "port": 3306
+                },
+                {
+                    "_comment": "RCON",
+			        "enabled": true,
+			        "host": "ip address",
+			        "port": 27015,
+			        "password": "server rcon password"
                 }
             ],
             [
@@ -113,7 +126,13 @@ Unpack it wherever you want
                     "password": "password",
                     "database": "database",
                     "port": 3306
-                    
+                },
+                {
+                    "_comment": "RCON",
+			        "enabled": true,
+			        "host": "ip address",
+			        "port": 27015,
+			        "password": "server rcon password"
                 }
             ]
         ]
