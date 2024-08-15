@@ -5,11 +5,11 @@ const connection = mysql.createConnection(config.DB);
 
 async function query(sql, params) {
     try {
-        let results = await connection.query(sql)
+        let results = await (await connection).query(sql)
         results = results[0]
         return results;
     } finally {
-        connection.destroy();
+        (await connection).destroy();
     }  
 }
 
