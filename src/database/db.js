@@ -1,16 +1,20 @@
 const mysql = require('mysql2/promise');
 const config = require('../../config.json');
 
-const connection = mysql.createConnection(config.DB);
+const pool = mysql.createPool(config.DB);
 
 async function query(sql, params) {
+    let connection = await pool.getConnection()
     try {
-        let results = await (await connection).query(sql)
+        let results = await connection.execute(sql)
         results = results[0]
         return results;
     } finally {
-        (await connection).destroy();
-    }  
+        if (connection) {
+            connection.release();
+        }
+
+    }
 }
 
 module.exports = {
