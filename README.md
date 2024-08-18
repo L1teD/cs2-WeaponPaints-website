@@ -103,3 +103,7 @@ And after all of this, site should be available at domain you configured in Ngin
 
 
 [![Steam donations](https://github.com/Nereziel/cs2-WeaponPaints/assets/32937653/a0d53822-4ca7-4caf-83b4-e1a9b5f8c94e)](https://steamcommunity.com/tradeoffer/new/?partner=1153616149&token=V-OXvmuV)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=L1teD/cs2-WeaponPaints-website&type=Date)](https://star-history.com/#L1teD/cs2-WeaponPaints-website&Date)
