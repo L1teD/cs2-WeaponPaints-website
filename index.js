@@ -65,7 +65,7 @@ app.use(
     extended: true,
   })
 );
-app.use(express.static('web/public'))
+app.use(express.static(path.join(__dirname, '/web/public')))
 app.use('/', mainRouter);
 
 app.set('view engine', 'ejs')
