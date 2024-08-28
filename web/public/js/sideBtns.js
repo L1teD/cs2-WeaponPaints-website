@@ -3,10 +3,10 @@ let defaultsTemp = await fetch(`/js/json/defaults/${lang}-defaults.json`)
 let agentsTemp = await fetch(`/js/json/skins/agents.json`)
 let musicTemp = await fetch(`/js/json/skins/music_kits.json`)
 
-export let skinsObject = await skinsTemp.json()
-export let defaultsObject = await defaultsTemp.json()
-export let agentsObject = await agentsTemp.json()
-export let musicObject = await musicTemp.json()
+window.skinsObject = await skinsTemp.json()
+window.defaultsObject = await defaultsTemp.json()
+window.agentsObject = await agentsTemp.json()
+window.musicObject = await musicTemp.json()
 
 const sideBtnHandler = (activeBtn) => {
     // remove active background

@@ -1,5 +1,3 @@
-import { skinsObject, defaultsObject, agentsObject, musicObject } from './sideBtns.js'
-
 window.defaultsTemplate = (weapon, langObject, lang) => {
     let card = document.createElement('div')
     card.classList.add('col-6', 'col-sm-4', 'col-md-3', 'p-2')
