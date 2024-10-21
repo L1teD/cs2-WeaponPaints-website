@@ -8,7 +8,7 @@ module.exports = (io, socket) => {
         if (getKnife.length >= 1) {
             await query(`UPDATE wp_player_knife SET knife = '${data.weaponid}' WHERE steamid = ${data.steamUserId}`)
         } else {
-            await query(`INSERT INTO wp_player_knife (steamid, knife) values (${data.steamUserId}, '${data.weaponid}')`)
+            await query(`INSERT INTO wp_player_knife (steamid, weapon_team, knife) values (${data.steamUserId}, 0, '${data.weaponid}')`)
         }
         socket.emit('knife-changed', {knife: data.weaponid})
     }
@@ -19,7 +19,7 @@ module.exports = (io, socket) => {
         if (getGloves.length >= 1) {
             await query(`UPDATE wp_player_gloves SET weapon_defindex = '${data.weaponid}' WHERE steamid = ${data.steamUserId}`)
         } else {
-            await query(`INSERT INTO wp_player_gloves (steamid, weapon_defindex) values (${data.steamUserId}, '${data.weaponid}')`)
+            await query(`INSERT INTO wp_player_gloves (steamid, weapon_team, weapon_defindex) values (${data.steamUserId}, 0, '${data.weaponid}')`)
         }
         socket.emit('glove-changed', {knife: data.weaponid})
     }
@@ -46,7 +46,7 @@ module.exports = (io, socket) => {
         if (getSkin.length >= 1) {
             await query(`UPDATE wp_player_skins SET weapon_paint_id = ${data.paintid} WHERE steamid = ${data.steamid} AND weapon_defindex = ${data.weaponid}`)
         } else {
-            await query(`INSERT INTO wp_player_skins (steamid, weapon_defindex, weapon_paint_id) VALUES ( ${data.steamid}, ${data.weaponid}, ${data.paintid})`)
+            await query(`INSERT INTO wp_player_skins (steamid, weapon_defindex, weapon_team, weapon_paint_id) VALUES ( ${data.steamid}, ${data.weaponid}, 0, ${data.paintid})`)
         }
 
         const newSkins = await query(`SELECT * FROM wp_player_skins WHERE steamid = ${data.steamid}`)
@@ -61,7 +61,7 @@ module.exports = (io, socket) => {
         if (getMusic.length >= 1) {
             await query(`UPDATE wp_player_music SET music_id = ${data.id} WHERE steamid = ${data.steamid}`)
         } else {
-            await query(`INSERT INTO wp_player_music (steamid, music_id) VALUES ( ${data.steamid}, ${data.id} )`)
+            await query(`INSERT INTO wp_player_music (steamid, weapon_team, music_id) VALUES ( ${data.steamid}, 0, ${data.id} )`)
         }
 
         const newMusic = await query(`SELECT * FROM wp_player_music WHERE steamid = ${data.steamid}`)
