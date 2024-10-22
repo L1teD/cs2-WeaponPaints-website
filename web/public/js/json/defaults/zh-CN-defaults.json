@@ -1,0 +1,506 @@
+[
+    {
+        "weapon_defindex": "26",
+        "weapon_name": "weapon_bizon",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bizon.png",
+        "paint_name": "PP野牛",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "17",
+        "weapon_name": "weapon_mac10",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mac10.png",
+        "paint_name": "MAC-10",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "34",
+        "weapon_name": "weapon_mp9",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp9.png",
+        "paint_name": "MP9",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "19",
+        "weapon_name": "weapon_p90",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p90.png",
+        "paint_name": "P90",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "24",
+        "weapon_name": "weapon_ump45",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ump45.png",
+        "paint_name": "UMP-45",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "7",
+        "weapon_name": "weapon_ak47",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ak47.png",
+        "paint_name": "AK-47",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "8",
+        "weapon_name": "weapon_aug",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_aug.png",
+        "paint_name": "AUG",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "10",
+        "weapon_name": "weapon_famas",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_famas.png",
+        "paint_name": "法玛斯",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "13",
+        "weapon_name": "weapon_galilar",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_galilar.png",
+        "paint_name": "加利尔",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "16",
+        "weapon_name": "weapon_m4a1",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1.png",
+        "paint_name": "M4A4",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "60",
+        "weapon_name": "weapon_m4a1_silencer",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m4a1_silencer.png",
+        "paint_name": "M4A1-S",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "39",
+        "weapon_name": "weapon_sg556",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_sg556.png",
+        "paint_name": "SG 553",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "9",
+        "weapon_name": "weapon_awp",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_awp.png",
+        "paint_name": "AWP",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "11",
+        "weapon_name": "weapon_g3sg1",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_g3sg1.png",
+        "paint_name": "G3SG1",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "38",
+        "weapon_name": "weapon_scar20",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_scar20.png",
+        "paint_name": "SCAR-20",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "40",
+        "weapon_name": "weapon_ssg08",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_ssg08.png",
+        "paint_name": "SSG 08",
+        "weapon_type": "csgo_inventory_weapon_category_rifles"
+    },
+    {
+        "weapon_defindex": "27",
+        "weapon_name": "weapon_mag7",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mag7.png",
+        "paint_name": "MAG-7",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "35",
+        "weapon_name": "weapon_nova",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_nova.png",
+        "paint_name": "新星",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "29",
+        "weapon_name": "weapon_sawedoff",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_sawedoff.png",
+        "paint_name": "截短式霰弹枪",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "25",
+        "weapon_name": "weapon_xm1014",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_xm1014.png",
+        "paint_name": "XM1014",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "14",
+        "weapon_name": "weapon_m249",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_m249.png",
+        "paint_name": "M249",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "28",
+        "weapon_name": "weapon_negev",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_negev.png",
+        "paint_name": "内格夫",
+        "weapon_type": "csgo_inventory_weapon_category_heavy"
+    },
+    {
+        "weapon_defindex": "1",
+        "weapon_name": "weapon_deagle",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_deagle.png",
+        "paint_name": "沙漠之鹰",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "2",
+        "weapon_name": "weapon_elite",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_elite.png",
+        "paint_name": "双枪贝瑞塔",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "3",
+        "weapon_name": "weapon_fiveseven",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_fiveseven.png",
+        "paint_name": "FN57",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "4",
+        "weapon_name": "weapon_glock",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_glock.png",
+        "paint_name": "格洛克-18",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "32",
+        "weapon_name": "weapon_hkp2000",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_hkp2000.png",
+        "paint_name": "P2000",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "30",
+        "weapon_name": "weapon_tec9",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_tec9.png",
+        "paint_name": "Tec-9",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "61",
+        "weapon_name": "weapon_usp_silencer",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_usp_silencer.png",
+        "paint_name": "USP-S",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "63",
+        "weapon_name": "weapon_cz75a",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_cz75a.png",
+        "paint_name": "CZ75-Auto",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "36",
+        "weapon_name": "weapon_p250",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_p250.png",
+        "paint_name": "P250",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "23",
+        "weapon_name": "weapon_mp5sd",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp5sd.png",
+        "paint_name": "MP5-SD",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "33",
+        "weapon_name": "weapon_mp7",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_mp7.png",
+        "paint_name": "MP7",
+        "weapon_type": "csgo_inventory_weapon_category_smgs"
+    },
+    {
+        "weapon_defindex": "64",
+        "weapon_name": "weapon_revolver",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_revolver.png",
+        "paint_name": "R8 左轮",
+        "weapon_type": "csgo_inventory_weapon_category_pistols"
+    },
+    {
+        "weapon_defindex": "31",
+        "weapon_name": "weapon_taser",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/a/aa/CS2Taserhud.png",
+        "paint_name": "Zeus X27",
+        "weapon_type": "csgo_inventory_weapon_category_utility"
+    },
+    {
+        "weapon_defindex": "500",
+        "weapon_name": "weapon_bayonet",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_bayonet.png",
+        "paint_name": "刺刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "503",
+        "weapon_name": "weapon_knife_css",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_css.png",
+        "paint_name": "海豹短刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "505",
+        "weapon_name": "weapon_knife_flip",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_flip.png",
+        "paint_name": "折叠刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "506",
+        "weapon_name": "weapon_knife_gut",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gut.png",
+        "paint_name": "穿肠刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "507",
+        "weapon_name": "weapon_knife_karambit",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_karambit.png",
+        "paint_name": "爪子刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "508",
+        "weapon_name": "weapon_knife_m9_bayonet",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_m9_bayonet.png",
+        "paint_name": "M9 刺刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "509",
+        "weapon_name": "weapon_knife_tactical",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_tactical.png",
+        "paint_name": "猎杀者匕首",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "512",
+        "weapon_name": "weapon_knife_falchion",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_falchion.png",
+        "paint_name": "弯刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "514",
+        "weapon_name": "weapon_knife_survival_bowie",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_survival_bowie.png",
+        "paint_name": "鲍伊猎刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "515",
+        "weapon_name": "weapon_knife_butterfly",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_butterfly.png",
+        "paint_name": "蝴蝶刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "516",
+        "weapon_name": "weapon_knife_push",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_push.png",
+        "paint_name": "暗影双匕",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "517",
+        "weapon_name": "weapon_knife_cord",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_cord.png",
+        "paint_name": "系绳匕首",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "518",
+        "weapon_name": "weapon_knife_canis",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_canis.png",
+        "paint_name": "幸存者匕首",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "519",
+        "weapon_name": "weapon_knife_ursus",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_ursus.png",
+        "paint_name": "熊刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "520",
+        "weapon_name": "weapon_knife_gypsy_jackknife",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_gypsy_jackknife.png",
+        "paint_name": "折刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "521",
+        "weapon_name": "weapon_knife_outdoor",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_outdoor.png",
+        "paint_name": "流浪者匕首",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "522",
+        "weapon_name": "weapon_knife_stiletto",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_stiletto.png",
+        "paint_name": "短剑",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "523",
+        "weapon_name": "weapon_knife_widowmaker",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_widowmaker.png",
+        "paint_name": "锯齿爪刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "525",
+        "weapon_name": "weapon_knife_skeleton",
+        "paint": "0",
+        "image": "https://raw.githubusercontent.com/Nereziel/cs2-WeaponPaints/main/website/img/skins/weapon_knife_skeleton.png",
+        "paint_name": "骷髅匕首",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "526",
+        "weapon_name": "weapon_knife_kukri",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/1/18/CS2_weapon_knife_kukri.png",
+        "paint_name": "尼泊尔军刀",
+        "weapon_type": "sfui_invpanel_filter_melee"
+    },
+    {
+        "weapon_defindex": "5027",
+        "weapon_name": "studded_bloodhound_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/f/f6/Inventory_icon_studded_bloodhound_gloves.png",
+        "paint_name": "血猎手套",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5030",
+        "weapon_name": "sporty_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/6/65/Inventory_icon_sporty_gloves.png",
+        "paint_name": "运动手套",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5031",
+        "weapon_name": "slick_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/6/67/Inventory_icon_slick_gloves.png",
+        "paint_name": "驾驶手套",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5032",
+        "weapon_name": "leather_handwraps",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/0/06/Inventory_icon_leather_handwraps.png",
+        "paint_name": "手部束带",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5033",
+        "weapon_name": "motorcycle_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/5/53/Inventory_icon_motorcycle_gloves.png",
+        "paint_name": "摩托手套",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5034",
+        "weapon_name": "specialist_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/b/b1/Inventory_icon_specialist_gloves.png",
+        "paint_name": "专业手套",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "5035",
+        "weapon_name": "studded_hydra_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/f/f6/Inventory_icon_studded_bloodhound_gloves.png",
+        "paint_name": "九头蛇手套",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    },
+    {
+        "weapon_defindex": "4725",
+        "weapon_name": "studded_brokenfang_gloves",
+        "paint": "0",
+        "image": "https://static.wikia.nocookie.net/cswikia/images/f/f6/Inventory_icon_studded_bloodhound_gloves.png",
+        "paint_name": "破防手套",
+        "weapon_type": "sfui_invpanel_filter_gloves"
+    }
+]

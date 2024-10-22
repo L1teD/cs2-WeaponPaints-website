@@ -1,0 +1,55 @@
+{
+    "navLogin": "登录",
+    "navLogout": "登出",
+    "navDelete": "删除账户",
+    "connect": "连接到服务器",
+    "profile": "个人主页",
+    "sideMenu": {
+        "knives": "刀",
+        "gloves": "手套",
+        "pistols": "手枪",
+        "rifles": "步枪",
+        "sniperRifles": "狙击枪",
+        "SMGs": "冲锋枪",
+        "heavy": "重型武器",
+        "utility": "电击枪",
+        "ctAgents": "CT 探员",
+        "tAgents": "T 探员",
+        "musicKits": "音乐盒"
+    },
+    "modal": {
+        "title": "磨损与模板",
+        "float": "磨损",
+
+        "patternButtons": [
+            {
+                "shortName": "FN",
+                "longName": "崭新出厂"
+            },
+            {
+                "shortName": "MW",
+                "longName": "略有磨损"
+            },
+            {
+                "shortName": "FT",
+                "longName": "久经沙场"
+            },
+            {
+                "shortName": "WW",
+                "longName": "破损不堪"
+            },
+            {
+                "shortName": "BS",
+                "longName": "战痕累累"
+            }
+
+        ],
+        "pattern": "模板"
+
+    },
+    "selectCategory": "选择一个分类",
+    "needLogin": "您需要先登陆，才能设置皮肤。",
+    "viaSteam": "通过Steam登陆",
+    "change": "修改",
+    "changeSkin": "修改皮肤"
+}
