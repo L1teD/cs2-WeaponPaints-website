@@ -20,6 +20,7 @@ module.exports = (io, socket) => {
             await query(`UPDATE wp_player_gloves SET weapon_defindex = '${data.weaponid}' WHERE steamid = ${data.steamUserId}`)
         } else {
             await query(`INSERT INTO wp_player_gloves (steamid, weapon_team, weapon_defindex) values (${data.steamUserId}, 0, '${data.weaponid}')`)
+            await query(`INSERT INTO wp_player_gloves (steamid, weapon_team, weapon_defindex) values (${data.steamUserId}, 1, '${data.weaponid}')`)
         }
         socket.emit('glove-changed', {knife: data.weaponid})
     }
