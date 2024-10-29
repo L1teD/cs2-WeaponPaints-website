@@ -15,8 +15,8 @@ Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-Weapon
 Screenshots taken from private version
 
 #### Preview
-- Public: https://ws.primat.fun/
-- Private: https://cs.primat.fun/
+- Public: (not available atm)
+- Private: https://private-sc.l1te.pw/
 
 ## If you want to use private, check this
 - **[See PRIVATE.md](https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/PRIVATE.md)**
