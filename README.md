@@ -16,7 +16,7 @@ Screenshots taken from private version
 
 #### Preview
 - Public: (not available atm)
-- Private: https://private-sc.l1te.pw/
+- Private: https://private-sc.l1te.pw/ (temporarily disabled (502) for development purposes)
 
 ## If you want to use private, check this
 - **[See PRIVATE.md](https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/PRIVATE.md)**
