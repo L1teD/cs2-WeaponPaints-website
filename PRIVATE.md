@@ -1,6 +1,3 @@
-## **WARNING**
-**If you used private <=2.4.1 then remove `wps_users` and `wps_workshop` tables since newer version is using a bit different layout for them**
-
 # Installation
 Requirements:
 - [Node.JS](https://nodejs.org/en) 17^
