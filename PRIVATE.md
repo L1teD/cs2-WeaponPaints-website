@@ -145,7 +145,7 @@ If Linux
 - Copy your in the console _**UUID**_
 <img src="https://github.com/L1teD/cs2-WeaponPaints-website/blob/main/previews/Screenshot_12.png?raw=true" width="600">
 
-- Then pay **[via DonationAlerts](https://www.donationalerts.com/r/l1te_ )** $60 with a message like “Discord: {discord id} UUID: {uuid}”
+- Then pay **[via DonationAlerts](https://www.donationalerts.com/r/l1te_ )** $50 with a message like “Discord: {discord id} UUID: {uuid}”
 
 - After that i'll contact you and send you your app key
 
