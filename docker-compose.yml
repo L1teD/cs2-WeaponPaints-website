@@ -2,7 +2,7 @@ services:
     skins-website:
         # image: pending:latest
         build:
-        context: .
+            context: .
         env_file:
             - .env
         networks:
