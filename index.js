@@ -1,5 +1,8 @@
 console.clear()
 
+// require dotenv only development mode.
+if (process.env.NODE_ENV === "development") require("dotenv").config()
+
 const express = require("express")
 const bodyParser = require("body-parser")
 const { startup } = require("./src/utils/startup")
@@ -15,7 +18,7 @@ const Logger = require("./src/utils/logger")
 const {
     WEBSITE_HOST,
     WEBSITE_INTERNAL_HOST,
-    PROTOCOL,
+    WEBSITE_PROTOCOL,
     WEBSITE_INTERNAL_PORT,
     STEAM_API_KEY,
     SESSION_SECRET,
@@ -29,12 +32,12 @@ const {
 const app = express()
 const port = WEBSITE_INTERNAL_PORT || 27275
 
-let returnURL = `${PROTOCOL}://${WEBSITE_HOST}/api/auth/steam/return`
-let realm = `${PROTOCOL}://${WEBSITE_HOST}/`
+let returnURL = `${WEBSITE_PROTOCOL}://${WEBSITE_HOST}/api/auth/steam/return`
+let realm = `${WEBSITE_PROTOCOL}://${WEBSITE_HOST}/`
 
 if (WEBSITE_HOST == "localhost" || WEBSITE_HOST == "127.0.0.1") {
-    returnURL = `${PROTOCOL}://${WEBSITE_HOST}:${WEBSITE_INTERNAL_PORT}/api/auth/steam/return`
-    realm = `${PROTOCOL}://${WEBSITE_HOST}:${WEBSITE_INTERNAL_PORT}/`
+    returnURL = `${WEBSITE_PROTOCOL}://${WEBSITE_HOST}:${WEBSITE_INTERNAL_PORT}/api/auth/steam/return`
+    realm = `${WEBSITE_PROTOCOL}://${WEBSITE_HOST}:${WEBSITE_INTERNAL_PORT}/`
 
     Logger.core.trace(
         `'localhost/127.0.0.1' at config detected, *returnURL* and *realm* changed to have port in it`,
@@ -109,7 +112,7 @@ app.use((err, req, res, next) => {
 
 const server = app.listen(port, WEBSITE_INTERNAL_HOST, () => {
     startup()
-    Logger.core.info(`App listening at ${PROTOCOL}://localhost:${port}`)
+    Logger.core.info(`App listening at ${WEBSITE_PROTOCOL}://localhost:${port}`)
 })
 
 const io = require("socket.io")(server)
