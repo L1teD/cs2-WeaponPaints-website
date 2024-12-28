@@ -42,6 +42,7 @@
     "node-archiver": "^0.3.0",
     "nodemon": "^3.0.1",
     "pkg": "^5.8.1",
+    "prettier": "^3.4.2",
     "zip-a-folder": "^3.1.6"
   }
 }
