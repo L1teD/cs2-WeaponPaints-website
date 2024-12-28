@@ -1,0 +1,19 @@
+name: code-format-checks
+on:
+    pull_request:
+        branches:
+            - main
+        types:
+            - opened
+            - synchronize
+jobs:
+    formatting-checks:
+        runs-on: ubuntu-latest
+        container:
+            image: tmknom/prettier
+        steps:
+            - name: Checkout code
+                uses: actions/checkout@v4
+
+            - name: Check JS file formatting
+                run: prettier . --check
