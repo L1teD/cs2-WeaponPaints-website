@@ -1,0 +1,7 @@
+{
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": false,
+    "bracketSameLine": true,
+    "htmlWhitespaceSensitivity": "ignore"
+}
