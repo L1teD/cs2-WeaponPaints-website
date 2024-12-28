@@ -1,2 +1,38 @@
 services:
   skins-website:
+    image: pending:latest
+    build:
+      context: .
+    env_file:
+      - .env
+    networks:
+        - skins
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - ./etc/nginx.conf:/etc/nginx/templates/nginx.conf.template
+      - certbot:/etc/letsencrypt
+      - certbot:/var/www/certbot
+    environment:
+      - NGINX_URL=${NGINX_URL}
+      - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx
+    networks:
+        - skins
+  certbot:
+    profiles: ["certbot"]
+    image: certbot/certbot
+    volumes:
+      - certbot:/etc/letsencrypt
+      - certbot:/var/www/certbot
+    command: certonly --standalone -w /var/www/certbot --email ${LETS_ENCRYPT_EMAIL} --agree-tos --no-eff-email --keep-until-expiring -d ${NGINX_URL}
+    ports:
+      - "80:80"
+networks:
+  skins:
+volumes:
+  certbot:
+  database:
