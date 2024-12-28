@@ -17,8 +17,9 @@ services:
             - ./config/nginx.conf:/etc/nginx/templates/nginx.conf.template
             - certbot:/etc/letsencrypt
             - certbot:/var/www/certbot
+        env_file:
+            - .env
         environment:
-            - WEBSITE_HOST=${WEBSITE_HOST}
             - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx
         networks:
             - skins
