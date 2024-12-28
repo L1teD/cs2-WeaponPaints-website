@@ -1,6 +1,10 @@
 # TODO: add multistage builds so the final image is not as heavy and maybe also use pnpm instead of npm
-FROM node:lts as prod
+FROM node:lts-alpine as prod
+
+WORKDIR /app
 
 COPY . .
-RUN npm i
-ENTRYPOINT ['node', '.']
+
+RUN npm install
+
+ENTRYPOINT ["node", "index.js"]
