@@ -13,7 +13,7 @@ jobs:
             image: tmknom/prettier
         steps:
             - name: Checkout code
-                uses: actions/checkout@v4
+              uses: actions/checkout@v4
 
             - name: Check JS file formatting
-                run: prettier . --check
+              run: prettier . --check
