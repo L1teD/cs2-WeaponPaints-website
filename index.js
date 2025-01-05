@@ -1,101 +1,130 @@
 console.clear()
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const { startup } = require('./src/utils/startup')
+// require dotenv only development mode.
+if (process.env.NODE_ENV === "development") require("dotenv").config()
 
-const path = require('path')
-const passport = require('passport')
-const passportSteam = require('passport-steam')
+const express = require("express")
+const bodyParser = require("body-parser")
+const { startup } = require("./src/utils/startup")
+
+const path = require("path")
+const passport = require("passport")
+const passportSteam = require("passport-steam")
 const SteamStrategy = passportSteam.Strategy
-const session = require('express-session')
-const MySQLStore = require('express-mysql-session')(session);
+const session = require("express-session")
+const MySQLStore = require("express-mysql-session")(session)
 
-const Logger = require('./src/utils/logger')
-const config = require('./config.json')
+const Logger = require("./src/utils/logger")
+const {
+    WEBSITE_HOST,
+    WEBSITE_INTERNAL_HOST,
+    WEBSITE_PROTOCOL,
+    WEBSITE_INTERNAL_PORT,
+    STEAM_API_KEY,
+    SESSION_SECRET,
+    DB_HOST,
+    DB_USER,
+    DB_PASSWORD,
+    DB_PORT,
+    DB_DATABASE,
+} = process.env
 
-const app = express();
-const port = config.PORT || 27275;
+const app = express()
+const port = WEBSITE_INTERNAL_PORT || 27275
 
-let returnURL = `${config.PROTOCOL}://${config.HOST}/api/auth/steam/return`
-let realm = `${config.PROTOCOL}://${config.HOST}/`
+let returnURL = `${WEBSITE_PROTOCOL}://${WEBSITE_HOST}/api/auth/steam/return`
+let realm = `${WEBSITE_PROTOCOL}://${WEBSITE_HOST}/`
 
-if (config.HOST == 'localhost' || config.HOST == '127.0.0.1') {
-    returnURL = `${config.PROTOCOL}://${config.HOST}:${config.PORT}/api/auth/steam/return`
-    realm = `${config.PROTOCOL}://${config.HOST}:${config.PORT}/`
-    
-    Logger.core.trace(`'localhost/127.0.0.1' at config detected, *returnURL* and *realm* changed to have port in it`)
+if (WEBSITE_HOST == "localhost" || WEBSITE_HOST == "127.0.0.1") {
+    returnURL = `${WEBSITE_PROTOCOL}://${WEBSITE_HOST}:${WEBSITE_INTERNAL_PORT}/api/auth/steam/return`
+    realm = `${WEBSITE_PROTOCOL}://${WEBSITE_HOST}:${WEBSITE_INTERNAL_PORT}/`
+
+    Logger.core.trace(
+        `'localhost/127.0.0.1' at config detected, *returnURL* and *realm* changed to have port in it`,
+    )
 }
 
 // Required to get data from user for sessions
 passport.serializeUser((user, done) => {
-    done(null, user);
-});
+    done(null, user)
+})
 passport.deserializeUser((user, done) => {
-    done(null, user);
-});
+    done(null, user)
+})
 // Initiate Strategy
-passport.use(new SteamStrategy({
-    returnURL: returnURL,
-    realm: realm,
-    apiKey: config.STEAMAPIKEY,
-}, function (identifier, profile, done) {
-    process.nextTick(function () {
-        profile.identifier = identifier;
-        return done(null, profile);
-    });
-}
-));
+passport.use(
+    new SteamStrategy(
+        {
+            returnURL: returnURL,
+            realm: realm,
+            apiKey: STEAM_API_KEY,
+        },
+        function (identifier, profile, done) {
+            process.nextTick(function () {
+                profile.identifier = identifier
+                return done(null, profile)
+            })
+        },
+    ),
+)
 
-const sessionStore = new MySQLStore(config.DB);
-app.use(session({
-    store: sessionStore,
-    secret: config.SESSION_SECRET,
-    saveUninitialized: true,
-    resave: false,
-}))
-app.use(passport.initialize());
-app.use(passport.session());
+const sessionStore = new MySQLStore({
+    host: DB_HOST,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    port: DB_PORT,
+    database: DB_DATABASE,
+})
 
-const mainRouter = require('./src/routes/mainRouter.route');
-
-app.use(bodyParser.json());
 app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
-app.use(express.static(path.join(__dirname, '/web/public')))
-app.use('/', mainRouter);
+    session({
+        store: sessionStore,
+        secret: SESSION_SECRET,
+        saveUninitialized: true,
+        resave: false,
+    }),
+)
+app.use(passport.initialize())
+app.use(passport.session())
 
-app.set('view engine', 'ejs')
-app.set('views', path.join(__dirname, '/web/views'))
+const mainRouter = require("./src/routes/mainRouter.route")
+
+app.use(bodyParser.json())
+app.use(
+    bodyParser.urlencoded({
+        extended: true,
+    }),
+)
+app.use(express.static(path.join(__dirname, "/web/public")))
+app.use("/", mainRouter)
+
+app.set("view engine", "ejs")
+app.set("views", path.join(__dirname, "/web/views"))
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
-  const statusCode = err.statusCode || 500;
-  console.error(err.message, err.stack);
-  res.status(statusCode).json({'message': err.message});
-  
-  return;
-});
+    const statusCode = err.statusCode || 500
+    console.error(err.message, err.stack)
+    res.status(statusCode).json({ message: err.message })
 
-const server = app.listen(port, config.INTERNAL_HOST, () => {
+    return
+})
+
+const server = app.listen(port, WEBSITE_INTERNAL_HOST, () => {
     startup()
-    Logger.core.info(`App listening at ${config.PROTOCOL}://localhost:${port}`)
-});
+    Logger.core.info(`App listening at ${WEBSITE_PROTOCOL}://localhost:${port}`)
+})
 
-const io = require("socket.io")(server);
+const io = require("socket.io")(server)
 
-const weaponSocketHandler = require('./src/listeners/weapon.listener');
+const weaponSocketHandler = require("./src/listeners/weapon.listener")
 
 const onConnection = (socket) => {
-    weaponSocketHandler(io, socket);
+    weaponSocketHandler(io, socket)
 }
 
-io.on("connection", onConnection);
+io.on("connection", onConnection)
 
-sessionStore.onReady()
-    .then(() => {
-        Logger.sql.info('MySQLStore ready')
-    })
+sessionStore.onReady().then(() => {
+    Logger.sql.info("MySQLStore ready")
+})

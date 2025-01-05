@@ -35,12 +35,14 @@
   },
   "devDependencies": {
     "big-json": "^3.2.0",
+    "dotenv": "^16.4.7",
     "get-json": "^1.0.1",
     "javascript-obfuscator": "^4.1.0",
     "nexe": "^4.0.0-rc.4",
     "node-archiver": "^0.3.0",
     "nodemon": "^3.0.1",
     "pkg": "^5.8.1",
+    "prettier": "^3.4.2",
     "zip-a-folder": "^3.1.6"
   }
 }

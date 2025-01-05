@@ -1,0 +1,5 @@
+flake.lock
+package-lock.json
+package.json
+*.min.js
+*.min.css
