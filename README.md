@@ -37,7 +37,7 @@ Requirements:
 
 ```bash
 # clone the main branch of the repo
-git clone https://github.com/L1teD/cs2-WeaponPaints-website
+git clone https://github.com/L1teD/cs2-WeaponPaints-website -b main-docker
 cd cs2-WeaponPaints-website
 ```
 
