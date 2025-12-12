@@ -1,5 +1,8 @@
+# This repository has been discontinued.
+This repository has been closed in favor of a newer version; currently, only a demo version is available: https://next-sc.l1te.pw<br>
+It will be available in various plans in the future, including a free one, [here](https://github.com/L1teD/next-sc)<br>
 
-# Weapon Paints website
+## Weapon Paints website
 
 Website used for the **[cs2-WeaponPaints](https://github.com/Nereziel/cs2-WeaponPaints/)** plugin
 
@@ -107,3 +110,4 @@ And after all of this, site should be available at domain you configured in Ngin
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=L1teD/cs2-WeaponPaints-website&type=Date)](https://star-history.com/#L1teD/cs2-WeaponPaints-website&Date)
+
